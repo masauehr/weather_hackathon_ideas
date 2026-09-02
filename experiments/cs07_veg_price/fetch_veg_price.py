@@ -32,7 +32,9 @@ import requests
 
 from config import (DATA_DIR, PRICE_BACKEND, STATS_DATA_ID, ITEM_SLUG,
                     VEG_YEAR_START, VEG_YEAR_END,
-                    VEGETAN_CITY, VEGETAN_ITEM_RUIBETU, VEGETAN_ITEM_CODE)
+                    VEGETAN_CITY, VEGETAN_ITEM_RUIBETU, VEGETAN_ITEM_CODE,
+                    VEG_MONTHLY_YEAR_START, VEG_MONTHLY_YEAR_END,
+                    VEGETAN_MARKET_MONTHLY, VEGETAN_RUIBETU_MONTHLY, VEGETAN_CODE_MONTHLY)
 
 ESTAT_ENDPOINT = "https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData"
 VEGETAN_BASE = "https://vegetan.alic.go.jp/vegetan/sch7.do"
@@ -53,10 +55,15 @@ def _parse_vegetan_text(text: str, path_hint: str = "") -> pd.DataFrame:
     rows = list(csv.reader(io.StringIO(text)))
     if not rows or "卸売市場別入荷量" not in "".join(rows[0]):
         raise ValueError(f"ベジ探形式でない: {path_hint or text[:40]!r}")
-    m = re.search(r"(\d{4})\s*年\s*(\d{1,2})\s*月", "".join(rows[0]))
-    if not m:
-        raise ValueError(f"年月を読めない: {rows[0]}")
-    year, month = int(m.group(1)), int(m.group(2))
+    joined = "".join(rows[0])
+    ym = re.search(r"(\d{4})\s*年\s*(\d{1,2})\s*月", joined)   # 日別/旬別: "YYYY年M月 ..."
+    if ym:
+        year, month = int(ym.group(1)), int(ym.group(2))
+    else:                                                       # 月別: "YYYY年 ..." のみ
+        y = re.search(r"(\d{4})\s*年", joined)
+        if not y:
+            raise ValueError(f"年を読めない: {rows[0]}")
+        year, month = int(y.group(1)), None
 
     label_row, kind_row = rows[1], rows[2]
     total_row = next((r for r in rows if r and r[0].strip() in ("総計", "合計")), None)
@@ -69,7 +76,7 @@ def _parse_vegetan_text(text: str, path_hint: str = "") -> pd.DataFrame:
             continue
         label = label_row[i - 1] if 0 < i <= len(label_row) else ""
         dm, mm = re.search(r"(\d{1,2})\s*日", label), re.search(r"(\d{1,2})\s*月", label)
-        if dm:
+        if dm and month:
             day, mon = int(dm.group(1)), month
         elif mm:
             day, mon = 15, int(mm.group(1))
@@ -115,6 +122,48 @@ def _fetch_vegetan_month(sess: requests.Session, year: int, month: int) -> pd.Da
     if "octet-stream" not in d.headers.get("content-type", "") and "csv" not in d.headers.get("content-type", ""):
         raise RuntimeError(f"{year}-{month:02d}: CSVが返らない（{d.status_code} {d.headers.get('content-type')}）")
     return _parse_vegetan_text(d.content.decode("cp932", errors="replace"), f"{year}-{month:02d}")
+
+
+def _fetch_vegetan_year_monthly(sess: requests.Session, year: int) -> pd.DataFrame:
+    """ベジ探 月別（outPutKbn=1）を1年分。産地=総計行の月次単価を返す。"""
+    sess.post(VEGETAN_BASE, timeout=30, headers={"Referer": VEGETAN_BASE}, data={
+        "CMD": "search", "searchFlg": "0", "outPutKbn": "1",
+        "baseYear": str(year), "baseYearTo": str(year),
+        "baseMonthFr": "1", "baseMonthTo": "12",
+        "marketCode": VEGETAN_MARKET_MONTHLY, "codeKbn": "1",
+        "hinmokuRuibetu": VEGETAN_RUIBETU_MONTHLY, "hinmokuCode": VEGETAN_CODE_MONTHLY,
+    })
+    qs = (f"CMD=downLoad&searchFlg=1&outPutKbn=1"
+          f"&svBaseYear={year}&svBaseYearTo={year}&svBaseMonthFr=1&svBaseMonthTo=12"
+          f"&svCodeKbn=1&svHinmokuRuibetu={VEGETAN_RUIBETU_MONTHLY}&svHinmokuCode={VEGETAN_CODE_MONTHLY}"
+          f"&svMarketCode={VEGETAN_MARKET_MONTHLY}&svHomeCode="
+          f"&svNendo1=&svNendo2=&svNendo3=&svNendo4=&svCity=")
+    d = sess.get(f"{VEGETAN_BASE}?{qs}", timeout=30, headers={"Referer": VEGETAN_BASE})
+    d.raise_for_status()
+    if "octet-stream" not in d.headers.get("content-type", "") and "csv" not in d.headers.get("content-type", ""):
+        raise RuntimeError(f"{year}: CSVが返らない（{d.status_code} {d.headers.get('content-type')}）")
+    return _parse_vegetan_text(d.content.decode("cp932", errors="replace"), str(year))
+
+
+def _fetch_vegetan_monthly() -> pd.DataFrame:
+    sess = requests.Session()
+    sess.headers.update({"User-Agent": UA, "Accept-Language": "ja,en;q=0.8"})
+    sess.get(VEGETAN_BASE, params={"outPutKbn": "1"}, timeout=30)
+    frames = []
+    for year in range(VEG_MONTHLY_YEAR_START, VEG_MONTHLY_YEAR_END + 1):
+        try:
+            df = _fetch_vegetan_year_monthly(sess, year)
+        except (requests.HTTPError, RuntimeError) as e:
+            print(f"  ベジ探(月別) {year}: スキップ（{type(e).__name__}）")
+            continue
+        print(f"  ベジ探(月別) {year}: {len(df)}点")
+        frames.append(df)
+        time.sleep(REQUEST_INTERVAL_SEC)
+    out = (pd.concat(frames, ignore_index=True).drop_duplicates("date")
+           .sort_values("date").reset_index(drop=True))
+    if out.empty:
+        raise SystemExit("ベジ探(月別)から1点も取れなかった。")
+    return out
 
 
 def _fetch_vegetan_auto() -> pd.DataFrame:
@@ -224,16 +273,22 @@ def _read_estat() -> pd.DataFrame:
 
 # ----------------------------------------------------------------
 def main() -> int:
+    import sys
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    backend = {"vegetan_auto": _fetch_vegetan_auto, "manual": _read_manual, "estat": _read_estat}
-    if PRICE_BACKEND not in backend:
-        raise SystemExit(f"PRICE_BACKEND が不正: {PRICE_BACKEND}")
-    df = backend[PRICE_BACKEND]()
+    if "--monthly" in sys.argv:      # ベジ探 月別（長期系列）
+        df = _fetch_vegetan_monthly()
+        suffix = "_monthly"
+    else:
+        backend = {"vegetan_auto": _fetch_vegetan_auto, "manual": _read_manual, "estat": _read_estat}
+        if PRICE_BACKEND not in backend:
+            raise SystemExit(f"PRICE_BACKEND が不正: {PRICE_BACKEND}")
+        df = backend[PRICE_BACKEND]()
+        suffix = ""
     df["date"] = pd.to_datetime(df["date"])
     df = df.dropna(subset=["date", "price"]).drop_duplicates("date").sort_values("date").reset_index(drop=True)
     if df.empty:
         raise SystemExit("有効な価格データが0件。")
-    out = DATA_DIR / f"veg_price_{ITEM_SLUG}.csv"
+    out = DATA_DIR / f"veg_price_{ITEM_SLUG}{suffix}.csv"
     df.to_csv(out, index=False)
     span = df["date"].diff().dt.days.median()
     print(f"-> {out}  ({len(df)}点, {df['date'].min().date()}〜{df['date'].max().date()}, 中央間隔~{span:.0f}日)")

@@ -40,7 +40,7 @@ CROPS = {
         "producer_station": "maebashi",
     },
 }
-ACTIVE_CROP = "spinach"   # ← "lettuce" / "spinach"
+ACTIVE_CROP = "spinach"   # ← "spinach" のみ進行中（lettuce は 2026-09-02 終了）
 
 _c = CROPS[ACTIVE_CROP]
 ITEM_SLUG = ACTIVE_CROP
@@ -51,10 +51,18 @@ VEGETAN_ITEM_RUIBETU = _c["vegetan_ruibetu"]
 VEGETAN_ITEM_CODE = _c["vegetan_code"]
 
 # --- 取得期間 ---
-YEAR_START = 2019          # 日照（平年比の分母を作るため長め）
+YEAR_START = 2011          # 気象（月次の長期系列に合わせて拡張）
 YEAR_END = 2026            # 未来月はスクリプトが自動で打ち切る
 VEG_YEAR_START = 2024      # ベジ探 日別は 2024年〜
 VEG_YEAR_END = 2026
+
+# ベジ探 月別（outPutKbn=1）＝1984年〜。真夏日数×価格の長期検証用。
+VEG_MONTHLY_YEAR_START = 2011
+VEG_MONTHLY_YEAR_END = 2026
+# 月別モードのコード（day モードと別体系）: marketCode 7=東京都中央市場計
+VEGETAN_MARKET_MONTHLY = "7"
+VEGETAN_RUIBETU_MONTHLY = {"lettuce": "9999030", "spinach": "9999020"}[ACTIVE_CROP]
+VEGETAN_CODE_MONTHLY = {"lettuce": "334000", "spinach": "318000"}[ACTIVE_CROP]
 
 # 価格取得バックエンド: "vegetan_auto" / "manual" / "estat"
 PRICE_BACKEND = "vegetan_auto"
