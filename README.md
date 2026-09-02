@@ -1,7 +1,7 @@
 # weather_hackathon_ideas
 
 気象データ × 各種データの相関分析・機械学習予測モデル・生成AI活用の**アイデア出し**を行うプロジェクト。
-「気象 × 生成AI ハッカソン」の事前準備を兼ねる。まだ実装はせず、案を広く集めて評価・選抜する段階。
+「気象 × 生成AI ハッカソン」の事前準備を兼ねる。案を広く集めて評価・選抜する段階（一部は [experiments/](experiments/) で相関の当たり付けまで実施済み）。
 
 > このREADMEが**目次（ハブ）**です。各ドキュメントの冒頭にもREADMEへ戻るリンクがあります。
 
@@ -28,6 +28,7 @@
 | ⚖️ [docs/evaluation.md](docs/evaluation.md) | 評価軸と候補スコアリング | 6軸 / 暫定スコア表 / 第一次候補 / 絞り込み手順 |
 | 🧰 [docs/existing_assets.md](docs/existing_assets.md) | ~/projects 内の流用可能な既存資産 | 気象取得 / 電力 / 生成AI / 台風 / 経済・家計 |
 | 🎯 [docs/candidates/](docs/candidates/) | 第一次候補の詳細設計（下表） | — |
+| 🧪 [experiments/](experiments/) | 相関の当たり付けスパイク（実コード）。生データは `data/`（git除外） | [cs07_veg_price](experiments/cs07_veg_price/)（ID-25 生鮮野菜価格の気象先行指標） |
 
 ### 🎯 第一次候補（詳細設計）
 
@@ -56,14 +57,19 @@
 
 ## 📌 状態
 
-- 2026-09-02 新規作成。アイデア発散フェーズ。実装物なし。
+- 2026-09-02 新規作成。アイデア発散フェーズ。
 - 第一次候補3案の詳細設計まで完了（[docs/candidates/](docs/candidates/)）。
 - データ利用ルールを確定（気象庁のみ・公開データのみ・個人データ不可・GRIB不使用）。全ドキュメントに反映済み。
 - データ取得が容易な順の相関テスト3件を [docs/data_easy_tests.md](docs/data_easy_tests.md) に整理。
-- 次: ハッカソン要項の確認 → 評価軸の重み付け → 1案に絞る（[plan.md](plan.md) フェーズ4）。あわせてテスト1（気温×電力需要）から着手可能。
+- **相関スパイクを1件実施（[experiments/cs07_veg_price/](experiments/cs07_veg_price/)、ID-25 / CS-07）**:
+  「産地（前橋）の真夏日数 → 東京のほうれんそう卸売価格・入荷量」を月次15年（2011〜2026）で検証。
+  分布ラグ回帰（交絡統制・HAC）で **真夏日+10日 → 翌月の卸売価格 +約10%／入荷量 −15%**（ラグ1か月 β=+0.0096, t=+3.3, p=0.001）。
+  「気象単独で価格を当てる」ことはできない（予測R²の上乗せ小）が、**早期警戒シグナルとして有効**。結果まとめ → [SPINACH_FINDINGS.md](experiments/cs07_veg_price/SPINACH_FINDINGS.md)。
+  副産物: 気象庁 etrn ＋ ベジ探（東京都中央卸売市場データ）の完全自動取得コード。
+- 次: ハッカソン要項の確認 → 評価軸の重み付け → 1案に絞る（[plan.md](plan.md) フェーズ4）。
 
-## 🛠️ 実装フェーズに入ったら
+## 🛠️ 実装メモ
 
-- Python環境（`met_env` 相当）＋ `requirements.txt` を作る
-- 検証コードは `experiments/`、データは `data/`（git 除外予定）
-- 気象庁API・各データの利用規約を遵守。詳細は [CLAUDE.md](CLAUDE.md)
+- Python環境: `met_env` 相当（Python 3.11、pandas / scipy / statsmodels / matplotlib / beautifulsoup4）。ルートに [requirements.txt](requirements.txt)。
+- 検証コードは `experiments/<テーマ>/`、生データ・出力図の一部は `data/`（git 除外）。結果図・集計は各テーマの `results/`（git 追跡）。
+- 気象庁API・各データの利用規約を遵守。図表には「気象庁ホームページ」等の出典を明記。詳細は [CLAUDE.md](CLAUDE.md)
