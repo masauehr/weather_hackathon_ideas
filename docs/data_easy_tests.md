@@ -3,44 +3,53 @@
 **[← README（目次）](../README.md)** ・ 関連: [correlation_studies](correlation_studies.md) ・ [data_sources](data_sources.md) ・ [ml_models](ml_models.md) ・ [idea_catalog](idea_catalog.md)
 
 第一次候補（ID-32 / ID-17 / ID-05）に縛られず、「**最低1年分の実データ**が**すぐ・軽量に**手に入る」ものから相関テスト→機械学習を回すための候補。
-**GRIB / NetCDF など大容量バイナリは除外**。すべて API（JSON）または CSV で、1地点あたり数百KB〜数MB。
 
-## 気象側は Open-Meteo Historical Weather API で共通化
+## 前提ルール（[CLAUDE.md](../CLAUDE.md) の絶対ルール）
 
-- エンドポイント: `https://archive-api.open-meteo.com/v1/archive`（`/v1/archive`）
-- 1940年以降・全球・**1時間値**、ERA5/ERA5-Land ベースの再解析。**APIキー不要・非商用無料**（〜1万req/日）
-- 1地点×数年×複数変数が**1リクエスト・数秒・JSON**で取れる。GRIBを一切触らずに済むのが要点
-- 主な変数: `temperature_2m` `relative_humidity_2m` `surface_pressure` `shortwave_radiation` `wind_speed_10m` `precipitation` `cloud_cover`
-- 商用利用や大量取得時はライセンス確認（CC-BY、商用は要問い合わせ）
+- **気象データは気象庁HPから取得する。** Open-Meteo / ERA5 などは使わない。
+- **個人データ・非公開データは使わない。** 自宅の電力使用量・電気代（`okiden*`）、自分の GPS ログ等は対象外。
+- 使うのは**誰でも同じ手順でアクセスできる公開データ**のみ。
+- **GRIB / NetCDF など大容量バイナリは除外**。すべて CSV（気象庁 obsdl・電力会社の公開実績・政府統計）で、1地点あたり数百KB〜数MB。
+
+## 気象側は「気象庁｜過去の気象データ・ダウンロード」で共通化
+
+- URL: <https://www.data.jma.go.jp/risk/obsdl/index.php>（旧 `/gmd/risk/obsdl/`）
+- **地点**（気象台156・アメダス多数）×**項目**（気温・降水・日照・全天日射※約48地点・風・湿度・気圧・積雪）×**期間**を指定して **CSV ダウンロード**。無料・誰でも可。
+- 粒度: 10分値 / 1時間値 / 日別値 / 月別値。相関テストは **1時間値 or 日別値**で十分。
+- **注意（唯一の手間）**: 1回のDLに容量上限がある（地点数×項目数×日数で制限）。**1〜2年ずつ・項目を絞って複数回DL** して結合する。
+- 補助: 表形式で確認したいだけなら「過去の気象データ検索」<https://www.data.jma.go.jp/obd/stats/etrn/index.php>。
+- 利用規約: 出典明示（例: 「気象庁ホームページ」）。
 
 ---
 
 ## 容易さランキング
 
-| 順位 | テスト | 気象側 | 相手側 | 相手側の形式・期間 | 整形の手間 |
+| 順位 | テスト | 気象側（気象庁 obsdl） | 相手側（公開データ） | 相手側の形式・期間 | 整形の手間 |
 |---|---|---|---|---|---|
-| 1 | 気温 × 電力需要（沖縄エリア） | Open-Meteo archive（那覇） | 沖縄電力「過去の電力使用実績」 | 月別CSV・2018年〜・1時間値 | 小（結合するだけ） |
-| 2 | 日射量 × 太陽光発電実績 | Open-Meteo archive（`shortwave_radiation`） | 一般送配電「エリア需給実績」 | CSV/年度zip・2016年度〜・1時間値・電源別列 | 中（CSV仕様の把握） |
-| 3 | 気温・絶対湿度 × インフルエンザ流行 | Open-Meteo archive（県庁所在地） | 感染症発生動向調査（定点当たり報告数） | CSV・多年・週次 | 中（週次集約・絶対湿度計算） |
+| 1 | 気温 × 電力需要（エリア） | 那覇/福岡/東京 の気温・湿度（1時間値） | 電力会社「過去の電力使用実績」/ 一般送配電「エリア需給実績」 | CSV・2016〜2018年〜・1時間値 | 小（時刻キーで結合） |
+| 2 | 全天日射量 × 太陽光発電実績 | 福岡/鹿児島 の全天日射量（1時間値） | 一般送配電「エリア需給実績」（電源別＝太陽光実績の列） | CSV/年度zip・2016年度〜・1時間値 | 中（CSV仕様の把握） |
+| 3 | 気温・絶対湿度 × インフルエンザ流行 | 県庁所在地の気温・相対湿度・気圧（日別→週平均） | 感染症発生動向調査「定点当たり報告数」 | CSV・多年・週次 | 中（週次集約・絶対湿度計算） |
+
+すべて気象側は同じ obsdl 取得フローを使い回せる。
 
 ---
 
-## テスト1 ── 気温 × 電力需要（沖縄エリア）　【最も容易】
+## テスト1 ── 気温 × 電力需要（エリア）　【最も容易】
 
-対応アイデア: [ID-01](idea_catalog.md) / [ID-03](idea_catalog.md)、[CS-01](correlation_studies.md) の実データ版。
+対応: [ID-01](idea_catalog.md) / [ID-03](idea_catalog.md)、[CS-01](correlation_studies.md) の公開データ版。
 
 ### データ
-| | 気象 | 電力需要 |
+| | 気象（気象庁） | 電力需要（公開実績） |
 |---|---|---|
-| 取得元 | Open-Meteo Historical Weather API | 沖縄電力「過去の電力使用実績」 <https://www.okiden.co.jp/denki/dl/> |
-| 期間 | 1940年〜（今回は2018年〜で十分） | **2018年〜**現在、月別 |
-| 粒度 | 1時間 | 1時間（使用実績・使用率） |
-| 形式・容量 | JSON・1リクエスト・数MB | CSV・月1ファイル・各数十KB |
-| 取得方法 | `latitude=26.21&longitude=127.68&start_date=2019-01-01&end_date=2024-12-31&hourly=temperature_2m,relative_humidity_2m,shortwave_radiation` | ページから月別CSVをDL（数十ファイル）。仕様は <https://www.okiden.co.jp/denki/data_desc.html> |
+| 取得元 | 気象庁 過去の気象データ・ダウンロード <https://www.data.jma.go.jp/risk/obsdl/index.php> | 電力会社「でんき予報 / 過去の電力使用実績」（例: 沖縄電力 <https://www.okiden.co.jp/denki/dl/>、東京電力 <https://www.tepco.co.jp/forecast/html/download-j.html>）。または一般送配電「エリア需給実績」 |
+| 対象 | 那覇（沖縄エリアなら）／福岡・東京 | 同じエリアの需要 |
+| 期間 | 任意（2019〜で十分） | 沖縄電力 2018年〜／東京電力 2016年〜 |
+| 粒度 | 1時間値（気温・相対湿度） | 1時間値（使用実績・使用率） |
+| 形式・容量 | CSV・1〜2年ずつ数回DL・各数百KB | CSV・月別 or 年別・各数十KB〜 |
 
 ### 相関仮説
-- 日最高気温・各時刻気温とエリア需要は**非線形（V字/J字）**。夏は冷房で急増、冬は暖房で微増。
-- 冷房度日(CDD)・暖房度日(HDD)で概ね説明できる。平日/休日、時間帯で層別が効く。
+- 気温とエリア需要は**非線形（V字/J字）**。夏は冷房で急増、冬は暖房で微増。
+- 冷房度日(CDD)・暖房度日(HDD)で概ね説明。平日/休日・時間帯の層別が効く。
 
 ### 最小分析 → GO基準
 1. 時刻を合わせて結合、散布図（気温 vs 需要）＋ LOWESS
@@ -48,70 +57,63 @@
 3. LightGBM（分位点 P10/P50/P90）で当日〜翌日需要、ベースライン（季節Naive）と比較
 - **GO**: CDD 単回帰で R² > 0.6、GBDT の MAPE がベースラインを明確に下回る
 
-### 既存流用
-`okiden` `okiden_month` `okiden_jukyu`（実績データと集計コード）、`nouken`（日射取得）
-
 ### 容易さの理由 / 注意
-- 両側とも**公式・軽量・整形不要に近い**。年数も潤沢。相関が強く既知なのでデモが確実に動く。
-- 注意: CSVの列定義（速報/確報、使用率の分母）を `data_desc` で確認。連休・イベント日の外れ値。
+- 両側とも**公式・公開・軽量**。年数も潤沢。相関が強く既知なのでデモが確実に動く。
+- 注意: 電力CSVの列定義（速報/確報、使用率の分母）を各社の説明ページで確認。連休・イベント日の外れ値。
+- **個人の `okiden*` データは使わない**（公開の「過去の電力使用実績」で代替）。
 
 ---
 
-## テスト2 ── 日射量 × 太陽光発電実績
+## テスト2 ── 全天日射量 × 太陽光発電実績
 
-対応アイデア: [ID-02](idea_catalog.md)、[MM-02](ml_models.md)、[CS-02](correlation_studies.md) の実データ版。
+対応: [ID-02](idea_catalog.md)、[MM-02](ml_models.md)、[CS-02](correlation_studies.md) の公開データ版。
 
 ### データ
-| | 日射量 | 太陽光発電実績 |
+| | 日射量（気象庁） | 太陽光発電実績（公開） |
 |---|---|---|
-| 取得元 | Open-Meteo archive `shortwave_radiation`（全天日射 W/m²）。代替 NASA POWER | 一般送配電「エリア需給実績」（電源別に**太陽光実績**の列あり） |
-| 候補エリア | エリア代表点（例: 九州＝福岡付近） | 九州電力送配電 <https://www.kyuden.co.jp/td_area_jukyu/jukyu.html> / 東京電力PG <https://www.tepco.co.jp/forecast/html/area_jukyu-j.html> / 東北電力NW <https://setsuden.nw.tohoku-epco.co.jp/download.html> |
-| 期間 | 1940年〜 | **2016年度〜**（各社）、月次CSV or 年度zip |
-| 粒度 | 1時間 | 1時間値（元データは30分値の平均） |
-| 形式・容量 | JSON・1リクエスト | CSV（月次）/ zip（年度）・合計数MB |
+| 取得元 | 気象庁 obsdl の**全天日射量**（1時間値、MJ/m²）。観測は約48地点（福岡・鹿児島・那覇・東京・札幌 等） | 一般送配電「エリア需給実績」の**太陽光実績**列 |
+| 具体源 | 〃 | 九州電力送配電 <https://www.kyuden.co.jp/td_area_jukyu/jukyu.html> / 東京電力PG <https://www.tepco.co.jp/forecast/html/area_jukyu-j.html> / 東北電力NW <https://setsuden.nw.tohoku-epco.co.jp/download.html> |
+| 対象エリア | 九州＝福岡（＋鹿児島で平均） | 九州エリア |
+| 期間 | 任意 | 2016年度〜、月次CSV or 年度zip |
+| 粒度 | 1時間値 | 1時間値（元は30分値の平均） |
+| 形式・容量 | CSV・数回DL | CSV/zip・合計数MB |
 
 ### 相関仮説
 - エリア日射量とエリア太陽光出力は**ほぼ線形**。気温（パネル効率）・季節（日射角）で小さく補正。
 
 ### 最小分析 → GO基準
 1. 時刻結合、時間値の散布図と相関 r
-2. 物理式（GHI→出力の簡易変換）をベースライン、**残差を GBDT** で学習（気温・太陽高度・季節）
+2. 物理式（日射→出力の簡易変換）をベースライン、**残差を GBDT** で学習（気温・太陽高度・季節）
 3. 快晴日 / 曇天日 / 変動日に分けて MAE を報告
 - **GO**: 時間値 r > 0.85、ハイブリッドが物理式のみより nMAE 改善
 
-### 既存流用
-`nouken`（日射データ取得ノウハウ）、`okiden_pages`（表示UI）
-
 ### 容易さの理由 / 注意
-- CSVを数回DLするだけで1年以上。関係がクリーンで**ML の教材として映える**。
-- 注意: 各社でCSVレイアウトが違う。1エリアに絞る。太陽光「実績」列と「抑制量」の扱いを確認。沖縄は太陽光比率が低めなので九州エリアが題材向き。
+- CSVを数回DLするだけで1年以上。関係がクリーンで **ML の教材として映える**。
+- 注意: 気象庁の日射観測は**地点が限られる**ので、エリア代表として1〜2地点で近似する前提を明記。各社でCSVレイアウトが違う→1エリアに絞る。太陽光「実績」列と「出力抑制量」の扱いを確認。
 
 ---
 
 ## テスト3 ── 気温・絶対湿度 × インフルエンザ流行
 
-対応アイデア: [idea_catalog I欄の種（媒介・感染症）](idea_catalog.md) / [ID-28](idea_catalog.md) 隣接。古典的な「絶対湿度仮説」の再現。
+対応: [idea_catalog I欄の種（媒介・感染症）](idea_catalog.md) / [ID-28](idea_catalog.md) 隣接。古典的な「絶対湿度仮説」の再現。
 
 ### データ
-| | 気象 | インフルエンザ |
+| | 気象（気象庁） | インフルエンザ（公開） |
 |---|---|---|
-| 取得元 | Open-Meteo archive（対象都県の県庁所在地）。相対湿度＋気温＋気圧から**絶対湿度**を計算 | 感染症発生動向調査「定点当たり報告数」 |
-| 具体源 | 〃 | 東京都感染症情報センター WEB感染症発生動向（CSVダウンロード、2000年1週〜） <https://idsc.tmiph.metro.tokyo.lg.jp/survey/websurvey/> / 厚労省 定点当たり報告数の推移 <https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html> |
-| 期間 | 1940年〜 | **多年（20年以上）**、週次 |
-| 形式・容量 | JSON | CSV・数百KB |
+| 取得元 | 気象庁 obsdl（対象都県の県庁所在地）。**気温・相対湿度・気圧**の日別値 → 絶対湿度を計算 | 感染症発生動向調査「定点当たり報告数」 |
+| 具体源 | 〃 | 東京都感染症情報センター WEB感染症発生動向（CSVダウンロード、2000年1週〜）<https://idsc.tmiph.metro.tokyo.lg.jp/survey/websurvey/> ／ 厚労省「定点当たり報告数の推移」<https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html> |
+| 期間 | 任意（20年可） | 多年（20年以上）、週次 |
+| 形式・容量 | CSV | CSV・数百KB |
 
 ### 相関仮説
-- **低温かつ低絶対湿度**の週の数週後にインフルエンザ定点報告数が増える（Shaman & Kohn の絶対湿度仮説）。
-- 季節性が強いので、季節ダミーとの交絡を切り分けるのがポイント。
+- **低温かつ低絶対湿度**の週の数週後にインフルエンザ定点報告数が増える（絶対湿度仮説）。
+- 季節性が強いので季節ダミーとの交絡を切り分けるのがポイント。
 
 ### 最小分析 → GO基準
-1. 気象を**週平均**に集約、絶対湿度を算出
+1. 気象を**週平均**に集約、絶対湿度を算出（気温・相対湿度・気圧から）
 2. 絶対湿度・気温の**ラグ（1〜4週）**を特徴量に、定点報告数を回帰（負の二項 or GBDT、Tweedie）
 3. 「増加/減少」の方向的中率、ピーク週の予測ズレで評価
 - **GO**: ラグ2〜4週で絶対湿度の負の係数が有意、方向的中率 > 0.7
-
-### 既存流用
-直接の資産は薄い。`ai_news` / `econ_digest` の「定期取得→集計→生成」パイプライン雛形のみ。
 
 ### 容易さの理由 / 注意
 - 両側CSVで通年・多年。**相関は非常に明確**でテストとして手堅い。
@@ -121,23 +123,26 @@
 
 ## 補欠（次点。軽いが癖がある）
 
-| テスト | 気象 | 相手側 | 癖 |
+| テスト | 気象（気象庁） | 相手側（公開） | 癖 |
 |---|---|---|---|
-| 気圧変化 × 「頭痛」検索トレンド（[CS-03](correlation_studies.md)） | Open-Meteo `surface_pressure` | Google トレンド（CSVエクスポート or pytrends、週次5年） | pytrends は非公式で不安定。CSV手動DLなら容易。指標は相対値 |
-| 気温 × JEPXスポット価格（[ID-02](idea_catalog.md)） | Open-Meteo（広域数地点） | JEPX 取引結果CSV（無料DL、30分値、年単位） | 価格は多要因（燃料費・出力抑制・連系線）。天候単独の寄与は小さめ |
-| WBGT × 熱中症搬送（[CS-04](correlation_studies.md)） | Open-Meteo＋WBGT近似計算 | 消防庁「熱中症による救急搬送状況」週報CSV | **夏季のみ**で通年データにならない。熱順化の扱いが必要 |
+| 気温 × JEPXスポット価格（[ID-02](idea_catalog.md)） | obsdl 広域数地点の気温 | JEPX 取引結果CSV（無料DL、30分値、年単位） | 価格は多要因（燃料費・出力抑制・連系線）。天候単独の寄与は小さめ |
+| WBGT × 熱中症搬送（[CS-04](correlation_studies.md)） | obsdl 気温・湿度・日射＋WBGT近似計算 | 消防庁「熱中症による救急搬送状況」週報CSV | **夏季のみ**で通年データにならない。熱順化の扱いが必要 |
+| 日照時間 × 青果卸売価格（[CS-07](correlation_studies.md)） | obsdl 主産地の日照時間・気温 | 農水省「青果物卸売市場調査」/ e-Stat（週次・月次） | 産地シフト（季節で主産地が変わる）。価格系列の整形にやや手間 |
+
+> 補欠から外したもの: 「気圧 × 頭痛の検索トレンド」= Google トレンドが誰でも同条件で再取得しにくく（相対値・時期依存）、ハッカソンの公開データ要件と相性が悪いため。
 
 ---
 
 ## 進め方の提案
 
-1. **テスト1 を最初に**回して「Open-Meteo archive 取得ユーティリティ」を1本作る（他テストでも使い回す）
+1. **テスト1 を最初に**回して「気象庁 obsdl の CSV を結合するユーティリティ」を1本作る（他テストでも使い回す）
 2. GO したらそのまま [ml_models.md](ml_models.md) の該当モデルへ
 3. テスト2・3 は取得ユーティリティが出来ていれば相手側CSVの整形だけ
 4. 実装コードは `experiments/<test名>/`、生データは `data/`（`.gitignore` 済み）
+5. 出典明示: 図表・記事に「気象庁ホームページ」等の出典を必ず記載
 
 ## 出典
-- [Historical Weather API | Open-Meteo](https://open-meteo.com/en/docs/historical-weather-api)
-- [過去の電力使用実績｜でんき予報｜沖縄電力](https://www.okiden.co.jp/denki/dl/) ／ [データの説明](https://www.okiden.co.jp/denki/data_desc.html)
+- [気象庁｜過去の気象データ・ダウンロード](https://www.data.jma.go.jp/risk/obsdl/index.php) ／ [過去の気象データ検索](https://www.data.jma.go.jp/obd/stats/etrn/index.php)
+- [過去の電力使用実績｜でんき予報｜沖縄電力](https://www.okiden.co.jp/denki/dl/) ／ [過去の電力使用実績データ｜東京電力](https://www.tepco.co.jp/forecast/html/download-j.html)
 - [エリア需給実績データ｜九州電力送配電](https://www.kyuden.co.jp/td_area_jukyu/jukyu.html) ／ [東京電力PG](https://www.tepco.co.jp/forecast/html/area_jukyu-j.html) ／ [東北電力NW](https://setsuden.nw.tohoku-epco.co.jp/download.html)
 - [WEB感染症発生動向調査｜東京都感染症情報センター](https://idsc.tmiph.metro.tokyo.lg.jp/survey/websurvey/) ／ [定点当たり報告数の推移｜厚生労働省](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii_00007.html)

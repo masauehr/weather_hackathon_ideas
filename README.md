@@ -5,6 +5,8 @@
 
 > このREADMEが**目次（ハブ）**です。各ドキュメントの冒頭にもREADMEへ戻るリンクがあります。
 
+> 🔑 **データ利用の絶対ルール**（[CLAUDE.md](CLAUDE.md)）: 気象データは**気象庁HPから取得**（過去 = [obsdl](https://www.data.jma.go.jp/risk/obsdl/index.php)、実況・予報 = bosai、天気図・衛星 = 気象庁画像）。相手側は**誰でも同じ手順でアクセスできる公開データのみ**。個人データ・非公開データ（自宅の電力使用量、自分のGPSログ等）は使わない。GRIB（数値予報GPV）は容量のため扱わない。
+
 ## 目的
 
 1. 気象データと他分野データ（電力・健康・農業・交通・小売・防災・経済など）の**相関仮説**を洗い出す
@@ -18,7 +20,7 @@
 |---|---|---|
 | 📋 [plan.md](plan.md) | 次の一手・準備タスク・確定要項欄 | 確定要項 / フェーズ1〜5 |
 | 💡 [docs/idea_catalog.md](docs/idea_catalog.md) | アイデア一覧（`ID-01`〜`ID-36` ＋種）。**主成果物** | A:電力 / B:健康 / C:農業 / D:交通 / E:小売・観光 / F:防災 / G:経済・行政 / H:環境 / I:スポーツ・行動 / J:基盤 |
-| 🗄️ [docs/data_sources.md](docs/data_sources.md) | 使えるデータソース棚卸し | 気象一次 / 再解析・海外API / 相手側データ / 生成AI・モデル / 事前準備 |
+| 🗄️ [docs/data_sources.md](docs/data_sources.md) | 使えるデータソース棚卸し（気象庁＋公開データのみ） | 気象（すべて気象庁） / 相手側データ / 生成AI・モデル / 事前準備 |
 | 🔗 [docs/correlation_studies.md](docs/correlation_studies.md) | 「まず相関を確認する」小規模検証 `CS-01`〜`CS-10` | 各CSの仮説・最小データ・手法・GO基準 |
 | ⚡ [docs/data_easy_tests.md](docs/data_easy_tests.md) | **データ取得が容易な順**の相関テスト候補3件（1年分以上・GRIB除外） | テスト1:気温×電力需要 / テスト2:日射×太陽光実績 / テスト3:気温・絶対湿度×インフル |
 | 🤖 [docs/ml_models.md](docs/ml_models.md) | 予測モデル設計 `MM-01`〜`MM-08` | 目的変数 / 特徴量 / 手法 / 検証 / 落とし穴 |
@@ -32,7 +34,7 @@
 | 案 | ドキュメント | 一言 | 元アイデア |
 |---|---|---|---|
 | ID-32 | [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) | 天気図・衛星をVLMで読み、気圧配置を判定して平文解説＋読み方教材 | [idea_catalog ID-32](docs/idea_catalog.md) |
-| ID-17 | [docs/candidates/c17_beach_day_planner.md](docs/candidates/c17_beach_day_planner.md) | 天気・波・潮位から「海日和スコア」＋半日プラン生成（沖縄の海） | [idea_catalog ID-17](docs/idea_catalog.md) |
+| ID-17 | [docs/candidates/c17_beach_day_planner.md](docs/candidates/c17_beach_day_planner.md) | 天気・風・潮位・UVから「海日和スコア」＋半日プラン生成（沖縄の海） | [idea_catalog ID-17](docs/idea_catalog.md) |
 | ID-05 | [docs/candidates/c05_meteoropathy_assistant.md](docs/candidates/c05_meteoropathy_assistant.md) | 気圧変化からリスク指数を予測し、理由説明とセルフケアを対話提供 | [idea_catalog ID-05](docs/idea_catalog.md) |
 | 比較 | [docs/candidates/README.md](docs/candidates/README.md) | 3案の48h開発視点の比較・絞り込み手順 | — |
 
@@ -56,7 +58,9 @@
 
 - 2026-09-02 新規作成。アイデア発散フェーズ。実装物なし。
 - 第一次候補3案の詳細設計まで完了（[docs/candidates/](docs/candidates/)）。
-- 次: ハッカソン要項の確認 → 評価軸の重み付け → 1案に絞る（[plan.md](plan.md) フェーズ4）。
+- データ利用ルールを確定（気象庁のみ・公開データのみ・個人データ不可・GRIB不使用）。全ドキュメントに反映済み。
+- データ取得が容易な順の相関テスト3件を [docs/data_easy_tests.md](docs/data_easy_tests.md) に整理。
+- 次: ハッカソン要項の確認 → 評価軸の重み付け → 1案に絞る（[plan.md](plan.md) フェーズ4）。あわせてテスト1（気温×電力需要）から着手可能。
 
 ## 🛠️ 実装フェーズに入ったら
 
