@@ -7,8 +7,8 @@
 from pathlib import Path
 
 # 生データの保存先（リポジトリルートの data/、.gitignore 済み）
-DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "cs07"
-OUT_DIR = Path(__file__).resolve().parent / "out"  # 図・集計の出力（.gitignore 済み: experiments/**/data ではないので注意）
+DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "cs07"  # 生データ（.gitignore 済み）
+OUT_DIR = Path(__file__).resolve().parent / "results"            # 図・集計（Git 追跡。README から参照する代表実行の成果）
 
 # --- 気象庁 過去の気象データ検索（etrn）の地点 ---
 # prec_no = 都府県・地方コード, block_no = 地点コード。

@@ -14,10 +14,10 @@
 |---|---|---|---|
 | 気象（日照時間・日別） | 気象庁「過去の気象データ検索」 daily_s1.php | `fetch_jma_sunshine.py` | ◎ 公開・鍵不要・完全自動 |
 | 卸売価格（レタス・東京・日別） | ベジ探「卸売市場別入荷量・価格」 sch7.do | `fetch_veg_price.py` | ◎ **鍵不要・完全自動**（1リクエスト=1か月をループ） |
-| （分析）ラグ相関＋判定 | — | `analyze_lag_corr.py` | GO/NO-GO と `out/lag_corr.png` |
-| （分析）診断図 | — | `plot_diagnostics.py` | `out/diagnostics.png`（6パネル） |
+| （分析）ラグ相関＋判定 | — | `analyze_lag_corr.py` | GO/NO-GO と `results/lag_corr.png` |
+| （分析）診断図 | — | `plot_diagnostics.py` | `results/diagnostics.png`（6パネル） |
 
-**手動DLは不要**。両方ともスクリプトが取得する。生データは `data/cs07/`（`.gitignore` 済み）、図は `out/`（同）。
+**手動DLは不要**。両方ともスクリプトが取得する。生データは `data/cs07/`（`.gitignore` 済み）。**図と集計は `results/`（Git 追跡）**＝下記「結果ログ」から参照する代表実行の成果。スクリプトを回すと `results/` が上書き更新される。
 
 ## 手順
 ```bash
@@ -26,11 +26,11 @@ P=/opt/anaconda3/envs/met_env/bin/python   # conda activate met_env でも可
 
 $P fetch_jma_sunshine.py        # 日照（config.py の YEAR_START〜YEAR_END, 諏訪/東京/静岡）約8分
 $P fetch_veg_price.py           # ベジ探から卸売価格（VEG_YEAR_START〜END, 東京・レタス）約1分
-$P analyze_lag_corr.py          # ラグ相関＋GO/NO-GO判定 → out/summary.txt, out/lag_corr.png
-$P plot_diagnostics.py          # 相関を「見て分かる」6枚組の診断図 → out/diagnostics.png
+$P analyze_lag_corr.py          # ラグ相関＋GO/NO-GO判定 → results/summary.txt, results/lag_corr.png
+$P plot_diagnostics.py          # 相関を「見て分かる」6枚組の診断図 → results/diagnostics.png
 ```
 
-## 診断図（out/diagnostics.png）の読み方
+## 診断図（[results/diagnostics.png](results/diagnostics.png)）の読み方
 | パネル | 見るもの | 仮説が正しいときの見え方 |
 |---|---|---|
 | A 相互相関(CCF) | ラグ -4〜+8 週の Spearman ρ | ラグ +2〜4週が負、負ラグ（価格→日照）はゼロ＝**非対称**なら因果向きが正しい |
@@ -59,7 +59,11 @@ $P plot_diagnostics.py          # 相関を「見て分かる」6枚組の診断
 |---|---|---|---|---|---|
 | 2026-09-02 | レタス / 諏訪（通年） | 139 (2024-01〜2026-08) | lag3 ρ=-0.159 (p=0.064), lag4 ρ=-0.138 (p=0.111) | **NO-GO（弱いが符号は仮説どおり）** | 気象庁＋ベジ探を完全自動で取得。lag3-4で日照↓→価格↑の傾向はあるが有意水準に届かず。通年で諏訪固定＝産地シフトの希釈が主因と推定 |
 
-診断図（out/diagnostics.png, 2026-09-02）の所見:
+![CS-07 診断図](results/diagnostics.png)
+
+*6パネル診断図（[results/diagnostics.png](results/diagnostics.png)）。ラグ別のシンプルな判定図は [results/lag_corr.png](results/lag_corr.png)、数値は [results/summary.txt](results/summary.txt)。*
+
+所見（2026-09-02）:
 - **A**: CCFはラグ+2〜4週が負・負ラグはゼロで**非対称** → 「日照が価格に先行」の向きは支持される（偶然の相関なら対称に出やすい）。ただし lag3 は95%帯に触れる程度。
 - **D**: 夏季(5〜10月)のみだと ρ=-0.21 (p=0.086) と通年より強い → 産地シフトの希釈仮説を支持。
 - **C**: 5分位は非単調（Q2が最も高値、Q1はそれほどでも）→ 「単週の日照不足」より「数週の累積不足」で見るべき兆候。
