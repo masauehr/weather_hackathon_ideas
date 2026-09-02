@@ -18,11 +18,22 @@ OUT_DIR = Path(__file__).resolve().parent / "results"            # 図・集計�
 JMA_STATIONS = {
     # name の末尾 [日射] は全天日射量の観測がある官署（etrn a3 で取得可）
     "nagano":   {"prec_no": 48, "block_no": "47610", "name": "長野（長野県）[日射]"},  # 夏秋レタス（南佐久の代表として）
-    "suwa":     {"prec_no": 48, "block_no": "47620", "name": "諏訪（長野県）"},         # 日射観測なし
-    "shizuoka": {"prec_no": 50, "block_no": "47656", "name": "静岡（静岡県）[日射]"},  # 冬レタス
-    "maebashi": {"prec_no": 42, "block_no": "47624", "name": "前橋（群馬県）[日射]"},  # ほうれんそう
-    "kumagaya": {"prec_no": 43, "block_no": "47626", "name": "熊谷（埼玉県）"},         # 日射観測なし
+    "suwa":     {"prec_no": 48, "block_no": "47620", "name": "諏訪（長野県）"},
+    "shizuoka": {"prec_no": 50, "block_no": "47656", "name": "静岡（静岡県）[日射]"},
     "tokyo":    {"prec_no": 44, "block_no": "47662", "name": "東京（参考・消費地）[日射]"},
+    # --- ほうれんそう産地（東京入荷ウェイト: 群馬36/茨城27/栃木11/埼玉8/千葉8/岩手4/岐阜2 %）---
+    "maebashi": {"prec_no": 42, "block_no": "47624", "name": "前橋（群馬県）[日射]"},
+    "mito":     {"prec_no": 40, "block_no": "47629", "name": "水戸（茨城県）"},
+    "utsunomiya": {"prec_no": 41, "block_no": "47615", "name": "宇都宮（栃木県）"},
+    "kumagaya": {"prec_no": 43, "block_no": "47626", "name": "熊谷（埼玉県）"},
+    "chiba":    {"prec_no": 45, "block_no": "47682", "name": "千葉（千葉県）"},
+    "morioka":  {"prec_no": 33, "block_no": "47584", "name": "盛岡（岩手県）"},
+    "gifu":     {"prec_no": 52, "block_no": "47632", "name": "岐阜（岐阜県）[日射]"},
+}
+# 産地キー → 都道府県名（ベジ探の origin 表記に一致）
+STATION_PREF = {
+    "maebashi": "群馬", "mito": "茨城", "utsunomiya": "栃木", "kumagaya": "埼玉",
+    "chiba": "千葉", "morioka": "岩手", "gifu": "岐阜",
 }
 
 # --- 品目定義（ベジ探 sch7.do 日別 outPutKbn=4 のコード） ---

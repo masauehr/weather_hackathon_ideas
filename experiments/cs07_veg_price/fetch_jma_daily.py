@@ -81,8 +81,14 @@ def _fetch_view(prec_no: int, block_no: str, year: int, month: int, view: str) -
     return df
 
 
+P1_ONLY = False   # main() で --p1only を見て切り替え（全天日射が不要なとき高速化）
+
+
 def fetch_month(prec_no: int, block_no: str, year: int, month: int) -> pd.DataFrame:
     p1 = _fetch_view(prec_no, block_no, year, month, "p1")
+    if P1_ONLY:
+        p1["solar_mj"] = float("nan")
+        return p1
     time.sleep(REQUEST_INTERVAL_SEC)
     a3 = _fetch_view(prec_no, block_no, year, month, "a3")
     return p1.merge(a3, on="date", how="outer")
@@ -102,7 +108,10 @@ def fetch_station(key: str) -> pd.DataFrame:
 
 
 def main(argv: list[str]) -> int:
-    keys = argv[1:] or list(JMA_STATIONS)
+    global P1_ONLY
+    args = [a for a in argv[1:] if a != "--p1only"]
+    P1_ONLY = "--p1only" in argv
+    keys = args or list(JMA_STATIONS)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     for key in keys:
         if key not in JMA_STATIONS:
