@@ -12,7 +12,8 @@ beautifulsoup4>=4.12 # 気象庁 etrn ページのパース（html.parser 使用
 matplotlib>=3.7      # 可視化
 openpyxl>=3.1        # 農水省 食品価格動向調査の xlsx を手元で読む場合（met_env には未導入 → pip install）
 
+statsmodels>=0.14   # 分布ラグ回帰（HAC標準誤差）— CS-07 ④で使用
+
 # --- 本設計フェーズで使う予定（スパイクでは未使用） ---
-# statsmodels>=0.14  # 分布ラグ回帰・季節調整
 # lightgbm>=4.0      # 価格の分位点回帰
 # shap>=0.44         # 説明性
