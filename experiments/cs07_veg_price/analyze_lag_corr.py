@@ -22,7 +22,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from config import (DATA_DIR, OUT_DIR, PRODUCER_STATION, PRICE_ITEM,
+from config import (DATA_DIR, OUT_DIR, PRODUCER_STATION, PRICE_ITEM, ITEM_SLUG,
                     LAG_WEEKS, GO_LAGS, GO_P)
 
 
@@ -48,7 +48,7 @@ def load_sunshine_weekly() -> pd.DataFrame:
 
 
 def load_price_weekly() -> tuple[pd.DataFrame, str]:
-    src = DATA_DIR / "veg_price.csv"
+    src = DATA_DIR / f"veg_price_{ITEM_SLUG}.csv"
     df = pd.read_csv(src, parse_dates=["date"]).dropna()
     df = df.sort_values("date")
     span_days = df["date"].diff().dt.days.median()
@@ -107,7 +107,7 @@ def main() -> int:
     ]
     summary = "\n".join(lines)
     print(summary)
-    (OUT_DIR / "summary.txt").write_text(summary + "\n")
+    (OUT_DIR / f"summary_{ITEM_SLUG}.txt").write_text(summary + "\n")
 
     # 図（ラベルは日本語フォント非依存のため ASCII）
     fig, ax = plt.subplots(1, 2, figsize=(12, 4.2))
@@ -127,8 +127,8 @@ def main() -> int:
     ax2.set_title(f"time series  item={PRICE_ITEM} producer={PRODUCER_STATION}  (src: JMA)")
     fig.autofmt_xdate()
     fig.tight_layout()
-    fig.savefig(OUT_DIR / "lag_corr.png", dpi=120)
-    print(f"\n-> {OUT_DIR/'lag_corr.png'}")
+    fig.savefig(OUT_DIR / f"lag_corr_{ITEM_SLUG}.png", dpi=120)
+    print(f"\n-> {OUT_DIR / f'lag_corr_{ITEM_SLUG}.png'}")
     return 0
 
 

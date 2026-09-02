@@ -22,7 +22,7 @@ plt.rcParams["font.family"] = ["Hiragino Sans", "DejaVu Sans"]  # macOS 日本�
 plt.rcParams["axes.unicode_minus"] = False
 from scipy import stats
 
-from config import OUT_DIR, PRODUCER_STATION, PRICE_ITEM, GO_LAGS
+from config import OUT_DIR, PRODUCER_STATION, PRICE_ITEM, GO_LAGS, ITEM_SLUG
 from analyze_lag_corr import load_sunshine_weekly, load_price_weekly
 
 LAGS = list(range(-4, 9))
@@ -133,7 +133,7 @@ def main() -> int:
                  f"週数={len(d)}  ({d['wk'].min().date()}〜{d['wk'].max().date()})   出典: 気象庁 / ベジ探",
                  fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.95], w_pad=2.5, h_pad=2.0)
-    out = OUT_DIR / "diagnostics.png"
+    out = OUT_DIR / f"diagnostics_{ITEM_SLUG}.png"
     fig.savefig(out, dpi=120)
     print(f"-> {out}")
     print(ccf.to_string(index=False, float_format=lambda v: f"{v:.3f}"))

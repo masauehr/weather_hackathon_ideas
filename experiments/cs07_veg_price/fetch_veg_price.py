@@ -30,7 +30,7 @@ import datetime as dt
 import pandas as pd
 import requests
 
-from config import (DATA_DIR, PRICE_BACKEND, STATS_DATA_ID,
+from config import (DATA_DIR, PRICE_BACKEND, STATS_DATA_ID, ITEM_SLUG,
                     VEG_YEAR_START, VEG_YEAR_END,
                     VEGETAN_CITY, VEGETAN_ITEM_RUIBETU, VEGETAN_ITEM_CODE)
 
@@ -233,7 +233,7 @@ def main() -> int:
     df = df.dropna(subset=["date", "price"]).drop_duplicates("date").sort_values("date").reset_index(drop=True)
     if df.empty:
         raise SystemExit("有効な価格データが0件。")
-    out = DATA_DIR / "veg_price.csv"
+    out = DATA_DIR / f"veg_price_{ITEM_SLUG}.csv"
     df.to_csv(out, index=False)
     span = df["date"].diff().dt.days.median()
     print(f"-> {out}  ({len(df)}点, {df['date'].min().date()}〜{df['date'].max().date()}, 中央間隔~{span:.0f}日)")
