@@ -13,4 +13,4 @@
 ## 一覧
 | ディレクトリ | 対応アイデア | 内容 | 状態 |
 |---|---|---|---|
-| [cs07_veg_price/](cs07_veg_price/) | [ID-25](../docs/idea_catalog.md) / [CS-07](../docs/correlation_studies.md) | 産地の日照不足 → 数週後の葉物卸売価格 の先行性 | 着手（プランビング作成） |
+| [cs07_veg_price/](cs07_veg_price/) | [ID-25](../docs/idea_catalog.md) / [CS-07](../docs/correlation_studies.md) | 産地の日照不足 → 数週後の葉物卸売価格 の先行性 | **クローズ（2026-09-02, NO-GO）**。ラグ3週 ρ=−0.16 p=0.064、効果量 r²≈3%。自動取得コードは資産として残す |
