@@ -6,6 +6,8 @@
 # データ（将来の実装フェーズ用。生データはコミットしない）
 data/
 experiments/**/data/
+experiments/**/out/
+experiments/**/*.log
 *.parquet
 *.nc
 *.grib

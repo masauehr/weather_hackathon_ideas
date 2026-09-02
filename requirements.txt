@@ -1,0 +1,18 @@
+# 気象×生成AI ハッカソン 事前検証（実装スパイク）用
+# 想定環境: conda env "met_env"（Python 3.11）
+#   conda activate met_env  もしくは
+#   /opt/anaconda3/envs/met_env/bin/python を直接指定
+
+# --- 検証コアで実際に使うもの ---
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10          # 相関・検定（ラグ相互相関）
+requests>=2.28       # 気象庁・e-Stat の取得
+beautifulsoup4>=4.12 # 気象庁 etrn ページのパース（html.parser 使用、lxml 不要）
+matplotlib>=3.7      # 可視化
+openpyxl>=3.1        # 農水省 食品価格動向調査の xlsx を手元で読む場合（met_env には未導入 → pip install）
+
+# --- 本設計フェーズで使う予定（スパイクでは未使用） ---
+# statsmodels>=0.14  # 分布ラグ回帰・季節調整
+# lightgbm>=4.0      # 価格の分位点回帰
+# shap>=0.44         # 説明性
