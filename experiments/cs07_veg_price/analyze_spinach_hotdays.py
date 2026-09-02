@@ -102,6 +102,30 @@ def monthly_test() -> tuple[list[str], dict]:
     res["warm1"] = dict(rho=rw, p=pw, perm_p=ppw, n=int(mw.sum()), ci=(lw, hw), r2=rw**2)
     lines.append(f"  [6〜10月のみ] lag1か月: ρ={rw:+.3f}  p={pw:.3f}  循環置換p={ppw:.3f}  "
                  f"n={int(mw.sum())}  95%CI[{lw:+.2f},{hw:+.2f}]  r²={rw**2:.3f}")
+
+    # --- 季節・トレンド交絡のチェック（lag1か月）---
+    # 月中心化で季節は除去済み。さらにトレンド／ゆるいドリフトも潰して ρ が残るか。
+    b2 = b.merge(price[["ym", "logp"]], on="ym").sort_values("ym").reset_index(drop=True)
+    t = np.arange(len(b2))
+
+    def _detrend(s: pd.Series) -> pd.Series:
+        return s - np.polyval(np.polyfit(t, s, 1), t)
+
+    variants = {
+        "月中心化のみ（元）":              (b2["hot_anom"], b2["resid"]),
+        "月中心化+線形トレンド除去":        (_detrend(b2["hot_anom"]), _detrend(b2["resid"])),
+        "前年同月比YoY（季節&トレンド除去）": (b2["hot"] - b2.groupby("mon")["hot"].shift(1),
+                                        b2["logp"] - b2.groupby("mon")["logp"].shift(1)),
+    }
+    slope_hot = np.polyfit(t, b2["hot"], 1)[0] * 12
+    slope_lp = np.polyfit(t, b2["logp"], 1)[0] * 12
+    lines += ["", f"## 季節・トレンド交絡チェック（lag1か月, 全月）  "
+              f"トレンド: 真夏日数 {slope_hot:+.2f}日/年, log価格 {slope_lp:+.4f}/年"]
+    for lbl, (x, y) in variants.items():
+        xx, yy = x.reset_index(drop=True), y.shift(-1).reset_index(drop=True)
+        mm = xx.notna() & yy.notna()
+        r, p = stats.spearmanr(xx[mm], yy[mm])
+        lines.append(f"  {lbl:30} n={int(mm.sum()):3d}  ρ={r:+.3f}  p={p:.4f}")
     return lines, {"base": b, "res": res}
 
 
