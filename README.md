@@ -20,6 +20,7 @@
 | 💡 [docs/idea_catalog.md](docs/idea_catalog.md) | アイデア一覧（`ID-01`〜`ID-36` ＋種）。**主成果物** | A:電力 / B:健康 / C:農業 / D:交通 / E:小売・観光 / F:防災 / G:経済・行政 / H:環境 / I:スポーツ・行動 / J:基盤 |
 | 🗄️ [docs/data_sources.md](docs/data_sources.md) | 使えるデータソース棚卸し | 気象一次 / 再解析・海外API / 相手側データ / 生成AI・モデル / 事前準備 |
 | 🔗 [docs/correlation_studies.md](docs/correlation_studies.md) | 「まず相関を確認する」小規模検証 `CS-01`〜`CS-10` | 各CSの仮説・最小データ・手法・GO基準 |
+| ⚡ [docs/data_easy_tests.md](docs/data_easy_tests.md) | **データ取得が容易な順**の相関テスト候補3件（1年分以上・GRIB除外） | テスト1:気温×電力需要 / テスト2:日射×太陽光実績 / テスト3:気温・絶対湿度×インフル |
 | 🤖 [docs/ml_models.md](docs/ml_models.md) | 予測モデル設計 `MM-01`〜`MM-08` | 目的変数 / 特徴量 / 手法 / 検証 / 落とし穴 |
 | ✨ [docs/genai_angles.md](docs/genai_angles.md) | 生成AIの絡ませ方 `GA-01`〜`GA-08` | パターン別 / アイデア対応表 / ガードレール |
 | ⚖️ [docs/evaluation.md](docs/evaluation.md) | 評価軸と候補スコアリング | 6軸 / 暫定スコア表 / 第一次候補 / 絞り込み手順 |
