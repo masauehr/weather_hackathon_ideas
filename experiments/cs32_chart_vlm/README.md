@@ -5,6 +5,8 @@
 「天気図＋衛星を VLM に読ませ、実況・予報でガードレールをかけられるか」を、1事例で通しで確かめた記録。
 データはすべて気象庁（公開）。個人データは不使用。出典: 気象庁ホームページ。
 
+**画像一覧と読み解き → [CHARTS.md](CHARTS.md)**（天気図2枚・赤外1枚を [images/](images/) に同梱し、要素ごとに解説）
+
 ## VLM とは
 **VLM（Vision-Language Model、視覚言語モデル）** は、画像とテキストの両方を入力に受け取り、テキストで答えるAIモデル。
 
@@ -31,6 +33,7 @@
 |---|---|
 | [fetch_chart.py](fetch_chart.py) | 地上天気図（アジア/日本近海）・ひまわり赤外(B13)・アメダス主要8地点・府県予報概況を取得。日本近海天気図の対象時刻に衛星・アメダスを揃える |
 | [vlm_output_20260925.json](vlm_output_20260925.json) | VLM 役が天気図/赤外を見て作った構造化出力（設計書スキーマ + 検証用 `claims`） |
+| [CHARTS.md](CHARTS.md) / [images/](images/) | 使った画像（気象庁）と、その読み取り結果・実況予報との突合の解説 |
 | [validate.py](validate.py) | ①ラベル許可リスト ②季節整合 ③確信度 ④数値引用 ⑤実況突合 ⑥予報突合。`--selftest` で壊した出力の検出を確認 |
 
 実行: `python fetch_chart.py` → `python validate.py vlm_output_20260925.json data/<対象時刻UTC>` （`data/` は git 除外）
