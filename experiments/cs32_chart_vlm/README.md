@@ -7,6 +7,7 @@
 
 **画像一覧と読み解き → [CHARTS.md](CHARTS.md)**（天気図2枚・赤外1枚を [images/](images/) に同梱し、要素ごとに解説）
 **発表スライド（Marp） → [SLIDES.md](SLIDES.md) / [SLIDES.pdf](SLIDES.pdf)**（本ページの内容を13枚に再構成）
+**デモUI → [webui/](webui/)**（実測データを使った静止デモ。読者切替・ガードレール検証パネルつき。`python -m http.server` で`webui/index.html`を開くだけで動く）
 
 ## VLM とは
 **VLM（Vision-Language Model、視覚言語モデル）** は、画像とテキストの両方を入力に受け取り、テキストで答えるAIモデル。

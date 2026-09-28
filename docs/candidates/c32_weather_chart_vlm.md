@@ -72,7 +72,7 @@
 - [x] 最新の地上天気図＋衛星赤外を取得して1枚に結合 → **スパイクで実装済み**（[fetch_chart.py](../../experiments/cs32_chart_vlm/fetch_chart.py)）
 - [x] VLMでスキーマ出力（pattern / evidence / today / tomorrow / caveats） → **実際のClaude API呼び出しまで確認済み**（[vlm_read.py](../../experiments/cs32_chart_vlm/vlm_read.py)、$0.018/回）
 - [x] 数値引用チェックと予報突合の最小版 → **実装済み**（[validate.py](../../experiments/cs32_chart_vlm/validate.py)、自己テスト3/3）
-- [ ] Web: 画像の隣に「一般向け解説」を表示、読者切替ボタン（一般/子ども） — 未着手（UIは新規に用意）
+- [x] Web: 画像の隣に「一般向け解説」を表示、読者切替ボタン（一般/子ども） → **2026-09-28実装・動作確認済み**（Vanilla JS、[experiments/cs32_chart_vlm/webui/](../../experiments/cs32_chart_vlm/webui/)。実測データを表示する静止デモで、実際にブラウザで表示・切替を確認）
 - [ ] 教材モード: 1パターン（冬型）だけ、要素の指し示し＋クイズ2問 — 未着手
 
 ### ストレッチ
