@@ -25,7 +25,7 @@
 - [ ] **気象庁「過去の気象データ・ダウンロード」の操作に慣れる**（地点・項目・期間の選択、容量上限→分割DL）
 - [ ] 気象庁 obsdl の CSV を読み込み・結合するユーティリティを1本書く（全テスト共通、`data/` は git 除外）
 - [ ] 相手側の公開CSVを試しに1年分DL（電力使用実績／エリア需給実績／感染症週報）
-- [ ] `jma_mcp` / `RAG_met` / `agent_orchestrator` をローカルで起動確認（ID-31 土台のコード参考）
+- [ ] `jma_mcp` / `RAG_met` をローカルで起動確認（ID-31 土台のコード参考）
 - [ ] ローカルLLM（Ollama）でナレーション品質の当たりを見る（GA-01 を1例）
 - [ ] `requirements.txt` 雛形（pandas, lightgbm, statsmodels, requests, matplotlib, shap）
 - [ ] （交通系を使うなら）ODPT 開発者登録 ／ （農業系なら）農研機構データの利用申請
@@ -58,7 +58,7 @@
 - [x] ID-17/ID-05の検証は見送り、**暫定でID-32に絞る**（[docs/evaluation.md](docs/evaluation.md)）— 2026-09-28
 - [ ] 評価表を要項判明後に再計算（現状はID-32暫定1位で確定ではない）
 - [x] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を詰める → **2026-09-28完了**。実測データ（正答率67%）を隠さず見せる構成に変更（[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)）
-- [x] 必要な既存資産（jma_app_suite, RAG_met）を実際に組み込めるか30分スパイク → **2026-09-28実施**。RAG_metは`RAGQuery.ask()`が実際に動作し出典ページ付きで回答（教材モードにそのまま使える）。jma_app_suiteは天気図表示アプリが無いことが判明（衛星/レーダー/予報のみ）→ 代わりに`~/web/webapp/weatherChartGmsViewer`（`~/projects`外・個人作成）にOpenLayersベースの本格的な天気図・衛星ビューアを発見、UI本体の土台として使う方針に変更（[docs/existing_assets.md](docs/existing_assets.md)）
+- [x] 必要な既存資産（RAG_met等）を実際に組み込めるか30分スパイク → **2026-09-28実施**。RAG_metは`RAGQuery.ask()`が実際に動作し出典ページ付きで回答（教材モードにそのまま使える）。天気図・衛星の地図表示については既存の公開資産に該当が無いと判明→ UIは別途新規に用意する方針（[docs/existing_assets.md](docs/existing_assets.md)）
 
 ## フェーズ5: ハッカソン当日
 - [ ] MVP実装（スコープは1機能に固定、拡張は後回し）

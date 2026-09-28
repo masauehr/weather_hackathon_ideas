@@ -69,7 +69,7 @@
                                                    |
                           [Web UI: 地図 + スコア帯グラフ + プラン + 警告]
 ```
-- Web UIは `jma_app_suite` / `tide_viewer` のコンポーネントを流用（Vanilla JS）。地図は軽量タイル。
+- Web UIは `tide_viewer` のコンポーネントを流用（Vanilla JS）。地図は軽量タイル。
 
 ## MVPスコープ（48h）
 - [ ] スポットJSONを5件（恩納村・真栄田・大度浜・トロピカルビーチ・アラハ 等、座標と最寄り観測所）
@@ -107,6 +107,5 @@
 
 ## 既存資産
 - `tide_viewer`（沖縄7観測所の潮位取得・96点スライスの知見）
-- `jma_app_suite`（天気・地図・UI部品）
 - `ai_news` / `econ_digest` のパイプライン（定期取得→LLM生成→表示）
 - `claude-api` スキル
