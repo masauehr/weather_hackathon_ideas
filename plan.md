@@ -54,9 +54,11 @@
 
 ## フェーズ4: 選抜とデモ設計
 - [x] 第一次候補3案の詳細設計（[docs/candidates/](docs/candidates/)：ID-32 / ID-17 / ID-05）— 2026-09-02
-- [ ] 評価表を再計算し1案に決定
-- [ ] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を書く ※各candidateに草案あり
-- [ ] 必要な既存資産を実際に組み込めるか30分スパイク
+- [x] ID-32の相関検証・複数事例の正答率測定 → GO・67%（[experiments/cs32_chart_vlm/](experiments/cs32_chart_vlm/)）— 2026-09-28
+- [x] ID-17/ID-05の検証は見送り、**暫定でID-32に絞る**（[docs/evaluation.md](docs/evaluation.md)）— 2026-09-28
+- [ ] 評価表を要項判明後に再計算（現状はID-32暫定1位で確定ではない）
+- [ ] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める
+- [ ] 必要な既存資産（jma_app_suite, RAG_met）を実際に組み込めるか30分スパイク
 
 ## フェーズ5: ハッカソン当日
 - [ ] MVP実装（スコープは1機能に固定、拡張は後回し）
