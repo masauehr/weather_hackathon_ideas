@@ -16,6 +16,8 @@ Pillow>=9.0          # ひまわり画像タイルの結合（ID-32 スパイク
 statsmodels>=0.14   # 分布ラグ回帰（HAC標準誤差）— CS-07 ④で使用
 anthropic>=0.40      # Claude API（VLM呼び出し）— ID-32 vlm_read.py で使用
 python-dotenv>=1.0   # .env から ANTHROPIC_API_KEY を読み込む
+pdfplumber>=0.11     # 「日々の天気図」PDFの座標抽出 — ID-32 fetch_hibiten.py で使用
+pdf2image>=1.17      # 同PDFのページ画像化（要 poppler: brew install poppler）
 
 # --- 本設計フェーズで使う予定（スパイクでは未使用） ---
 # lightgbm>=4.0      # 価格の分位点回帰
