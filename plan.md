@@ -57,7 +57,7 @@
 - [x] ID-32の相関検証・複数事例の正答率測定 → GO・67%（[experiments/cs32_chart_vlm/](experiments/cs32_chart_vlm/)）— 2026-09-28
 - [x] ID-17/ID-05の検証は見送り、**暫定でID-32に絞る**（[docs/evaluation.md](docs/evaluation.md)）— 2026-09-28
 - [ ] 評価表を要項判明後に再計算（現状はID-32暫定1位で確定ではない）
-- [ ] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める
+- [x] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を詰める → **2026-09-28完了**。実測データ（正答率67%）を隠さず見せる構成に変更（[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)）
 - [x] 必要な既存資産（jma_app_suite, RAG_met）を実際に組み込めるか30分スパイク → **2026-09-28実施**。RAG_metは`RAGQuery.ask()`が実際に動作し出典ページ付きで回答（教材モードにそのまま使える）。jma_app_suiteは天気図表示アプリが無いことが判明（衛星/レーダー/予報のみ）→ 代わりに`~/web/webapp/weatherChartGmsViewer`（`~/projects`外・個人作成）にOpenLayersベースの本格的な天気図・衛星ビューアを発見、UI本体の土台として使う方針に変更（[docs/existing_assets.md](docs/existing_assets.md)）
 
 ## フェーズ5: ハッカソン当日
