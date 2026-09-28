@@ -6,6 +6,7 @@
 データはすべて気象庁（公開）。個人データは不使用。出典: 気象庁ホームページ。
 
 **画像一覧と読み解き → [CHARTS.md](CHARTS.md)**（天気図2枚・赤外1枚を [images/](images/) に同梱し、要素ごとに解説）
+**発表スライド（Marp） → [SLIDES.md](SLIDES.md) / [SLIDES.pdf](SLIDES.pdf)**（本ページの内容を13枚に再構成）
 
 ## VLM とは
 **VLM（Vision-Language Model、視覚言語モデル）** は、画像とテキストの両方を入力に受け取り、テキストで答えるAIモデル。
