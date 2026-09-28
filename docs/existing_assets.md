@@ -11,10 +11,11 @@
 
 | プロジェクト | 使える部分 | 対応アイデア |
 |---|---|---|
-| `jma_app_suite` 系 | 予報/レーダー/衛星/天気図の取得・表示（Vanilla JS） | ID-17, ID-21, ID-32 |
+| `jma_app_suite` 系 | 予報/レーダー/衛星の取得・表示（Vanilla JS）。**天気図（地上気圧配置図）の表示アプリは無い**（2026-09-28実機確認、apps/配下はforecast/radar系/satellite系のみ）。CSS/レイアウトの流儀のみ流用見込み | ID-17, ID-21 |
+| `~/web/webapp/weatherChartGmsViewer`（`~/projects`外・個人作成） | **天気図・衛星の本格ビューア**（2026-09-28発見・実機確認）。OpenLayersで地図上に天気図(日本周辺/アジア域)・ひまわり衛星(赤外/可視/水蒸気)・降水レーダーを重ね合わせ表示。ズーム・海岸線・緯度経度グリッド・解析日時選択つき。取得元URLは本スパイクのfetch_chart.pyと同じbosai系（`himawari/data/satimg/...`等）。CORS回避用のPHPプロキシ（`cgi/get_contents.php`）も同梱、社内ネットワーク向けの分岐が入っているが自宅環境では素通しのfile_get_contentsとして動く | ID-32のUI本体として最有力 |
 | `jma_mcp` `jma_mcp_remote` | JMA APIを叩くMCPサーバー（予報・アメダス・台風・潮位など） | ID-31 のツール層 |
 | `jma_weather_report` | JMA APIから定期取得しレポート化（Python/Actions） | ID-31, ID-33 |
-| `RAG_met` | 気象文書のRAG基盤 | ID-31, ID-32教材, ID-10（農薬ラベル） |
+| `RAG_met` | 気象文書のRAG基盤。**2026-09-28実機確認: `RAGQuery.ask()`が動作、ChromaDB(既に総観気象学教科書・気象庁予報用語集を投入済み)から検索し出典ページ付きで回答**（例: 「前線とは何か」→ 総観気象学p.168等を引用）。ID-32教材モードにそのまま使える。ただし`strict`モードは検索でヒットしない質問には「該当情報なし」で拒否するため、質問の言い回しを教科書の記述に近づける工夫が要る | ID-31, ID-32教材, ID-10（農薬ラベル） |
 | `tide_viewer` | 沖縄県7観測所の潮位（tide_obs/astro/time、96点スライス注意） | ID-17 |
 | `nouken` | メッシュ農業気象データ取得コードの書き方（※気象データ本体は気象庁 obsdl から取得する方針） | ID-10〜12 のコード参考 |
 | `ageostrophic` `note_jra55_emagram` | 高層・再解析の解析ノウハウ、エマグラム | ID-32 |
