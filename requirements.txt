@@ -14,6 +14,8 @@ openpyxl>=3.1        # 農水省 食品価格動向調査の xlsx を手元で�
 
 Pillow>=9.0          # ひまわり画像タイルの結合（ID-32 スパイク）
 statsmodels>=0.14   # 分布ラグ回帰（HAC標準誤差）— CS-07 ④で使用
+anthropic>=0.40      # Claude API（VLM呼び出し）— ID-32 vlm_read.py で使用
+python-dotenv>=1.0   # .env から ANTHROPIC_API_KEY を読み込む
 
 # --- 本設計フェーズで使う予定（スパイクでは未使用） ---
 # lightgbm>=4.0      # 価格の分位点回帰
