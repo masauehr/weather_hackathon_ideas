@@ -11,16 +11,20 @@
 """
 import io
 import json
+import math
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
-from PIL import Image
+from PIL import Image, ImageDraw
 
 BASE = "https://www.jma.go.jp/bosai"
 UA = {"User-Agent": "weather-hackathon-spike (personal research)"}
 DATA = Path(__file__).parent / "data"
+COASTLINE = json.loads((Path(__file__).parent / "coastline_ea.json").read_text())
+# fetch_ir のタイル範囲: z=4, x=13,14 / y=5,6（東経112〜157度・北緯22〜55度）
+IR_Z, IR_X0, IR_Y0 = 4, 13, 5
 
 # 実況の裏取りに使う主要地点（アメダス地点コード）
 STATIONS = {
@@ -48,20 +52,42 @@ def chart_valid_utc(name):
     return name.split("_")[6]
 
 
+def lonlat_to_tile(lon, lat, z):
+    """緯度経度 → スリッピータイル座標(浮動小数)。標準の Web Mercator タイル方式。"""
+    xtile = (lon + 180.0) / 360.0 * (2 ** z)
+    lat_rad = math.radians(lat)
+    ytile = (1.0 - math.log(math.tan(lat_rad) + 1.0 / math.cos(lat_rad)) / math.pi) / 2.0 * (2 ** z)
+    return xtile, ytile
+
+
+def draw_coastline(canvas, z, x0, y0, tile_px=256):
+    """coastline_ea.json（Natural Earth 1:50m, パブリックドメイン）の線を canvas に描く。"""
+    draw = ImageDraw.Draw(canvas)
+    for line in COASTLINE["lines"]:
+        pts = []
+        for lon, lat in line:
+            xt, yt = lonlat_to_tile(lon, lat, z)
+            pts.append(((xt - x0) * tile_px, (yt - y0) * tile_px))
+        if len(pts) >= 2:
+            draw.line(pts, fill=(255, 255, 0), width=1)
+
+
 def fetch_ir(out, target_utc):
     """ひまわり赤外 B13 を全球(fd)の z=4 2x2 タイル(x=13,14 / y=5,6 ≒ 東経112〜157度・北緯22〜55度)で結合する。
 
     jp 域は斜めに欠けた範囲しかなく太平洋側が空白になるため fd を使う。
+    生の赤外画像には海岸線が無く陸海の境目が分からないため、Natural Earth の海岸線を重ね描きする。
     """
     times = get(f"{BASE}/himawari/data/satimg/targetTimes_fd.json").json()
     # 天気図の対象時刻に最も近い観測を選ぶ（時刻ずれで解説と実況が食い違うのを防ぐ）
     t = min(times, key=lambda x: abs(int(x["validtime"]) - int(target_utc)))
     base, valid = t["basetime"], t["validtime"]
     canvas = Image.new("RGB", (512, 512))
-    for yi, y in enumerate((5, 6)):
-        for xi, x in enumerate((13, 14)):
-            url = f"{BASE}/himawari/data/satimg/{base}/fd/{valid}/B13/TBB/4/{x}/{y}.jpg"
+    for yi, y in enumerate((IR_Y0, IR_Y0 + 1)):
+        for xi, x in enumerate((IR_X0, IR_X0 + 1)):
+            url = f"{BASE}/himawari/data/satimg/{base}/fd/{valid}/B13/TBB/{IR_Z}/{x}/{y}.jpg"
             canvas.paste(Image.open(io.BytesIO(get(url).content)).convert("RGB"), (xi * 256, yi * 256))
+    draw_coastline(canvas, IR_Z, IR_X0, IR_Y0)
     canvas.save(out)
     return {"basetime": base, "validtime": valid}
 
