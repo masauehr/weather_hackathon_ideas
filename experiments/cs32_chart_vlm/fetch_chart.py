@@ -106,7 +106,8 @@ def fetch_amedas(target_utc):
     return stamp, out
 
 
-def main():
+def fetch_all() -> Path:
+    """天気図・衛星・アメダス・予報概況を一式取得し、保存先ディレクトリを返す。daily_update.py 等から再利用する。"""
     DATA.mkdir(exist_ok=True)
     asia, near = latest_chart("asia"), latest_chart("near")
     # 日本近海天気図(near)の対象時刻(UTC)に衛星・アメダスを揃える。アジア図は 6 時間毎のため直近を併記
@@ -128,8 +129,13 @@ def main():
             overview[name] = {"error": str(e)}
     (out / "overview.json").write_text(json.dumps(overview, ensure_ascii=False, indent=2))
     (out / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2))
+    return out
+
+
+def main():
+    out = fetch_all()
     print(out)
-    print(json.dumps(meta, ensure_ascii=False, indent=2))
+    print((out / "meta.json").read_text())
 
 
 if __name__ == "__main__":

@@ -8,6 +8,22 @@
 **画像一覧と読み解き → [CHARTS.md](CHARTS.md)**（天気図2枚・赤外1枚を [images/](images/) に同梱し、要素ごとに解説）
 **発表スライド（Marp） → [SLIDES.md](SLIDES.md) / [SLIDES.pdf](SLIDES.pdf)**（本ページの内容を13枚に再構成）
 **デモUI → [webui/](webui/)**（実測データを使った静止デモ。読者切替・ガードレール検証パネルつき。`python -m http.server` で`webui/index.html`を開くだけで動く）
+**常時公開 → <https://masauehr.github.io/weather_hackathon_ideas/experiments/cs32_chart_vlm/webui/index.html>**（GitHub Pages。毎朝6時JSTに自動更新、直近10日分の履歴を日付選択で切替可能）
+
+## 毎日の自動更新（GitHub Actions）
+[.github/workflows/daily-vlm-update.yml](../../.github/workflows/daily-vlm-update.yml) が毎朝6時JST（21:00 UTC）に [daily_update.py](daily_update.py) を実行する。
+1. `fetch_chart.py` で今日の天気図・衛星・アメダス・予報を取得
+2. Claude API（Sonnet 5）で気圧配置を判定（一般向け・こども向けの解説を1回の呼び出しで取得）
+3. `validate.py` のガードレール検証
+4. [webui/history/<日付>/](webui/history/) に画像＋data.jsonを保存、**10日より古い履歴は自動削除**
+5. GitHub Actionsがpush → GitHub Pagesが自動再ビルド
+
+**セットアップに必要な作業（本人のみ）**: リポジトリの Secrets に `ANTHROPIC_API_KEY` を登録する必要がある（Claude Codeからは`.env`の内容を読めないため、以下はご自身で実行）。
+```bash
+gh secret set ANTHROPIC_API_KEY --repo masauehr/weather_hackathon_ideas
+```
+GitHub Actionsは**公開リポジトリでは無料**（標準ランナーに分数制限なし）。かかるのはClaude APIの呼び出し分のみ（1日あたり約$0.02〜0.04）。
+動作確認は Actions タブから `workflow_dispatch` で手動実行できる。
 
 ## VLM とは
 **VLM（Vision-Language Model、視覚言語モデル）** は、画像とテキストの両方を入力に受け取り、テキストで答えるAIモデル。

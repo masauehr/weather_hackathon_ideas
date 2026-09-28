@@ -27,6 +27,17 @@ header {
 }
 header h1 { margin: 0 0 6px; font-size: 24px; }
 header .subtitle { margin: 0; opacity: 0.85; font-size: 14px; }
+.date-select-wrap { margin-top: 10px; font-size: 13px; }
+.date-select-wrap label { margin-right: 6px; opacity: 0.85; }
+.date-select-wrap select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 13px;
+}
+.date-select-wrap select option { color: #1f2430; }
 
 main {
   display: grid;
