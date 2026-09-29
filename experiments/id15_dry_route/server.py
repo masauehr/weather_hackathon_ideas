@@ -61,14 +61,20 @@ class Handler(BaseHTTPRequestHandler):
 
     def _api_route(self, q):
         try:
-            start = (float(q["start_lat"][0]), float(q["start_lon"][0]))
-            end = (float(q["end_lat"][0]), float(q["end_lon"][0]))
+            waypoints = []
+            for p in q["points"]:
+                lat_s, lon_s = p.split(",")
+                waypoints.append((float(lat_s), float(lon_s)))
+            if len(waypoints) < 2:
+                raise ValueError("2点以上必要")
             mode = q.get("mode", ["walk"])[0]
-        except (KeyError, ValueError):
-            return self._send_json({"error": "start_lat/start_lon/end_lat/end_lon が必要"}, 400)
+            if mode not in ("walk", "bike"):
+                raise ValueError("mode は walk/bike のみ")
+        except (KeyError, ValueError) as e:
+            return self._send_json({"error": f"points（lat,lon形式を2つ以上、繰り返し指定）が必要: {e}"}, 400)
         speed = R.WALK_MPS if mode == "walk" else R.BIKE_MPS
         try:
-            result = R.recommend(start, end, speed)
+            result = R.recommend(waypoints, speed, mode)
             self._send_json(result)
         except Exception as e:  # noqa: BLE001
             self._send_json({"error": str(e)}, 502)

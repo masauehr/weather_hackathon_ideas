@@ -17,7 +17,7 @@
   <section class="map-panel">
     <div id="map"></div>
     <div class="map-controls">
-      <p class="hint">地図をクリックして<b>出発地→到着地</b>の順に2点指定（クリックし直すとリセット）</p>
+      <p class="hint">地図をクリックして経由地を順に追加（2点以上、出発地→...→到着地）。OSRMで道路に沿った経路にスナップします</p>
       <label>移動手段
         <select id="mode">
           <option value="walk">徒歩（4.8km/h）</option>
@@ -25,6 +25,8 @@
         </select>
       </label>
       <button id="btn-eval" disabled>この経路を評価</button>
+      <button id="btn-clear" class="secondary">経由地をクリア</button>
+      <span id="waypoint-count" class="waypoint-count">経由地: 0点</span>
       <div class="frame-slider-wrap">
         <label for="frame-slider">表示中のナウキャスト: <span id="frame-label">-</span></label>
         <input type="range" id="frame-slider" min="0" max="0" value="0">
@@ -40,8 +42,8 @@
       <tbody></tbody>
     </table>
     <p class="caveats">
-      経路は2点間の直線補間（実際の道路網ではない）。降雨は二値判定（強度は区別しない）。
-      60分より先の予測は対象外。<br>出典: 気象庁ホームページ（高解像度降水ナウキャスト）
+      経路はOSRM（OpenStreetMap、公開デモサーバー）で道路にスナップ（取得できない場合は直線で代替）。降雨は二値判定（強度は区別しない）。
+      60分より先の予測は対象外。<br>出典: 気象庁ホームページ（高解像度降水ナウキャスト）・OpenStreetMapコントリビューター（ルーティング）
     </p>
   </section>
 </main>
