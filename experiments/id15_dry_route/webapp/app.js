@@ -8,20 +8,24 @@ let roadLine = null;           // 評価後、実際に道路に沿った経路
 let pointMarkers = [];         // 評価後の各点（濡れる/晴れ）マーカー
 let frames = { base: null, validtimes: [] };
 let latestResult = null;
+let currentFrameIdx = 0;
 
 function tileUrl(basetime, validtime) {
   return `https://www.jma.go.jp/bosai/jmatile/data/nowc/${basetime}/none/${validtime}/surf/hrpns/{z}/{x}/{y}.png`;
 }
 
 // JMAのhrpns(高解像度降水ナウキャスト)タイルは奇数ズーム(5,7,9)で空タイル(334byte)を返す
-// （実測で確認）。奇数ズームでは1段下の偶数ズームを取得してLeafletに拡大表示させる。
-const JmaTileLayer = L.TileLayer.extend({
-  _getZoomForUrl: function () {
-    let zoom = L.TileLayer.prototype._getZoomForUrl.call(this);
-    if (zoom % 2 !== 0) zoom = Math.max(4, zoom - 1);
-    return zoom;
-  },
-});
+// （実測で確認）。ズームに応じた「有効な偶数ズーム」を1つだけ使うタイル層を作る。
+// 注意: L.TileLayerの_getZoomForUrlをオーバーライドしてURLのzだけ変える方式は、
+// タイル座標(x,y)は元のズーム用のまま残るため地理的に不整合なタイルを要求してしまい失敗する
+// （実測で確認：z=7→z=6のURLに書き換えても表示は空白のままだった）。
+// 正しい方法は、有効ズームが変わるたびに minNativeZoom=maxNativeZoom=そのズーム に固定した
+// レイヤーを作り直すこと（Leaflet標準のスケール機構がx,y,zを整合させて処理してくれる）。
+function effectiveNativeZoom(mapZoom) {
+  let z = Math.min(10, Math.max(4, Math.round(mapZoom)));
+  if (z % 2 !== 0) z -= 1;
+  return z;
+}
 
 async function main() {
   map = L.map("map").setView([35.6812, 139.7671], 13);
@@ -30,6 +34,7 @@ async function main() {
   }).addTo(map);
 
   map.on("click", onMapClick);
+  map.on("zoomend", () => refreshJmaLayer());
 
   const res = await fetch("/api/frames");
   frames = await res.json();
@@ -53,12 +58,19 @@ function formatJst(vt) {
 }
 
 function updateFrame(idx) {
+  currentFrameIdx = idx;
   const vt = frameValidtime(idx);
   document.getElementById("frame-label").textContent =
     idx === 0 ? `実況 ${formatJst(vt)}` : `${idx * 5}分後 ${formatJst(vt)}`;
+  refreshJmaLayer();
+}
+
+function refreshJmaLayer() {
+  const vt = frameValidtime(currentFrameIdx);
+  const eff = effectiveNativeZoom(map.getZoom());
   if (jmaLayer) map.removeLayer(jmaLayer);
-  jmaLayer = new JmaTileLayer(tileUrl(frames.base, vt), {
-    opacity: 0.7, maxNativeZoom: 10, minNativeZoom: 4, minZoom: 4, maxZoom: 18,
+  jmaLayer = L.tileLayer(tileUrl(frames.base, vt), {
+    opacity: 0.7, minNativeZoom: eff, maxNativeZoom: eff, minZoom: 4, maxZoom: 18,
   }).addTo(map);
 }
 
