@@ -1,0 +1,13 @@
+# ID-35 スパイク用（専用venvで使う。ルートのconda env "met_env"は使わない）
+# 理由: met_env(numpy/pandasがMKL版)にpipでtorchを入れるとOMPの二重初期化でセグフォルトする（README.md参照）
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+numpy
+pandas
+requests
+torch
+
+anthropic>=0.40      # Claude API（合成シナリオの説明レポート生成）
+python-dotenv>=1.0   # ../../.env から ANTHROPIC_API_KEY を読み込む

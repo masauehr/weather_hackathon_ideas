@@ -1,0 +1,110 @@
+{
+  "観測データの最低気圧": 870.0,
+  "条件追従性（合成条件と実際の生成結果のズレ）": [
+    {
+      "target_hpa": 990,
+      "actual_mean_hpa": 994.2,
+      "gap_hpa": 4.2
+    },
+    {
+      "target_hpa": 970,
+      "actual_mean_hpa": 979.3,
+      "gap_hpa": 9.3
+    },
+    {
+      "target_hpa": 950,
+      "actual_mean_hpa": 964.7,
+      "gap_hpa": 14.7
+    },
+    {
+      "target_hpa": 920,
+      "actual_mean_hpa": 940.2,
+      "gap_hpa": 20.2
+    },
+    {
+      "target_hpa": 900,
+      "actual_mean_hpa": 921.7,
+      "gap_hpa": 21.7
+    },
+    {
+      "target_hpa": 860.0,
+      "actual_mean_hpa": 885.5,
+      "gap_hpa": 25.5
+    },
+    {
+      "target_hpa": 840.0,
+      "actual_mean_hpa": 869.0,
+      "gap_hpa": 29.0
+    },
+    {
+      "target_hpa": 820.0,
+      "actual_mean_hpa": 853.6,
+      "gap_hpa": 33.6
+    }
+  ],
+  "気圧-風速の物理的整合性": {
+    "回帰式": "wind_kt = 0.8021 * (1010 - pressure) + 30.7846",
+    "残差std_kt": 5.79,
+    "観測データの(1010-pressure)範囲": [
+      4.0,
+      140.0
+    ],
+    "各条件での示唆風速": [
+      {
+        "actual_min_pressure_hpa": 994.2,
+        "implied_wind_kt": 43.5,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 979.3,
+        "implied_wind_kt": 55.4,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 964.7,
+        "implied_wind_kt": 67.1,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 940.2,
+        "implied_wind_kt": 86.8,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 921.7,
+        "implied_wind_kt": 101.6,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 885.5,
+        "implied_wind_kt": 130.7,
+        "regression_extrapolated": false
+      },
+      {
+        "actual_min_pressure_hpa": 869.0,
+        "implied_wind_kt": 143.9,
+        "regression_extrapolated": true
+      },
+      {
+        "actual_min_pressure_hpa": 853.6,
+        "implied_wind_kt": 156.2,
+        "regression_extrapolated": true
+      }
+    ]
+  },
+  "形状のrealism（生成系列 vs 最も近い実台風とのRMSE, hPa）": [
+    {
+      "target_hpa": 990,
+      "rmse_vs_nearest_real_hpa": 3.23
+    },
+    {
+      "target_hpa": 970,
+      "rmse_vs_nearest_real_hpa": 11.91
+    },
+    {
+      "target_hpa": 950,
+      "rmse_vs_nearest_real_hpa": 22.67
+    }
+  ],
+  "結論": "条件追従性: 観測範囲内(970〜990hPa)はズレ数hPa程度で追従するが、条件が観測範囲から離れるほどズレ(gap)が単調に拡大する（940hPa指定で+20hPa、820hPa指定で+34hPa）。完全に外挿できないわけではない（820hPa指定でも853.6hPaまでは動く）が、指定値ほど強い台風にはならず、条件をそのまま信じることはできない（この構成のCVAEは学習データの外への外挿にバイアスがかかる）。気圧-風速の関係は観測範囲内では強い相関(r≈0.97)があるが、観測データの(1010-pressure)範囲(4〜140程度)を超える示唆風速（869hPa以降）は回帰の外挿にあたり信頼性が保証されない。"
+}

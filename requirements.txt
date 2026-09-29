@@ -22,3 +22,8 @@ pdf2image>=1.17      # 同PDFのページ画像化（要 poppler: brew install p
 # --- 本設計フェーズで使う予定（スパイクでは未使用） ---
 # lightgbm>=4.0      # 価格の分位点回帰
 # shap>=0.44         # 説明性
+
+# --- ID-35 スパイク（experiments/id35_synthetic_typhoon/）は例外 ---
+# torch（条件付きVAE）を使うが、met_env(numpy/pandasがMKL版)にpipでtorchを入れると
+# OMPの二重初期化でセグフォルトするため、このスパイクだけ専用venvを使う。
+# 詳細・インストール方法は experiments/id35_synthetic_typhoon/requirements.txt 参照。
