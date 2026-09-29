@@ -16,6 +16,11 @@
 <main>
   <section class="map-panel">
     <div id="map"></div>
+    <div class="map-legend">
+      <span class="legend-item"><span class="legend-dot wet"></span>雨に当たる地点</span>
+      <span class="legend-item"><span class="legend-dot dry"></span>雨に当たらない地点</span>
+      <span class="legend-note">（表の行をクリックすると、その出発時刻での地点の色に切り替わります）</span>
+    </div>
     <div class="map-controls">
       <p class="hint">地図をクリックして経由地を順に追加（2点以上、出発地→...→到着地）。OSRMで道路に沿った経路にスナップします</p>
       <label>移動手段
@@ -41,6 +46,7 @@
       <thead><tr><th>出発</th><th>濡れる点</th><th>比率</th></tr></thead>
       <tbody></tbody>
     </table>
+    <p class="table-legend">🟩 緑色に強調された行 = 最も濡れにくい、おすすめの出発時刻</p>
     <p class="caveats">
       経路はOSRM（OpenStreetMap、公開デモサーバー）で道路にスナップ（取得できない場合は直線で代替）。降雨は二値判定（強度は区別しない）。
       60分より先の予測は対象外。<br>出典: 気象庁ホームページ（高解像度降水ナウキャスト）・OpenStreetMapコントリビューター（ルーティング）
