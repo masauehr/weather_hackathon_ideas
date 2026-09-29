@@ -69,6 +69,7 @@
 - **ID-32 天気図VLM解説のAPI実証＋複数事例の正答率測定を実施（2026-09-28）**: `vlm_read.py`（当日1事例、実況・予報つき、NG0件・$0.018/回）と `fetch_hibiten.py`＋`eval_historical.py`（気象庁「日々の天気図」アーカイブから過去15事例・7パターンを抽出し正答率測定）を追加。**結果: 15事例中10件正解（67%）、コスト$0.065**。台風・梅雨前線・移動性高気圧は強い一方、「日本海低気圧」を「南岸低気圧」と系統的に誤答する弱点を発見。
 - **ID-32を独立プロジェクトとして切り出し（2026-09-29）**: 検証GOだったため [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm)（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)、毎朝6:13 JST自動更新）として独立。本リポジトリの`experiments/cs32_chart_vlm/`・GitHub Pages・GitHub Actionsは停止済み。設計の経緯は[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)に残す。
 - **ID-17/ID-05の検証は見送り、暫定でID-32（天気図VLM解説）に絞る（2026-09-28）**: 実際に検証まで済んだのがID-32のみのため（[docs/evaluation.md](docs/evaluation.md)）。要項判明後に審査基準と照らして再確認する前提。
+- **ID-15「濡れない経路」を検証・独立プロジェクトとして切り出し（2026-09-29）**: 高解像度降水ナウキャストのタイル（αチャンネル）で降雨有無を機械的に判定できることを実測で確認、奄美市名瀬の実データ（帯状のレーダーエコー接近中）で出発時刻をずらす効果を確認（20分後だけ40%濡れ、他は0%）。OSRMで道路にスナップした経路・Webアプリも実装し、GOだったため [dry_route](https://github.com/masauehr/dry_route) として独立。本リポジトリの`experiments/id15_dry_route/`は削除済み。
 - 次: 3分デモ筋書きを [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める → ハッカソン要項の確認（[plan.md](plan.md) フェーズ4）。
 
 ## 🛠️ 実装メモ
