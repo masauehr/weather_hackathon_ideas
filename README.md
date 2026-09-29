@@ -30,14 +30,22 @@
 | 🎯 [docs/candidates/](docs/candidates/) | 第一次候補の詳細設計（下表） | — |
 | 🧪 [experiments/](experiments/) | 相関の当たり付けスパイク（実コード）。生データは `data/`（git除外） | [cs07_veg_price](experiments/cs07_veg_price/)（ID-25 生鮮野菜価格の気象先行指標） |
 
-### 🎯 第一次候補（詳細設計）
+### 🎯 実装した案（設計 → 実装まで進んだもの）
 
-| 案 | ドキュメント | 一言 | 元アイデア |
-|---|---|---|---|
-| ID-32 | [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) | 天気図・衛星をVLMで読み、気圧配置を判定して平文解説＋読み方教材 | [idea_catalog ID-32](docs/idea_catalog.md) |
-| ID-17 | [docs/candidates/c17_beach_day_planner.md](docs/candidates/c17_beach_day_planner.md) | 天気・風・潮位・UVから「海日和スコア」＋半日プラン生成（沖縄の海） | [idea_catalog ID-17](docs/idea_catalog.md) |
-| ID-05 | [docs/candidates/c05_meteoropathy_assistant.md](docs/candidates/c05_meteoropathy_assistant.md) | 気圧変化からリスク指数を予測し、理由説明とセルフケアを対話提供 | [idea_catalog ID-05](docs/idea_catalog.md) |
-| 比較 | [docs/candidates/README.md](docs/candidates/README.md) | 3案の48h開発視点の比較・絞り込み手順 | — |
+| 案 | 内容 | 実装 |
+|---|---|---|
+| [ID-32](docs/idea_catalog.md) 天気図VLM解説 | 天気図・衛星画像をVLMで読み、気圧配置を判定して平文解説＋読み方教材 | 独立プロジェクト [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm)（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)）として実装・公開済み。設計の経緯は[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) |
+| [ID-15](docs/idea_catalog.md) 濡れない経路 | 高解像度降水ナウキャストで自転車/徒歩の経路上の降雨有無を判定し、出発時刻を提案 | 独立プロジェクト [dry_route](https://github.com/masauehr/dry_route)（[デモ](https://dry-route.onrender.com)）として実装・公開済み |
+| [ID-22](docs/idea_catalog.md) SNS災害情報×気象実況のクロスチェック | SNS投稿の位置推定・地図プロット・公式情報との整合チェックで「確認済み/未確認/要注意」の信頼度ラベルを付与 | 別プロジェクトとして実装済み（自分用途のため非公開・本リポジトリからのリンクなし） |
+
+検討のみで検証・実装を見送った案（[docs/candidates/](docs/candidates/) に詳細設計を残す）:
+
+| 案 | ドキュメント | 一言 |
+|---|---|---|
+| ID-17 | [docs/candidates/c17_beach_day_planner.md](docs/candidates/c17_beach_day_planner.md) | 天気・風・潮位・UVから「海日和スコア」＋半日プラン生成（沖縄の海） |
+| ID-05 | [docs/candidates/c05_meteoropathy_assistant.md](docs/candidates/c05_meteoropathy_assistant.md) | 気圧変化からリスク指数を予測し、理由説明とセルフケアを対話提供 |
+
+比較: [docs/candidates/README.md](docs/candidates/README.md)（3案の48h開発視点の比較・絞り込み手順。ID-32を選定した経緯）
 
 ## 🔄 進め方
 
@@ -70,6 +78,7 @@
 - **ID-32を独立プロジェクトとして切り出し（2026-09-29）**: 検証GOだったため [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm)（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)、毎朝6:13 JST自動更新）として独立。本リポジトリの`experiments/cs32_chart_vlm/`・GitHub Pages・GitHub Actionsは停止済み。設計の経緯は[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)に残す。
 - **ID-17/ID-05の検証は見送り、暫定でID-32（天気図VLM解説）に絞る（2026-09-28）**: 実際に検証まで済んだのがID-32のみのため（[docs/evaluation.md](docs/evaluation.md)）。要項判明後に審査基準と照らして再確認する前提。
 - **ID-15「濡れない経路」を検証・独立プロジェクトとして切り出し（2026-09-29）**: 高解像度降水ナウキャストのタイル（αチャンネル）で降雨有無を機械的に判定できることを実測で確認、奄美市名瀬の実データ（帯状のレーダーエコー接近中）で出発時刻をずらす効果を確認（20分後だけ40%濡れ、他は0%）。OSRMで道路にスナップした経路・Webアプリも実装し、GOだったため [dry_route](https://github.com/masauehr/dry_route)（[デモ](https://dry-route.onrender.com)、Render無料プラン）として独立。本リポジトリの`experiments/id15_dry_route/`は削除済み。
+- **ID-22「SNS災害情報×気象実況のクロスチェック」を別プロジェクトとして実装済み（2026-09-29確認）**: SNS投稿の収集・位置推定（精度A〜D）・地図プロット・元投稿へのリンク・公式情報（気象庁）との整合チェックによるフェイク自動判定（確認済み/未確認/要注意＋根拠）まで実装済み。**自分用途のため非公開**、本リポジトリからはリンクしない（[docs/existing_assets.md](docs/existing_assets.md)の「公開リポジトリのみ」方針に合わせる）。
 - 次: 3分デモ筋書きを [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める → ハッカソン要項の確認（[plan.md](plan.md) フェーズ4）。
 
 ## 🛠️ 実装メモ
