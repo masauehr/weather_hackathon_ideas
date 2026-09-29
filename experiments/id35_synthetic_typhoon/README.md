@@ -5,6 +5,8 @@
 条件付きVAE（Conditional VAE）で気象庁の台風ベストトラック（中心気圧の時系列）を学習し、
 「観測史上よりもっと強い台風」を合成できるかを検証したスパイク。
 
+> 📊 **図で見たい場合は [VISUAL_REPORT.md](VISUAL_REPORT.md)** を参照（CVAEの仕組み・生成結果・限界を6枚の図で解説）。
+
 ## 結論（先に）
 
 | 問い | 結果 |
@@ -24,6 +26,7 @@
 | [src/generate.py](src/generate.py) | 指定した最低気圧を条件に合成シナリオを生成 |
 | [src/validate.py](src/validate.py) | 条件追従性・気圧-風速の物理的整合性・形状のrealismを機械的にチェック |
 | [src/explain_report.py](src/explain_report.py) | 検証結果をClaudeに渡し、平文の説明・信頼性レポートを生成 |
+| [src/visualize.py](src/visualize.py) | [VISUAL_REPORT.md](VISUAL_REPORT.md)用の図6枚を生成（`results/figs/`） |
 
 ## 実行方法
 ```bash

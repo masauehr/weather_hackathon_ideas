@@ -8,6 +8,7 @@ numpy
 pandas
 requests
 torch
+matplotlib          # 可視化レポート（visualize.py）
 
 anthropic>=0.40      # Claude API（合成シナリオの説明レポート生成）
 python-dotenv>=1.0   # ../../.env から ANTHROPIC_API_KEY を読み込む
