@@ -2,6 +2,8 @@
 
 **[← README（目次）](../../README.md)** ・ [候補一覧](README.md) ・ 他候補: [c17 ビーチ日和](c17_beach_day_planner.md) / [c05 気象病](c05_meteoropathy_assistant.md) ・ 参照: [idea_catalog ID-32](../idea_catalog.md) ・ [genai_angles GA-05](../genai_angles.md) ・ [existing_assets](../existing_assets.md)
 
+> 📦 **2026-09-29: 検証GOのため独立プロジェクト [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm) として切り出し済み**（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)、毎朝6:13 JST自動更新）。本リポジトリの`experiments/cs32_chart_vlm/`は削除済み。以下は設計時点の記録として残す（一部リンクは移行先を参照）。
+
 ## 一言
 地上天気図・高層天気図・衛星画像をVLMに読ませ、気圧配置を判定して「なぜこの天気か・明日どうなるか」を平文で解説する。あわせて「天気図の読み方」を学べる教材モードを持つ。
 
@@ -69,10 +71,10 @@
 - VLMは Claude（画像対応）。ローカルVLMは品質未知なので本命はクラウド。
 
 ## MVPスコープ（48h）
-- [x] 最新の地上天気図＋衛星赤外を取得して1枚に結合 → **スパイクで実装済み**（[fetch_chart.py](../../experiments/cs32_chart_vlm/fetch_chart.py)）
-- [x] VLMでスキーマ出力（pattern / evidence / today / tomorrow / caveats） → **実際のClaude API呼び出しまで確認済み**（[vlm_read.py](../../experiments/cs32_chart_vlm/vlm_read.py)、$0.018/回）
-- [x] 数値引用チェックと予報突合の最小版 → **実装済み**（[validate.py](../../experiments/cs32_chart_vlm/validate.py)、自己テスト3/3）
-- [x] Web: 画像の隣に「一般向け解説」を表示、読者切替ボタン（一般/子ども） → **2026-09-28実装・動作確認済み**（Vanilla JS、[experiments/cs32_chart_vlm/webui/](../../experiments/cs32_chart_vlm/webui/)。実測データを表示する静止デモで、実際にブラウザで表示・切替を確認）
+- [x] 最新の地上天気図＋衛星赤外を取得して1枚に結合 → **スパイクで実装済み**（[fetch_chart.py](https://github.com/masauehr/weather_chart_vlm/blob/main/fetch_chart.py)）
+- [x] VLMでスキーマ出力（pattern / evidence / today / tomorrow / caveats） → **実際のClaude API呼び出しまで確認済み**（[vlm_read.py](https://github.com/masauehr/weather_chart_vlm/blob/main/vlm_read.py)、$0.018/回）
+- [x] 数値引用チェックと予報突合の最小版 → **実装済み**（[validate.py](https://github.com/masauehr/weather_chart_vlm/blob/main/validate.py)、自己テスト3/3）
+- [x] Web: 画像の隣に「一般向け解説」を表示、読者切替ボタン（一般/子ども） → **2026-09-28実装・動作確認済み**（Vanilla JS、[webui/](https://github.com/masauehr/weather_chart_vlm/tree/main/webui)。実測データを表示する静止デモで、実際にブラウザで表示・切替を確認）
 - [ ] 教材モード: 1パターン（冬型）だけ、要素の指し示し＋クイズ2問 — 未着手
 
 ### ストレッチ
@@ -80,7 +82,7 @@
 
 ## 3分デモ筋書き（2026-09-28、実測データに基づき更新）
 
-前提: スパイクで**正答率67%（15事例）**、「日本海低気圧⇄南岸低気圧」を系統的に混同する弱点も判明済み（[experiments/cs32_chart_vlm/README.md](../../experiments/cs32_chart_vlm/README.md)）。**当たる時だけを見せる構成にはしない**（外れた時に会場で実演してしまうと逆効果）。「間違えることもあるが、ガードレールで検知できる」を差別化ポイントとして正面から見せる。
+前提: スパイクで**正答率67%（15事例）**、「日本海低気圧⇄南岸低気圧」を系統的に混同する弱点も判明済み（[weather_chart_vlm/README.md](https://github.com/masauehr/weather_chart_vlm/blob/main/README.md)）。**当たる時だけを見せる構成にはしない**（外れた時に会場で実演してしまうと逆効果）。「間違えることもあるが、ガードレールで検知できる」を差別化ポイントとして正面から見せる。
 
 | 時間 | 内容 | 話す内容・実際の材料 |
 |---|---|---|

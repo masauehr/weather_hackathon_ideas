@@ -66,7 +66,8 @@
   分布ラグ回帰（交絡統制・HAC）で **真夏日+10日 → 翌月の卸売価格 +約10%／入荷量 −15%**（ラグ1か月 β=+0.0096, t=+3.3, p=0.001）。
   「気象単独で価格を当てる」ことはできない（予測R²の上乗せ小）が、**早期警戒シグナルとして有効**。結果まとめ → [SPINACH_FINDINGS.md](experiments/cs07_veg_price/SPINACH_FINDINGS.md)。
   副産物: 気象庁 etrn ＋ ベジ探（東京都中央卸売市場データ）の完全自動取得コード。
-- **ID-32 天気図VLM解説のAPI実証＋複数事例の正答率測定を実施（2026-09-28）**: [experiments/cs32_chart_vlm/](experiments/cs32_chart_vlm/) に `vlm_read.py`（当日1事例、実況・予報つき、NG0件・$0.018/回）と `fetch_hibiten.py`＋`eval_historical.py`（気象庁「日々の天気図」アーカイブから過去15事例・7パターンを抽出し正答率測定）を追加。**結果: 15事例中10件正解（67%）、コスト$0.065**。台風・梅雨前線・移動性高気圧は強い一方、「日本海低気圧」を「南岸低気圧」と系統的に誤答する弱点を発見。
+- **ID-32 天気図VLM解説のAPI実証＋複数事例の正答率測定を実施（2026-09-28）**: `vlm_read.py`（当日1事例、実況・予報つき、NG0件・$0.018/回）と `fetch_hibiten.py`＋`eval_historical.py`（気象庁「日々の天気図」アーカイブから過去15事例・7パターンを抽出し正答率測定）を追加。**結果: 15事例中10件正解（67%）、コスト$0.065**。台風・梅雨前線・移動性高気圧は強い一方、「日本海低気圧」を「南岸低気圧」と系統的に誤答する弱点を発見。
+- **ID-32を独立プロジェクトとして切り出し（2026-09-29）**: 検証GOだったため [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm)（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)、毎朝6:13 JST自動更新）として独立。本リポジトリの`experiments/cs32_chart_vlm/`・GitHub Pages・GitHub Actionsは停止済み。設計の経緯は[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)に残す。
 - **ID-17/ID-05の検証は見送り、暫定でID-32（天気図VLM解説）に絞る（2026-09-28）**: 実際に検証まで済んだのがID-32のみのため（[docs/evaluation.md](docs/evaluation.md)）。要項判明後に審査基準と照らして再確認する前提。
 - 次: 3分デモ筋書きを [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める → ハッカソン要項の確認（[plan.md](plan.md) フェーズ4）。
 

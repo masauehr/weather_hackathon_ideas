@@ -54,7 +54,7 @@
 
 ## フェーズ4: 選抜とデモ設計
 - [x] 第一次候補3案の詳細設計（[docs/candidates/](docs/candidates/)：ID-32 / ID-17 / ID-05）— 2026-09-02
-- [x] ID-32の相関検証・複数事例の正答率測定 → GO・67%（[experiments/cs32_chart_vlm/](experiments/cs32_chart_vlm/)）— 2026-09-28
+- [x] ID-32の相関検証・複数事例の正答率測定 → GO・67% — 2026-09-28。**2026-09-29に独立プロジェクト [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm) として切り出し**（本リポジトリの`experiments/cs32_chart_vlm/`は削除済み）
 - [x] ID-17/ID-05の検証は見送り、**暫定でID-32に絞る**（[docs/evaluation.md](docs/evaluation.md)）— 2026-09-28
 - [ ] 評価表を要項判明後に再計算（現状はID-32暫定1位で確定ではない）
 - [x] 「3分で伝わる」デモ筋書き（課題→入力→予測→生成AIの一言→行動）を詰める → **2026-09-28完了**。実測データ（正答率67%）を隠さず見せる構成に変更（[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md)）
