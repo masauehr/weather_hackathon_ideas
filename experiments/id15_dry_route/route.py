@@ -112,7 +112,7 @@ def evaluate(route_pts, speed_mps, depart_offset_min, base, vts):
 MAX_DETOUR_RATIO = 3.0  # OSRM経路が直線距離の何倍を超えたら「迂回しすぎ」とみなし直線にフォールバックするか
 
 
-def recommend(waypoints, speed_mps, mode="walk", n_points=20, max_wait_min=30):
+def recommend(waypoints, speed_mps, mode="walk", n_points=20, max_wait_min=60):
     """waypoints: [(lat,lon), ...]（2点以上、経由地順）。"""
     straight_dist_m = sum(
         haversine_m(*waypoints[i], *waypoints[i + 1]) for i in range(len(waypoints) - 1)
