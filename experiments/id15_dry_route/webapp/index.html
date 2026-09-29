@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>濡れない経路（デモ）</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>濡れない経路 — 出発時刻ナビ（デモ）</h1>
+  <p class="subtitle">気象庁 高解像度降水ナウキャスト（60分先まで）で、経路上の降雨を判定</p>
+</header>
+
+<main>
+  <section class="map-panel">
+    <div id="map"></div>
+    <div class="map-controls">
+      <p class="hint">地図をクリックして<b>出発地→到着地</b>の順に2点指定（クリックし直すとリセット）</p>
+      <label>移動手段
+        <select id="mode">
+          <option value="walk">徒歩（4.8km/h）</option>
+          <option value="bike">自転車（15km/h）</option>
+        </select>
+      </label>
+      <button id="btn-eval" disabled>この経路を評価</button>
+      <div class="frame-slider-wrap">
+        <label for="frame-slider">表示中のナウキャスト: <span id="frame-label">-</span></label>
+        <input type="range" id="frame-slider" min="0" max="0" value="0">
+      </div>
+    </div>
+  </section>
+
+  <section class="result-panel">
+    <h2>出発時刻の推薦</h2>
+    <p id="result-summary" class="result-summary">経路を指定して「評価」を押してください。</p>
+    <table id="result-table">
+      <thead><tr><th>出発</th><th>濡れる点</th><th>比率</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="caveats">
+      経路は2点間の直線補間（実際の道路網ではない）。降雨は二値判定（強度は区別しない）。
+      60分より先の予測は対象外。<br>出典: 気象庁ホームページ（高解像度降水ナウキャスト）
+    </p>
+  </section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="app.js"></script>
+</body>
+</html>

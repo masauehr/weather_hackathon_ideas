@@ -18,8 +18,22 @@
 |---|---|
 | [fetch_nowcast.py](fetch_nowcast.py) | 高解像度降水ナウキャストの基準時刻・予測時刻一覧取得、タイルPNGの取得・αチャンネルでの降雨判定 |
 | [route.py](route.py) | 2点間を直線補間した経路について、出発時刻を5分ずつ遅らせた候補ごとに「経路上の何点が濡れるか」を評価し最良の出発時刻を推す |
+| [server.py](server.py) + [webapp/](webapp/) | ブラウザで地図上に経路・降雨タイル・推薦テーブルを表示するデモ（下記） |
 
-実行: `python route.py walk`（徒歩4.8km/h） / `python route.py bike`（自転車15km/h）
+実行（CLI）: `python route.py walk`（徒歩4.8km/h） / `python route.py bike`（自転車15km/h）
+
+## Webアプリ（デモ）
+```bash
+python server.py       # http://127.0.0.1:8793/
+```
+地図（Leaflet + OpenStreetMap）に気象庁の降雨タイルを重ねて表示。クリックで出発地→到着地を指定し「評価」を押すと、
+出発時刻の候補ごとの推薦テーブルと、選んだ候補の経路上の各点（☔濡れる/☀晴れ）が地図に表示される。
+スライダーで実況〜60分先までのナウキャストフレームを切り替え可能。
+
+**GitHub Pagesのような常時公開はしない**（できない）。理由:
+1. 降水ナウキャストは「今から60分先まで」しか意味を持たないデータで、静的サイトに事前計算した結果を置いても数分で無意味になる。
+2. 対象JSON（`targetTimes_N2.json`等）にCORSヘッダーが無く、ブラウザから直接fetchできない。`server.py`が気象庁への取得を代行する必要があり、これは動的サーバーでしか実現できない。
+そのため使うときにローカルで `python server.py` を起動する運用とする。
 
 ## 仕組み
 1. `targetTimes_N2.json` で直近の予測基準時刻と、60分先までの5分毎 validtime を取得
