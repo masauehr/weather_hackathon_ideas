@@ -109,9 +109,19 @@ def evaluate(route_pts, speed_mps, depart_offset_min, base, vts):
             "wet_ratio": wet / len(results), "points": results}
 
 
+MAX_DETOUR_RATIO = 3.0  # OSRM経路が直線距離の何倍を超えたら「迂回しすぎ」とみなし直線にフォールバックするか
+
+
 def recommend(waypoints, speed_mps, mode="walk", n_points=20, max_wait_min=30):
     """waypoints: [(lat,lon), ...]（2点以上、経由地順）。"""
+    straight_dist_m = sum(
+        haversine_m(*waypoints[i], *waypoints[i + 1]) for i in range(len(waypoints) - 1)
+    )
     road = fetch_road_route(waypoints, mode)
+    # OSRMが極端に迂回した経路（山道の周回等）を返すことがあるため、直線距離の
+    # MAX_DETOUR_RATIO倍を超えたら信頼せず直線にフォールバックする。
+    if road and straight_dist_m > 0 and road[1] > straight_dist_m * MAX_DETOUR_RATIO:
+        road = None
     used_road_routing = road is not None
     geometry = road[0] if road else waypoints
     route_pts, total_dist_m = resample_polyline(geometry, n_points)

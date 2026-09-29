@@ -13,6 +13,16 @@ function tileUrl(basetime, validtime) {
   return `https://www.jma.go.jp/bosai/jmatile/data/nowc/${basetime}/none/${validtime}/surf/hrpns/{z}/{x}/{y}.png`;
 }
 
+// JMAのhrpns(高解像度降水ナウキャスト)タイルは奇数ズーム(5,7,9)で空タイル(334byte)を返す
+// （実測で確認）。奇数ズームでは1段下の偶数ズームを取得してLeafletに拡大表示させる。
+const JmaTileLayer = L.TileLayer.extend({
+  _getZoomForUrl: function () {
+    let zoom = L.TileLayer.prototype._getZoomForUrl.call(this);
+    if (zoom % 2 !== 0) zoom = Math.max(4, zoom - 1);
+    return zoom;
+  },
+});
+
 async function main() {
   map = L.map("map").setView([35.6812, 139.7671], 13);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -47,8 +57,8 @@ function updateFrame(idx) {
   document.getElementById("frame-label").textContent =
     idx === 0 ? `実況 ${formatJst(vt)}` : `${idx * 5}分後 ${formatJst(vt)}`;
   if (jmaLayer) map.removeLayer(jmaLayer);
-  jmaLayer = L.tileLayer(tileUrl(frames.base, vt), {
-    opacity: 0.7, maxNativeZoom: 10, minZoom: 4, maxZoom: 18,
+  jmaLayer = new JmaTileLayer(tileUrl(frames.base, vt), {
+    opacity: 0.7, maxNativeZoom: 10, minNativeZoom: 4, minZoom: 4, maxZoom: 18,
   }).addTo(map);
 }
 
