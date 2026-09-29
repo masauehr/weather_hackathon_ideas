@@ -135,9 +135,14 @@ function renderResult(result) {
   const best = result.best;
   const summary = document.getElementById("result-summary");
   const routing = result.used_road_routing ? "道路沿い（OSRM）" : "直線補間（道路経路が取得できず代替）";
-  let text = best.wet_ratio === 0
-    ? `${best.depart_offset_min}分後に出発すれば、経路上で雨に当たらない見込みです。`
-    : `どの時間帯でも完全には避けられませんが、${best.depart_offset_min}分後の出発が最も濡れにくい見込みです（${best.wet_points}/${best.total_points}点で降雨）。`;
+  let text;
+  if (best.wet_ratio === 0) {
+    text = `${best.depart_offset_min}分後に出発すれば、経路上で雨に当たらない見込みです。`;
+  } else if (best.wet_ratio < 0.5) {
+    text = `どの時間帯でも完全には避けられませんが、${best.depart_offset_min}分後の出発が最も濡れにくい見込みです（${best.wet_points}/${best.total_points}点で降雨）。`;
+  } else {
+    text = `⚠️ この60分間はいずれの出発時刻でも経路の半分以上で雨に当たる見込みです。${best.depart_offset_min}分後が相対的には最良ですが、それでも${best.wet_points}/${best.total_points}点で降雨が見込まれます。`;
+  }
   text += ` [経路: ${routing}、距離${result.distance_m}m]`;
   summary.textContent = text;
 
@@ -145,7 +150,12 @@ function renderResult(result) {
   tbody.innerHTML = "";
   result.evals.forEach((e) => {
     const tr = document.createElement("tr");
-    if (e.depart_offset_min === best.depart_offset_min) tr.classList.add("best");
+    // 「最良」でも比率が高いままなら緑(=安全)に見せない。比率に応じて色を変える。
+    if (e.depart_offset_min === best.depart_offset_min) {
+      if (best.wet_ratio === 0) tr.classList.add("best-dry");
+      else if (best.wet_ratio < 0.5) tr.classList.add("best-partial");
+      else tr.classList.add("best-wet");
+    }
     tr.innerHTML = `<td>${e.depart_offset_min}分後</td><td>${e.wet_points}/${e.total_points}</td><td>${Math.round(e.wet_ratio * 100)}%</td>`;
     tr.addEventListener("click", () => showPoints(e));
     tbody.appendChild(tr);
