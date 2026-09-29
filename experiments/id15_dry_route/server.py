@@ -1,14 +1,21 @@
-"""ID-15 デモ用ローカルサーバー。
+"""ID-15 デモサーバー。ローカル実行・公開デプロイ（Render等）の両方に対応。
 
 降水ナウキャストは「今から60分先まで」しか意味を持たないデータのため、GitHub Pagesのような
 静的常時公開はできない（都度サーバー側で最新データを取りに行く必要がある）。
 また対象JSONにはCORSヘッダーが無く、ブラウザから直接 fetch すると失敗するため、
-本サーバーが気象庁への取得を代行し、結果だけをブラウザに返す（127.0.0.1限定）。
+本サーバーが気象庁・OSRMへの取得を代行し、結果だけをブラウザに返す。
 
-使い方: python server.py [port]  → http://127.0.0.1:8793/
-出典: 気象庁ホームページ（高解像度降水ナウキャスト）
+このサーバーは書き込みAPIも機密データ（.env等）も持たない読み取り専用の公開データ中継のため、
+DNSリバインディング対策のHostチェックは行わない（他の自作サーバー(disaster_sns_watch等)は
+個人データを扱うため実施しているが、本アプリには該当しない）。
+
+使い方:
+  ローカル: python server.py [port]  → http://127.0.0.1:8793/
+  公開デプロイ: 環境変数 PORT を使う（Render等が自動設定）
+出典: 気象庁ホームページ（高解像度降水ナウキャスト）・OpenStreetMap（ルーティング）
 """
 import json
+import os
 import sys
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -29,11 +36,6 @@ def _json_default(o):
 
 
 class Handler(BaseHTTPRequestHandler):
-    def _host_ok(self):
-        """DNSリバインディング対策: Hostヘッダーが自分自身(127.0.0.1:port)のときだけ受け付ける。"""
-        port = self.server.server_port
-        return (self.headers.get("Host") or "") in (f"127.0.0.1:{port}", f"localhost:{port}")
-
     def _send_json(self, obj, status=200):
         body = json.dumps(obj, ensure_ascii=False, default=_json_default).encode("utf-8")
         self.send_response(status)
@@ -43,8 +45,6 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self):
-        if not self._host_ok():
-            return self._send_json({"error": "forbidden host"}, 403)
         url = urlparse(self.path)
         if url.path == "/api/frames":
             return self._api_frames()
@@ -103,9 +103,10 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_PORT
-    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
-    print(f"http://127.0.0.1:{port}/")
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", DEFAULT_PORT))
+    host = "127.0.0.1" if len(sys.argv) > 1 or "PORT" not in os.environ else "0.0.0.0"
+    server = ThreadingHTTPServer((host, port), Handler)
+    print(f"http://{host}:{port}/")
     server.serve_forever()
 
 
