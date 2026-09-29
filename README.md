@@ -37,6 +37,7 @@
 | [ID-32](docs/idea_catalog.md) 天気図VLM解説 | 天気図・衛星画像をVLMで読み、気圧配置を判定して平文解説＋読み方教材 | 独立プロジェクト [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm)（[デモ](https://masauehr.github.io/weather_chart_vlm/webui/index.html)）として実装・公開済み。設計の経緯は[docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) |
 | [ID-15](docs/idea_catalog.md) 濡れない経路 | 高解像度降水ナウキャストで自転車/徒歩の経路上の降雨有無を判定し、出発時刻を提案 | 独立プロジェクト [dry_route](https://github.com/masauehr/dry_route)（[デモ](https://dry-route.onrender.com)）として実装・公開済み |
 | [ID-22](docs/idea_catalog.md) SNS災害情報×気象実況のクロスチェック | SNS投稿の位置推定・地図プロット・公式情報との整合チェックで「確認済み/未確認/要注意」の信頼度ラベルを付与 | 別プロジェクトとして実装済み（自分用途のため非公開・本リポジトリからのリンクなし） |
+| [ID-25](docs/idea_catalog.md) 生鮮野菜価格の気象先行指標 | 産地（前橋）の真夏日数 → 東京の葉物卸売価格・入荷量の先行性を統計的に検証（相関の当たり付けが目的、Web/生成AI部分は未実装） | 本リポジトリ内 [experiments/cs07_veg_price/](experiments/cs07_veg_price/) で検証済み。真夏日+10日→翌月価格+約10%（p=0.001）だが、月次2値の早期警戒アラートとしては弱い（AUC≈0.55）。結果まとめ: [SPINACH_FINDINGS.md](experiments/cs07_veg_price/SPINACH_FINDINGS.md) |
 
 検討のみで検証・実装を見送った案（[docs/candidates/](docs/candidates/) に詳細設計を残す）:
 
