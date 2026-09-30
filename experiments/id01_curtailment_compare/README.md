@@ -14,7 +14,8 @@
 | データの対象期間 | **2018年度〜2025年度**（8年分） | **2022年度〜2025年度**（4年分） |
 | 実際に抽出できた制御日数 | **1175日**（2018-10-13〜2026-03-31） | **160日**（2023-01-01〜2026-03-30） |
 | 「休日（低需要）に多い」仮説 | **確認**: 土日の割合37.4%（カレンダー上の基準28.6%より明確に高い） | **確認**: 土日の割合46.9%（九州よりさらに高い） |
-| 「晴天（日照時間が長い）に多い」仮説 | **強く確認**: 制御日の日照時間平均7.18h vs 非制御日4.40h。**曜日を統制（日曜のみ）してもなお6.66h vs 3.41hと明確な差** | **弱く確認**: 制御日の日照時間平均5.46h vs 非制御日4.85h。**曜日を統制（日曜のみ）すると差が消える（5.03h vs 5.06h）** |
+| 「晴天に多い」仮説（日照時間） | **強く確認**: 制御日の日照時間平均7.18h vs 非制御日4.40h。**曜日を統制（日曜のみ）してもなお6.66h vs 3.41hと明確な差**（Cohen's d=0.73、日曜のみ0.89） | **弱く確認**: 制御日の日照時間平均5.46h vs 非制御日4.85h。**曜日を統制（日曜のみ）すると差が消える**（Cohen's d=0.16、日曜のみ-0.01） |
+| 「晴天に多い」仮説（全天日射量） | **確認だが日照時間より判別力は弱い**: 16.46 vs 11.99 MJ/m²（Cohen's d=0.63、日曜のみ0.76） | **ほぼ確認できない**: 15.15 vs 14.82 MJ/m²（Cohen's d=0.05、日曜のみ-0.22＝方向が逆転） |
 | GO/NO-GO | **九州の方がGO**: データ形式・期間・信号の強さのすべてで優位 | 一部GO（構造的には制御されやすいが、この検証では天気との相関がはっきり出ず、データも4年分と短い） |
 
 **推奨: 九州エリアを本命に進める。** 沖縄は独立系統で構造的に出力制御が起きやすい面白さはあるが、
@@ -28,6 +29,7 @@ cd experiments/id01_curtailment_compare
 /opt/anaconda3/envs/met_env/bin/python src/parse_okinawa.py    # data/processed/okinawa_curtail_days.csv
 # 気象庁の日照時間（福岡・那覇）
 /opt/anaconda3/envs/met_env/bin/python src/fetch_sunshine.py   # data/processed/sunshine_{fukuoka,naha}.csv
+/opt/anaconda3/envs/met_env/bin/python src/fetch_solar.py      # data/processed/solar_{fukuoka,naha}.csv（全天日射量、判別力比較用）
 ```
 （`data/raw/`の元ファイルは同梱していないため、`parse_kyushu.py`実行前に九州電力送配電「[過去の出力制御実績＿九州本土](https://www.kyuden.co.jp/td_power_usages/out_ctrl_history.html)」のExcel、沖縄電力「[過去の出力制御指示内容](https://www.okiden.co.jp/business-support/purchase/control/previous_control/index.html)」のPDF（2022〜2025年度分）を`data/raw/`に配置する）
 
@@ -36,15 +38,15 @@ cd experiments/id01_curtailment_compare
 |---|---|---|
 | 九州の出力制御実績 | [過去の出力制御実績＿九州本土](https://www.kyuden.co.jp/td_power_usages/out_ctrl_history.html)（九州電力送配電） | Excel・2018年度〜2025年度 |
 | 沖縄の出力制御実績 | [過去の出力制御指示内容](https://www.okiden.co.jp/business-support/purchase/control/previous_control/index.html)（沖縄電力） | PDF・2022年度〜2025年度 |
-| 日照時間（福岡・那覇） | 気象庁 [過去の気象データ・ダウンロード](https://www.data.jma.go.jp/stats/etrn/) daily_s1.php | 1日値・任意期間 |
+| 日照時間・全天日射量（福岡・那覇） | 気象庁 [過去の気象データ・ダウンロード](https://www.data.jma.go.jp/stats/etrn/) daily_s1.php（p1/a3ビュー） | 1日値・任意期間 |
 
 いずれも公開データ・出典明記の上で利用可能。九州・沖縄電力の利用規約に従う。
 
 ## 仕組み
 1. 九州: Excelの「通し番号」ブロック（年度により5列/2列など列幅が異なる）を走査し、「再エネ出力制御期間」の日付を抽出（[src/parse_kyushu.py](src/parse_kyushu.py)）
 2. 沖縄: PDFの各ページをpdfplumberでテーブル抽出し、同じ「通し番号」「再エネ出力制御期間」の構造を読む（[src/parse_okinawa.py](src/parse_okinawa.py)）
-3. 気象庁etrnから福岡・那覇の日照時間を取得（[src/fetch_sunshine.py](src/fetch_sunshine.py)、cs07_veg_price/fetch_jma_daily.pyのp1ビュー取得パターンを流用）
-4. 制御日 vs 非制御日で日照時間の平均を比較。曜日（特に日曜）を固定した上でも比較し、「休日効果」と「晴天効果」を分けて確認
+3. 気象庁etrnから福岡・那覇の日照時間・全天日射量を取得（[src/fetch_sunshine.py](src/fetch_sunshine.py)・[src/fetch_solar.py](src/fetch_solar.py)、cs07_veg_price/fetch_jma_daily.pyのp1/a3ビュー取得パターンを流用）
+4. 制御日 vs 非制御日で日照時間・全天日射量それぞれの平均とCohen's d（群間差を標準偏差で正規化した効果量）を比較。曜日（特に日曜）を固定した上でも比較し、「休日効果」と「晴天効果」を分けて確認
 
 ## 発見・注意（実装上のハマりどころ）
 - **公表される太陽光/風力の発電実績は「出力制御後」の値**（九州電力送配電の注記で確認）。単純にCSVの太陽光列を見るだけでは制御量は分からず、別途「出力制御実績」の報告書（Excel/PDF）を読む必要がある。
@@ -52,6 +54,7 @@ cd experiments/id01_curtailment_compare
 - **古い年度は日付が「10/13（土）」のような曜日付き文字列**（新しい年度はdatetime型）。フォーマットの違いを吸収する必要がある。
 - 沖縄のPDFも九州と全く同じ報告書フォーマット（同じ経産省の開示ルールに基づくため）だったので、九州で作ったパーサーの構造理解がそのまま流用できた。
 - 那覇の日照時間だけでは沖縄本島全体のPV分布を代表しきれていない可能性がある（弱い相関の一因かもしれない。未検証）。
+- **「全天日射量の方が発電量との相関が強いはずなので、日照時間より判別力が高いのでは」という想定を検証したが、実際は逆だった**（九州: Cohen's d 日照時間0.73 > 全天日射量0.63、日曜のみ0.89 > 0.76。沖縄: 0.16 > 0.05、日曜のみ-0.01 vs -0.22で全天日射量は方向まで逆転）。出力制御は「その日の発電量」ではなく「昼のピーク時間帯に供給が需要を超えるか」という**閾値イベント**なので、1日を通して積分した全天日射量よりも「直射光が当たった時間の長さ（＝晴天の持続性）」の方が、ピーク時間帯の出力の高さと相関しやすいと考えられる（推測、厳密な検証はしていない）。
 
 ## 限界（過大評価しないために）
 1. 制御の**量**（何万kW制御したか）は今回見ていない。制御が「あったか無かったか」の二値のみ。
