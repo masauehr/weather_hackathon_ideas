@@ -148,35 +148,43 @@ def fig04_discriminative_power():
 
 
 def fig05_auc_comparison():
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_auc_score
+
     df = build_dataset()
+    df["month"] = df["date"].dt.month
+    month_dummies = pd.get_dummies(df["month"], prefix="month", drop_first=True)
+    df = pd.concat([df, month_dummies], axis=1)
+    month_cols = list(month_dummies.columns)
+
+    n_train = int(len(df) * 0.7)
+    train, test = df.iloc[:n_train], df.iloc[n_train:]
+
     results = []
     for feats, label in [
         (["is_weekend_or_holiday"], "曜日のみ"),
         (["sunshine_h"], "日照時間のみ"),
-        (["sunshine_h", "is_weekend_or_holiday"], "日照時間+曜日"),
+        (["sunshine_h", "is_weekend_or_holiday"], "日照時間\n+曜日"),
         (["sunshine_h", "is_weekend_or_holiday", "years_since_start"], "+トレンド項"),
+        (month_cols + ["sunshine_h", "is_weekend_or_holiday", "years_since_start"], "+月（季節）\n★最大の効果"),
     ]:
-        from sklearn.linear_model import LogisticRegression
-        from sklearn.metrics import roc_auc_score
-        n_train = int(len(df) * 0.7)
-        train, test = df.iloc[:n_train], df.iloc[n_train:]
-        model = LogisticRegression()
+        model = LogisticRegression(max_iter=1000)
         model.fit(train[feats], train["is_curtailed"])
         proba = model.predict_proba(test[feats])[:, 1]
         auc = roc_auc_score(test["is_curtailed"], proba)
         results.append((label, auc))
 
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(9, 5))
     labels = [r[0] for r in results]
     aucs = [r[1] for r in results]
-    colors = ["#94a3b8", "#94a3b8", "#2563eb", "#16a34a"]
+    colors = ["#94a3b8", "#94a3b8", "#2563eb", "#16a34a", "#dc2626"]
     bars = ax.bar(labels, aucs, color=colors)
     for b, v in zip(bars, aucs):
         ax.text(b.get_x() + b.get_width() / 2, v + 0.01, f"{v:.3f}", ha="center", fontsize=10)
     ax.axhline(0.5, color="gray", ls=":", lw=1.5, label="ランダム(AUC=0.5)")
     ax.set_ylabel("ROC-AUC")
-    ax.set_ylim(0.4, 0.8)
-    ax.set_title("⑤ ロジスティック回帰: 日照時間と曜日は相補的")
+    ax.set_ylim(0.4, 0.9)
+    ax.set_title("⑤ ロジスティック回帰: 月（季節）を入れると精度が跳ね上がる")
     ax.legend()
     fig.tight_layout()
     fig.savefig(FIG_DIR / "05_auc_comparison.png", dpi=140)

@@ -43,7 +43,7 @@ def evaluate(df: pd.DataFrame, features: list, label: str) -> dict:
     n_train = int(len(df) * TRAIN_RATIO)
     train, test = df.iloc[:n_train], df.iloc[n_train:]
 
-    model = LogisticRegression()
+    model = LogisticRegression(max_iter=1000)
     model.fit(train[features], train["is_curtailed"])
 
     proba = model.predict_proba(test[features])[:, 1]
@@ -67,16 +67,24 @@ def evaluate(df: pd.DataFrame, features: list, label: str) -> dict:
 
 def main():
     df = build_dataset()
+    df["month"] = df["date"].dt.month
+    month_dummies = pd.get_dummies(df["month"], prefix="month", drop_first=True)
+    df = pd.concat([df, month_dummies], axis=1)
+    month_cols = list(month_dummies.columns)
+
     results = []
     results.append(evaluate(df, ["is_weekend_or_holiday"], "曜日（土日祝）のみ"))
     results.append(evaluate(df, ["sunshine_h"], "日照時間のみ"))
     results.append(evaluate(df, ["sunshine_h", "is_weekend_or_holiday"], "日照時間＋曜日（土日祝）"))
     results.append(evaluate(df, ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
                              "日照時間＋曜日＋トレンド（導入量増加の近似）"))
+    results.append(evaluate(df, month_cols + ["years_since_start"], "月（季節）のみ＋トレンド"))
+    results.append(evaluate(df, month_cols + ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
+                             "月＋日照＋曜日＋トレンド（フル）"))
 
     print("=== まとめ ===")
     for r in results:
-        print(f"  {r['label']:24s} AUC={r['auc']:.3f}  適合率={r['precision']:.3f}  再現率={r['recall']:.3f}")
+        print(f"  {r['label']:28s} AUC={r['auc']:.3f}  適合率={r['precision']:.3f}  再現率={r['recall']:.3f}")
 
 
 if __name__ == "__main__":
