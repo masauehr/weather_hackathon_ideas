@@ -278,8 +278,39 @@ def main():
     fig07_backtest_comparison()
     fig08_generation_scatter()
     fig09_generation_corr_comparison()
+    fig10_seasonal_weekday_effect()
     print(f"図を保存: {FIG_DIR}")
 
 
 if __name__ == "__main__":
     main()
+
+
+def fig10_seasonal_weekday_effect():
+    df = pd.read_csv(PROCESSED_DIR / "kyushu_curtail_days.csv", parse_dates=["date"])
+    df["month"] = df["date"].dt.month
+    df["is_weekend"] = df["date"].dt.dayofweek.isin([5, 6])
+
+    counts = df["month"].value_counts().reindex(range(1, 13), fill_value=0)
+    weekend_ratio = df.groupby("month")["is_weekend"].mean().reindex(range(1, 13)) * 100
+
+    fig, ax1 = plt.subplots(figsize=(10, 5.5))
+    ax1.bar(counts.index, counts.values, color="#94a3b8", alpha=0.8, label="制御日数（左軸）")
+    ax1.set_xlabel("月")
+    ax1.set_ylabel("出力制御の実施日数（2018〜2025年度合計）")
+    ax1.set_xticks(range(1, 13))
+
+    ax2 = ax1.twinx()
+    ax2.plot(weekend_ratio.index, weekend_ratio.values, color="#dc2626", marker="o",
+              lw=2, label="土日の割合（右軸）")
+    ax2.axhline(2 / 7 * 100, color="gray", ls=":", lw=1.5, label="カレンダー上の土日割合(28.6%)")
+    ax2.set_ylabel("制御日に占める土日の割合 (%)")
+    ax2.set_ylim(0, 100)
+
+    ax1.set_title("⑩ 「土日に多い」は季節で大きく異なる\n（春は制御日自体が多く土日比率は低い、夏〜初秋は制御がまれで土日に偏る）", pad=14)
+    handles1, labels1 = ax1.get_legend_handles_labels()
+    handles2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "10_seasonal_weekday.png", dpi=140)
+    plt.close(fig)
