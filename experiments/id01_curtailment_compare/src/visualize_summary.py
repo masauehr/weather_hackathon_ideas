@@ -228,6 +228,45 @@ def fig07_backtest_comparison():
     plt.close(fig)
 
 
+def fig08_generation_scatter():
+    gen = pd.read_csv(PROCESSED_DIR / "kyushu_generation_merged.csv", parse_dates=["date"])
+    fig, ax = plt.subplots(figsize=(8, 6))
+    for label, sub, color in [("非制御日", gen[gen["is_curtailed"] == 0], "#94a3b8"),
+                               ("制御日", gen[gen["is_curtailed"] == 1], "#dc2626")]:
+        ax.scatter(sub["solar_mj"], sub["wind_solar_mwh"], s=10, alpha=0.4, color=color, label=label)
+    ax.set_xlabel("実測 全天日射量 (MJ/m²)")
+    ax.set_ylabel("実際の発電量（風力+太陽光, MWh/日）")
+    ax.set_title("⑧ 発電量との関係: 制御日は同じ日射量でも発電量が頭打ち")
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "08_generation_scatter.png", dpi=140)
+    plt.close(fig)
+
+
+def fig09_generation_corr_comparison():
+    gen = pd.read_csv(PROCESSED_DIR / "kyushu_generation_merged.csv", parse_dates=["date"])
+    non_curtailed = gen[gen["is_curtailed"] == 0]
+    methods = [("sunshine_h", "日照時間"), ("solar_mj", "全天日射量"),
+               ("amgsds_proxy_h", "AMGSDS風"), ("simplified_h", "簡略化")]
+    all_r = [gen["wind_solar_mwh"].corr(gen[c]) for c, _ in methods]
+    nc_r = [non_curtailed["wind_solar_mwh"].corr(non_curtailed[c]) for c, _ in methods]
+
+    x = np.arange(len(methods))
+    width = 0.35
+    fig, ax = plt.subplots(figsize=(9, 5))
+    ax.bar(x - width / 2, all_r, width, label="全日", color="#94a3b8")
+    ax.bar(x + width / 2, nc_r, width, label="非制御日のみ", color="#2563eb")
+    ax.set_xticks(x)
+    ax.set_xticklabels([m[1] for m in methods])
+    ax.set_ylabel("実際の発電量との相関係数 r")
+    ax.set_ylim(0.6, 0.95)
+    ax.set_title("⑨ 発電量との相関: 全天日射量が最も強い（日照時間より上）")
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "09_generation_corr.png", dpi=140)
+    plt.close(fig)
+
+
 def main():
     fig00_pipeline_diagram()
     fig01_scatter_sunshine_curtail()
@@ -237,6 +276,8 @@ def main():
     fig05_auc_comparison()
     fig06_amgsds_bias()
     fig07_backtest_comparison()
+    fig08_generation_scatter()
+    fig09_generation_corr_comparison()
     print(f"図を保存: {FIG_DIR}")
 
 

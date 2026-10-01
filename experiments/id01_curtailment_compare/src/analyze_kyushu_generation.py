@@ -34,7 +34,7 @@ def main():
         print(f"  {name:28s} r={r:.3f}")
 
     print("\n=== 非制御日のみでの相関（出力制御による頭打ちを除く） ===")
-    non_curtailed = df[~df["is_curtailed"]]
+    non_curtailed = df[df["is_curtailed"] == 0]
     print(f"  (n={len(non_curtailed)})")
     for col, name in [("sunshine_h", "実測日照時間"), ("solar_mj", "実測全天日射量"),
                        ("amgsds_proxy_h", "AMGSDS風(快晴バイアス補正)"), ("simplified_h", "簡略化")]:
@@ -43,8 +43,8 @@ def main():
 
     print("\n=== 制御日 vs 非制御日の発電量レベル（天気が同程度でも制御で頭打ちになるか） ===")
     clear_days = df[df["weather_class"].isin(["快晴", "晴れ"])]
-    for label, sub in [("快晴/晴れ×制御日", clear_days[clear_days["is_curtailed"]]),
-                        ("快晴/晴れ×非制御日", clear_days[~clear_days["is_curtailed"]])]:
+    for label, sub in [("快晴/晴れ×制御日", clear_days[clear_days["is_curtailed"] == 1]),
+                        ("快晴/晴れ×非制御日", clear_days[clear_days["is_curtailed"] == 0])]:
         print(f"  {label}: n={len(sub)}  発電量平均={sub['wind_solar_mwh'].mean():.1f}MWh  "
               f"実測日照時間平均={sub['sunshine_h'].mean():.2f}h")
 
