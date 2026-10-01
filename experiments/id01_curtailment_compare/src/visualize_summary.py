@@ -279,6 +279,7 @@ def main():
     fig08_generation_scatter()
     fig09_generation_corr_comparison()
     fig10_seasonal_weekday_effect()
+    fig11_okinawa_seasonal()
     print(f"図を保存: {FIG_DIR}")
 
 
@@ -313,4 +314,43 @@ def fig10_seasonal_weekday_effect():
     ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left", fontsize=9)
     fig.tight_layout()
     fig.savefig(FIG_DIR / "10_seasonal_weekday.png", dpi=140)
+    plt.close(fig)
+
+
+def fig11_okinawa_seasonal():
+    df = pd.read_csv(PROCESSED_DIR / "okinawa_curtail_days.csv", parse_dates=["date"])
+    df["month"] = df["date"].dt.month
+    df["is_weekend"] = df["date"].dt.dayofweek.isin([5, 6])
+
+    counts = df["month"].value_counts().reindex(range(1, 13), fill_value=0)
+    weekend_ratio = df.groupby("month")["is_weekend"].mean().reindex(range(1, 13)) * 100
+    n_by_month = df["month"].value_counts().reindex(range(1, 13), fill_value=0)
+
+    fig, ax1 = plt.subplots(figsize=(10, 5.5))
+    ax1.bar(counts.index, counts.values, color="#94a3b8", alpha=0.8, label="制御日数（左軸）")
+    ax1.set_xlabel("月")
+    ax1.set_ylabel("出力制御の実施日数（2023〜2025年度合計）")
+    ax1.set_xticks(range(1, 13))
+
+    ax2 = ax1.twinx()
+    # サンプル数が小さい月(n<10)は点を薄く・マーカーを変えて示す
+    for m in range(1, 13):
+        n = n_by_month[m]
+        if n == 0:
+            continue
+        alpha = 1.0 if n >= 10 else 0.4
+        marker = "o" if n >= 10 else "x"
+        ax2.plot(m, weekend_ratio[m], marker=marker, color="#dc2626", alpha=alpha, ms=9)
+    ax2.plot([], [], marker="o", color="#dc2626", label="土日の割合（右軸, 10件以上）")
+    ax2.plot([], [], marker="x", color="#dc2626", alpha=0.4, label="土日の割合（右軸, 10件未満・参考値）")
+    ax2.axhline(2 / 7 * 100, color="gray", ls=":", lw=1.5, label="カレンダー上の土日割合(28.6%)")
+    ax2.set_ylabel("制御日に占める土日の割合 (%)")
+    ax2.set_ylim(0, 105)
+
+    ax1.set_title("⑪ 沖縄: 6〜10月は出力制御が0日\n（九州と異なり「季節自体」が制御の有無を分ける）", pad=14)
+    handles1, labels1 = ax1.get_legend_handles_labels()
+    handles2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper center", fontsize=8.5)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "11_okinawa_seasonal.png", dpi=140)
     plt.close(fig)
