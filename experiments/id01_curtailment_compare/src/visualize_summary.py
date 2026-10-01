@@ -84,6 +84,33 @@ def fig01_scatter_sunshine_curtail():
     plt.close(fig)
 
 
+def fig01b_scatter_solarmj_curtail():
+    """fig01(日照時間)と対になる全天日射量版。同じ現象(制御日は晴天側に偏る)を別指標で確認する。"""
+    kyu_c = pd.read_csv(PROCESSED_DIR / "kyushu_curtail_days.csv", parse_dates=["date"])
+    oki_c = pd.read_csv(PROCESSED_DIR / "okinawa_curtail_days.csv", parse_dates=["date"])
+    fuk = pd.read_csv(PROCESSED_DIR / "solar_fukuoka.csv", parse_dates=["date"])
+    naha = pd.read_csv(PROCESSED_DIR / "solar_naha.csv", parse_dates=["date"])
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5), sharey=True)
+    rng = np.random.default_rng(0)
+    for ax, (name, sol, curtail) in zip(axes, [("九州(福岡)", fuk, kyu_c), ("沖縄(那覇)", naha, oki_c)]):
+        sol = sol.copy()
+        sol["is_curtailed"] = sol["date"].isin(curtail["date"])
+        for label, sub, color in [("非制御日", sol[~sol["is_curtailed"]], "#94a3b8"),
+                                   ("制御日", sol[sol["is_curtailed"]], "#dc2626")]:
+            jitter = rng.uniform(-0.15, 0.15, len(sub))
+            x = (sub["is_curtailed"].astype(int) + jitter)
+            ax.scatter(x, sub["solar_mj"], s=8, alpha=0.35, color=color, label=label)
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(["非制御日", "制御日"])
+        ax.set_title(name)
+        ax.set_ylabel("全天日射量 (MJ/m²)")
+    fig.suptitle("①b 出力制御日は全天日射量が大きい側にも偏る（日照時間と同じ傾向）", fontsize=13)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "01b_scatter_solarmj.png", dpi=140)
+    plt.close(fig)
+
+
 def fig02_yearly_trend():
     kyu = pd.read_csv(PROCESSED_DIR / "kyushu_curtail_days.csv", parse_dates=["date"])
     # 気象庁側ではなく「fiscal_year_sheet」列があればそれを使う
@@ -281,6 +308,7 @@ def fig09_generation_corr_comparison():
 def main():
     fig00_pipeline_diagram()
     fig01_scatter_sunshine_curtail()
+    fig01b_scatter_solarmj_curtail()
     fig02_yearly_trend()
     fig03_weekday_ratio()
     fig04_discriminative_power()

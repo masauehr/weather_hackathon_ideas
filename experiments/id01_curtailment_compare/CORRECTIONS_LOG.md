@@ -27,6 +27,43 @@
 - #4→#5の流れは「指摘を受けて直した（つもり）が、関連する別の場所（図・モデル）まで直し切れていなかった」という、修正の伝播漏れの典型例。
 - 逆に言えば、**同じデータに対して複数の角度から疑問を持たれ続けたことで、精度が段階的に上がっていった**（Cohen's d、ロジスティック回帰AUC、発電量相関のいずれも、訂正を経るごとに「もっともらしい」だけでなく「実際に正しい」数値に近づいた）。
 
+## 代表的な3つの例（図で見る）
+
+### 例A: 季節による違い（#4・#5）
+
+最初の結論は「制御日のうち土日の割合は37.4%」という季節を区別しない一つの数字だけだった。
+「季節による変動はないのか？」という指摘を受けて月別に分解すると、九州・沖縄のどちらも
+**正反対の2パターンが混ざっていた**とわかった（春は頻発・曜日差小、夏〜初秋は希少・土日に極端に偏る）。
+
+![九州: 季節×曜日効果のグラフ。春は制御が多く曜日差が小さいが、夏は制御が少なく土日に極端に偏る](results/figs/10_seasonal_weekday.png)
+
+![沖縄: 季節変動のグラフ。5〜10月は出力制御が0日という九州とは異なるパターン](results/figs/11_okinawa_seasonal.png)
+
+### 例B: 前日指示 と 当日速報 — 日照時間の散布図（#8・最重要の訂正）
+
+「前日指示」列だけを見て、当日の「速報」による取り消しを見落としていたバグ。前日は晴れ予報で
+制御を指示したが、当日は曇って実際には不要だった、というケースを誤って「制御日」に含めていた。
+修正前は制御日（赤）が日照時間の短い側にも広く散らばっていたが、修正後は晴天側にはっきり集まった。
+
+| 訂正前 | 訂正後 |
+|---|---|
+| ![訂正前: 制御日が日照時間の短い側にも広く散らばる散布図](results/figs_before_correction/01_scatter_sunshine.png) | ![訂正後: 制御日が日照時間の長い側に明確に集まる散布図](results/figs/01_scatter_sunshine.png) |
+
+### 例C: 前日指示 と 当日速報 — 全天日射量の散布図（#8、別指標での再確認）
+
+同じ修正を、日照時間とは別の指標「全天日射量」でも確認した結果。日照時間（例B）と同様に、
+修正でノイズ（実際には制御不要だった日）が除かれ、高日射側への偏りが明確になった。
+
+| 訂正前 | 訂正後 |
+|---|---|
+| ![訂正前: 制御日が全天日射量の小さい側にも広く散らばる散布図](results/figs_before_correction/01b_scatter_solarmj.png) | ![訂正後: 制御日が全天日射量の大きい側に明確に集まる散布図](results/figs/01b_scatter_solarmj.png) |
+
+> 📝 この①bの「訂正前」図のみ、他の図とは作り方が異なる。`data/`はgit管理外のため、バグ修正後は
+> 当時（前日指示のみを見ていた頃）の制御日リストそのものは残っていない。そこでExcel/PDFの生データ
+> （`data/raw/`、これはgit管理外だが当時のまま手元に残っている）から当時のロジックだけを再現し、
+> 全天日射量版の散布図を新たに作成した（九州1170日/沖縄160日で、実際の当時の値1175日/160日に近い）。
+> 他の「訂正前」図（①②③④⑤⑦⑧⑨⑩⑪）はgit履歴から当時のPNGそのものを復元したものであり、再現ではない。
+
 ## 訂正前後の図の比較（#8: パーサーのバグ修正）
 
 最大の訂正（#8）について、修正前の図を [results/figs_before_correction/](results/figs_before_correction/) にgit履歴から復元して残した。現在の図（[README.md](README.md)・[REPORT.md](REPORT.md)参照）と見比べると、信号がどれだけクリアになったかが分かる。
@@ -34,6 +71,7 @@
 | 図 | 訂正前 | 訂正後 |
 |---|---|---|
 | ①散布図（制御日の日照時間） | [figs_before_correction/01_scatter_sunshine.png](results/figs_before_correction/01_scatter_sunshine.png) | [figs/01_scatter_sunshine.png](results/figs/01_scatter_sunshine.png) |
+| ①b散布図（制御日の全天日射量） | [figs_before_correction/01b_scatter_solarmj.png](results/figs_before_correction/01b_scatter_solarmj.png)（※再現図、上記注記参照） | [figs/01b_scatter_solarmj.png](results/figs/01b_scatter_solarmj.png) |
 | ②年次トレンド | [figs_before_correction/02_yearly_trend.png](results/figs_before_correction/02_yearly_trend.png) | [figs/02_yearly_trend.png](results/figs/02_yearly_trend.png) |
 | ③曜日別割合 | [figs_before_correction/03_weekday_ratio.png](results/figs_before_correction/03_weekday_ratio.png) | [figs/03_weekday_ratio.png](results/figs/03_weekday_ratio.png) |
 | ④判別力比較（Cohen's d） | [figs_before_correction/04_discriminative_power.png](results/figs_before_correction/04_discriminative_power.png) | [figs/04_discriminative_power.png](results/figs/04_discriminative_power.png) |
