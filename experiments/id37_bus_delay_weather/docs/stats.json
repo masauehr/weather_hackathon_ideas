@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-10-02T08:42:11.879377",
+  "total_observations": 5136,
+  "observations_with_weather": 815,
+  "observations_before_weather_tracking": 4321,
+  "period_start": "2026-10-02 08:31:38.843485",
+  "period_end": "2026-10-02 08:31:38.843485",
+  "delay_seconds": {
+    "mean": 155.7,
+    "median": 116.0,
+    "max": 1216.0,
+    "min": -23.0
+  },
+  "weather_coverage": {
+    "rows_with_precipitation_data": 815,
+    "rows_total": 815,
+    "rows_with_rain_detected": 0
+  },
+  "daily": [
+    {
+      "date": "2026-10-02",
+      "n": 815,
+      "mean_delay": 155.6957055214724,
+      "n_rain": 0
+    }
+  ]
+}

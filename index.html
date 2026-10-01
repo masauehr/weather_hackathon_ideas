@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ID-37 バス遅延×天気 データ収集モニター</title>
+<style>
+  :root {
+    --bg: #0c1220; --surface: #141c2e; --surface-2: #1c2740;
+    --fg: #eef2f8; --muted: #93a1bb; --accent: #f3a53a; --ok: #45c9a8; --warn: #e06878;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f7f5f0; --surface: #ffffff; --surface-2: #eef0f4;
+      --fg: #171c2b; --muted: #5b6478; --accent: #c97a12; --ok: #1f9a7d; --warn: #c23f52;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--fg); margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+    padding: 24px 16px 48px; max-width: 920px; margin-inline: auto;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: .9rem; margin: 0 0 28px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .card { background: var(--surface); border: 1px solid var(--surface-2); border-radius: 14px; padding: 16px 18px; }
+  .card .label { font-size: .75rem; color: var(--muted); letter-spacing: .04em; }
+  .card .value { font-size: 1.6rem; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .card .value.ok { color: var(--ok); }
+  .card .value.warn { color: var(--warn); }
+  section { margin-bottom: 28px; }
+  section h2 { font-size: 1rem; color: var(--muted); font-weight: 600; margin: 0 0 10px; }
+  #chart { background: var(--surface); border: 1px solid var(--surface-2); border-radius: 14px; padding: 16px; overflow-x: auto; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; font-size: .82rem; }
+  .bar-row .d { width: 76px; flex: 0 0 auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .bar-track { flex: 1; background: var(--surface-2); border-radius: 6px; height: 16px; min-width: 0; position: relative; }
+  .bar-fill { background: var(--accent); height: 100%; border-radius: 6px; }
+  .bar-row .n { width: 48px; flex: 0 0 auto; text-align: right; font-variant-numeric: tabular-nums; }
+  footer { color: var(--muted); font-size: .78rem; text-align: center; margin-top: 32px; }
+  #empty { color: var(--muted); padding: 24px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <h1>バス遅延 × 天気 データ収集モニター</h1>
+  <p class="sub">東京都交通局(都営バス)のリアルタイム遅延を5分おきにポーリングし、最寄りアメダス観測点の降水量と突き合わせて蓄積中。
+    <a href="https://github.com/masauehr/weather_hackathon_ideas/tree/main/experiments/id37_bus_delay_weather" target="_blank" rel="noopener">プロジェクト詳細</a></p>
+
+  <div id="empty" hidden>まだ観測データがありません。収集が始まると自動で表示されます。</div>
+
+  <div id="content" hidden>
+    <div class="grid">
+      <div class="card"><div class="label">累積観測数</div><div class="value" id="v-total">-</div></div>
+      <div class="card"><div class="label">天気付き観測数</div><div class="value ok" id="v-weather">-</div></div>
+      <div class="card"><div class="label">降水あり観測</div><div class="value" id="v-rain">-</div></div>
+      <div class="card"><div class="label">平均遅延</div><div class="value" id="v-delay">-</div></div>
+    </div>
+
+    <section>
+      <h2>観測期間</h2>
+      <div class="card"><span id="v-period">-</span></div>
+    </section>
+
+    <section>
+      <h2>日別の収集件数</h2>
+      <div id="chart"></div>
+    </section>
+  </div>
+
+  <footer id="updated">読み込み中...</footer>
+
+<script>
+async function load() {
+  try {
+    const res = await fetch('experiments/id37_bus_delay_weather/docs/stats.json?_=' + Date.now());
+    const s = await res.json();
+
+    if (!s.total_observations) {
+      document.getElementById('empty').hidden = false;
+      document.getElementById('updated').textContent = '最終更新: ' + new Date(s.generated_at).toLocaleString('ja-JP');
+      return;
+    }
+
+    document.getElementById('content').hidden = false;
+    document.getElementById('v-total').textContent = s.total_observations.toLocaleString();
+    document.getElementById('v-weather').textContent = s.observations_with_weather.toLocaleString();
+    const rainPct = s.weather_coverage.rows_total ? (s.weather_coverage.rows_with_rain_detected / s.weather_coverage.rows_total * 100).toFixed(1) : 0;
+    document.getElementById('v-rain').textContent = s.weather_coverage.rows_with_rain_detected.toLocaleString() + '件 (' + rainPct + '%)';
+    document.getElementById('v-delay').textContent = Math.round(s.delay_seconds.mean) + '秒';
+    document.getElementById('v-period').textContent =
+      new Date(s.period_start).toLocaleString('ja-JP') + ' 〜 ' + new Date(s.period_end).toLocaleString('ja-JP');
+
+    const chart = document.getElementById('chart');
+    const maxN = Math.max(...s.daily.map(d => d.n));
+    chart.innerHTML = s.daily.map(d => `
+      <div class="bar-row">
+        <div class="d">${d.date}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${maxN ? (d.n / maxN * 100) : 0}%"></div></div>
+        <div class="n">${d.n}</div>
+      </div>`).join('');
+
+    document.getElementById('updated').textContent = '最終更新: ' + new Date(s.generated_at).toLocaleString('ja-JP') + '（約30分おきに自動更新）';
+  } catch (e) {
+    document.getElementById('updated').textContent = 'データの読み込みに失敗しました: ' + e;
+  }
+}
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
