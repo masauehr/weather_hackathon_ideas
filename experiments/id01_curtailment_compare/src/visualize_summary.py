@@ -216,7 +216,7 @@ def fig07_backtest_comparison():
     df = build_backtest_dataset()
     results = []
     for col, label in [("sunshine_h", "実測そのまま\n(参考上限)"),
-                        ("amgsds_proxy_h", "AMGSDS風\n(快晴バイアス補正)"),
+                        ("amgsds_proxy_h", "AMGSDS模擬予報\n(快晴バイアス補正)"),
                         ("simplified_h", "簡略化\n(カテゴリ→分位点)")]:
         r = bt_evaluate(df, col, label.replace("\n", " "))
         results.append((label, r["auc"]))
@@ -230,7 +230,7 @@ def fig07_backtest_comparison():
         ax.text(b.get_x() + b.get_width() / 2, v + 0.005, f"{v:.3f}", ha="center", fontsize=10)
     ax.set_ylabel("ROC-AUC")
     ax.set_ylim(0.55, 0.85)
-    ax.set_title("⑦ バックテスト: 簡略化がAMGSDS風補正より僅かに優位\n（快晴バイアス補正がリスク信号を弱めるため）")
+    ax.set_title("⑦ バックテスト: 簡略化がAMGSDS模擬予報による補正より僅かに優位\n（快晴バイアス補正がリスク信号を弱めるため）")
     fig.tight_layout()
     fig.savefig(FIG_DIR / "07_backtest_comparison.png", dpi=140)
     plt.close(fig)
@@ -258,7 +258,7 @@ def fig09_generation_corr_comparison():
     gen = pd.read_csv(PROCESSED_DIR / "kyushu_generation_merged.csv", parse_dates=["date"])
     non_curtailed = gen[gen["is_curtailed"] == 0]
     methods = [("sunshine_h", "日照時間"), ("solar_mj", "全天日射量"),
-               ("amgsds_proxy_h", "AMGSDS風"), ("simplified_h", "簡略化")]
+               ("amgsds_proxy_h", "AMGSDS模擬予報"), ("simplified_h", "簡略化")]
     all_r = [gen["solar_mwh"].corr(gen[c]) for c, _ in methods]
     nc_r = [non_curtailed["solar_mwh"].corr(non_curtailed[c]) for c, _ in methods]
 

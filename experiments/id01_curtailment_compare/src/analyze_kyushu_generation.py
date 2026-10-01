@@ -31,7 +31,7 @@ def main():
 
     print("=== 実際の発電量[MWh]との相関（全日） ===")
     for col, name in [("sunshine_h", "実測日照時間"), ("solar_mj", "実測全天日射量"),
-                       ("amgsds_proxy_h", "AMGSDS風(快晴バイアス補正)"), ("simplified_h", "簡略化")]:
+                       ("amgsds_proxy_h", "AMGSDS模擬予報(快晴バイアス補正)"), ("simplified_h", "簡略化")]:
         r = df["solar_mwh"].corr(df[col])
         print(f"  {name:28s} r={r:.3f}")
 
@@ -39,7 +39,7 @@ def main():
     non_curtailed = df[df["is_curtailed"] == 0]
     print(f"  (n={len(non_curtailed)})")
     for col, name in [("sunshine_h", "実測日照時間"), ("solar_mj", "実測全天日射量"),
-                       ("amgsds_proxy_h", "AMGSDS風(快晴バイアス補正)"), ("simplified_h", "簡略化")]:
+                       ("amgsds_proxy_h", "AMGSDS模擬予報(快晴バイアス補正)"), ("simplified_h", "簡略化")]:
         r = non_curtailed["solar_mwh"].corr(non_curtailed[col])
         print(f"  {name:28s} r={r:.3f}")
 

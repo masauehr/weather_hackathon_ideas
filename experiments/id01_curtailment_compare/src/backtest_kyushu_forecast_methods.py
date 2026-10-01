@@ -1,4 +1,4 @@
-"""九州の過去の出力制御実績に対し、「AMGSDS風（快晴バイアス補正済み）予報」と「天気カテゴリの簡略化」
+"""九州の過去の出力制御実績に対し、「AMGSDS模擬予報（快晴バイアス補正済み）」と「天気カテゴリの簡略化」
 のどちらが出力制御の予測に有効かをバックテストする。
 
 ユーザーの提案: AMGSDSの実際の予報vintageアーカイブは福岡には存在しないため、代わりに
@@ -114,7 +114,7 @@ def main():
 
     results = []
     results.append(evaluate(df, "sunshine_h", "実測そのまま（オラクル、参考上限）"))
-    results.append(evaluate(df, "amgsds_proxy_h", "AMGSDS風（快晴バイアス補正シミュレーション）"))
+    results.append(evaluate(df, "amgsds_proxy_h", "AMGSDS模擬予報（快晴バイアス補正シミュレーション）"))
     results.append(evaluate(df, "simplified_h", "簡略化（天気カテゴリ→分位点）"))
 
     print("\n=== まとめ ===")
