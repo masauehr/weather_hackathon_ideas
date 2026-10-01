@@ -241,14 +241,32 @@ def fig08_generation_scatter():
     # 太陽光の導入量が年々増えているため、頭打ち効果を公平に見るには導入量がほぼ一定の
     # 直近期間に限定する（全期間だと「天気」ではなく「導入量の違う年の混在」になってしまう）
     gen = gen[gen["date"] >= "2023-01-01"]
-    fig, ax = plt.subplots(figsize=(8, 6))
-    for label, sub, color in [("非制御日", gen[gen["is_curtailed"] == 0], "#94a3b8"),
-                               ("制御日", gen[gen["is_curtailed"] == 1], "#dc2626")]:
-        ax.scatter(sub["solar_mj"], sub["solar_mwh"], s=10, alpha=0.4, color=color, label=label)
+    non_c = gen[gen["is_curtailed"] == 0]
+    curt = gen[gen["is_curtailed"] == 1]
+
+    # 非制御日だけで1次式を回帰（「晴れれば発電量も素直に伸びる」という線形の基準線）。
+    # 制御日がこの基準線からどれだけ下にずれるかで、頭打ち(非線形)を可視化する。
+    slope, intercept = np.polyfit(non_c["solar_mj"], non_c["solar_mwh"], 1)
+    r2 = np.corrcoef(non_c["solar_mj"], non_c["solar_mwh"])[0, 1] ** 2
+    x_line = np.array([gen["solar_mj"].min(), gen["solar_mj"].max()])
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    ax.scatter(non_c["solar_mj"], non_c["solar_mwh"], s=10, alpha=0.4, color="#94a3b8", label="非制御日")
+    ax.scatter(curt["solar_mj"], curt["solar_mwh"], s=10, alpha=0.4, color="#dc2626", label="制御日")
+    ax.plot(x_line, slope * x_line + intercept, color="#1d4ed8", lw=2, ls="--",
+            label=f"非制御日の回帰直線 (R²={r2:.2f})\n天候だけなら発電量はこの直線に乗るはず")
+
+    # 制御日の各点が、この基準線からどれだけ下にずれているか（頭打ち分）を薄く示す
+    curt_pred = slope * curt["solar_mj"] + intercept
+    below = curt_pred - curt["solar_mwh"]
+    ax.vlines(curt["solar_mj"], curt["solar_mwh"], curt_pred, color="#dc2626", alpha=0.08, lw=1)
+
     ax.set_xlabel("実測 全天日射量 (MJ/m²)")
     ax.set_ylabel("実際の発電量（太陽光単独, MWh/日）")
-    ax.set_title("⑧ 発電量との関係: 制御日は同じ日射量でも発電量が頭打ち\n（2023年以降、導入量がほぼ一定の期間に限定）")
-    ax.legend()
+    ax.set_title("⑧ 発電量との関係: 非制御日は線形、制御日は直線から下に外れる（頭打ち＝非線形）\n"
+                 f"2023年以降・導入量がほぼ一定の期間に限定／制御日の基準線からの平均ずれ {below.mean():,.0f}MWh",
+                 fontsize=11)
+    ax.legend(fontsize=9, loc="upper left")
     fig.tight_layout()
     fig.savefig(FIG_DIR / "08_generation_scatter.png", dpi=140)
     plt.close(fig)
