@@ -183,7 +183,7 @@ def fig05_auc_comparison():
         ax.text(b.get_x() + b.get_width() / 2, v + 0.01, f"{v:.3f}", ha="center", fontsize=10)
     ax.axhline(0.5, color="gray", ls=":", lw=1.5, label="ランダム(AUC=0.5)")
     ax.set_ylabel("ROC-AUC")
-    ax.set_ylim(0.4, 0.9)
+    ax.set_ylim(0.4, 0.98)
     ax.set_title("⑤ ロジスティック回帰: 月（季節）を入れると精度が跳ね上がる")
     ax.legend()
     fig.tight_layout()
@@ -229,7 +229,7 @@ def fig07_backtest_comparison():
     for b, v in zip(bars, aucs):
         ax.text(b.get_x() + b.get_width() / 2, v + 0.005, f"{v:.3f}", ha="center", fontsize=10)
     ax.set_ylabel("ROC-AUC")
-    ax.set_ylim(0.55, 0.72)
+    ax.set_ylim(0.55, 0.85)
     ax.set_title("⑦ バックテスト: 簡略化がAMGSDS風補正より僅かに優位\n（快晴バイアス補正がリスク信号を弱めるため）")
     fig.tight_layout()
     fig.savefig(FIG_DIR / "07_backtest_comparison.png", dpi=140)
@@ -296,10 +296,6 @@ def main():
     print(f"図を保存: {FIG_DIR}")
 
 
-if __name__ == "__main__":
-    main()
-
-
 def fig10_seasonal_weekday_effect():
     df = pd.read_csv(PROCESSED_DIR / "kyushu_curtail_days.csv", parse_dates=["date"])
     df["month"] = df["date"].dt.month
@@ -315,16 +311,24 @@ def fig10_seasonal_weekday_effect():
     ax1.set_xticks(range(1, 13))
 
     ax2 = ax1.twinx()
-    ax2.plot(weekend_ratio.index, weekend_ratio.values, color="#dc2626", marker="o",
-              lw=2, label="土日の割合（右軸）")
+    # サンプル数が小さい月(n<10)は参考値として区別する（7・8月はn=2〜3のため）
+    for m in range(1, 13):
+        n = counts[m]
+        if n == 0:
+            continue
+        marker = "o" if n >= 10 else "x"
+        alpha = 1.0 if n >= 10 else 0.4
+        ax2.plot(m, weekend_ratio[m], marker=marker, color="#dc2626", alpha=alpha, ms=9)
+    ax2.plot([], [], marker="o", color="#dc2626", label="土日の割合（右軸, 10件以上）")
+    ax2.plot([], [], marker="x", color="#dc2626", alpha=0.4, label="土日の割合（右軸, 10件未満・参考値）")
     ax2.axhline(2 / 7 * 100, color="gray", ls=":", lw=1.5, label="カレンダー上の土日割合(28.6%)")
     ax2.set_ylabel("制御日に占める土日の割合 (%)")
-    ax2.set_ylim(0, 100)
+    ax2.set_ylim(0, 105)
 
     ax1.set_title("⑩ 「土日に多い」は季節で大きく異なる\n（春は制御日自体が多く土日比率は低い、夏〜初秋は制御がまれで土日に偏る）", pad=14)
     handles1, labels1 = ax1.get_legend_handles_labels()
     handles2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left", fontsize=9)
+    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left", fontsize=8.5)
     fig.tight_layout()
     fig.savefig(FIG_DIR / "10_seasonal_weekday.png", dpi=140)
     plt.close(fig)
@@ -436,3 +440,7 @@ def fig13_roc_curve():
     fig.tight_layout()
     fig.savefig(FIG_DIR / "13_roc_curve.png", dpi=140)
     plt.close(fig)
+
+
+if __name__ == "__main__":
+    main()
