@@ -291,6 +291,8 @@ def main():
     fig09_generation_corr_comparison()
     fig10_seasonal_weekday_effect()
     fig11_okinawa_seasonal()
+    fig12_logistic_concept()
+    fig13_roc_curve()
     print(f"図を保存: {FIG_DIR}")
 
 
@@ -364,4 +366,73 @@ def fig11_okinawa_seasonal():
     ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper center", fontsize=8.5)
     fig.tight_layout()
     fig.savefig(FIG_DIR / "11_okinawa_seasonal.png", dpi=140)
+    plt.close(fig)
+
+
+def fig12_logistic_concept():
+    """ロジスティック回帰の仕組みを図解する概念図。"""
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 6.5)
+    ax.axis("off")
+
+    def box(x, y, w, h, text, color="#dbeafe", fontsize=10):
+        b = FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.08,rounding_size=0.12",
+                            linewidth=1.4, edgecolor="#334155", facecolor=color)
+        ax.add_patch(b)
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=fontsize)
+
+    def arrow(x1, y1, x2, y2):
+        ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=16,
+                                      linewidth=1.6, color="#334155"))
+
+    ax.text(0.2, 6.1, "⑫ ロジスティック回帰の仕組み", fontsize=14, weight="bold")
+
+    box(0.3, 3.9, 2.3, 1.4, "特徴量\n(日照時間・曜日・\n月・経過年数)", color="#fef3c7", fontsize=9.5)
+    arrow(2.7, 4.6, 3.6, 4.6)
+    box(3.6, 3.9, 2.3, 1.4, "各特徴量に重みを\nかけて合計する\n(回帰式)", color="#dbeafe", fontsize=9.5)
+    arrow(6.0, 4.6, 6.9, 4.6)
+    box(6.9, 3.9, 2.8, 1.4, "シグモイド関数で\n0〜1の確率に変換\n(出力制御の確率)", color="#e9d5ff", fontsize=9.5)
+
+    arrow(8.3, 3.9, 8.3, 2.7)
+    box(5.5, 1.5, 4.2, 1.1, "しきい値(例:0.5)で判定\n確率が0.5以上 → 「制御あり」と予測\n確率<0.5 → 「制御なし」と予測", color="#fee2e2", fontsize=9)
+
+    ax.text(0.2, 1.9, "この「しきい値」の選び方で\n適合率・再現率が変わる\n(下図⑬参照)", fontsize=9.5, color="#334155")
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "12_logistic_concept.png", dpi=140)
+    plt.close(fig)
+
+
+def fig13_roc_curve():
+    """フルモデル(月+日照+曜日+トレンド)の実際のROC曲線を描き、AUCの意味を図解する。"""
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_curve, roc_auc_score
+
+    df = build_dataset()
+    df["month"] = df["date"].dt.month
+    month_dummies = pd.get_dummies(df["month"], prefix="month", drop_first=True)
+    df = pd.concat([df, month_dummies], axis=1)
+    feats = list(month_dummies.columns) + ["sunshine_h", "is_weekend_or_holiday", "years_since_start"]
+
+    n_train = int(len(df) * 0.7)
+    train, test = df.iloc[:n_train], df.iloc[n_train:]
+    model = LogisticRegression(max_iter=1000)
+    model.fit(train[feats], train["is_curtailed"])
+    proba = model.predict_proba(test[feats])[:, 1]
+    fpr, tpr, _ = roc_curve(test["is_curtailed"], proba)
+    auc = roc_auc_score(test["is_curtailed"], proba)
+
+    fig, ax = plt.subplots(figsize=(6.5, 6.5))
+    ax.plot(fpr, tpr, color="#dc2626", lw=2.5, label=f"フルモデル (AUC={auc:.3f})")
+    ax.fill_between(fpr, tpr, alpha=0.15, color="#dc2626")
+    ax.plot([0, 1], [0, 1], color="gray", ls=":", lw=1.5, label="ランダム (AUC=0.5)")
+    ax.set_xlabel("偽陽性率\n(制御が無い日を「制御あり」と誤予測した割合)")
+    ax.set_ylabel("真陽性率\n(制御がある日を正しく「制御あり」と予測できた割合)")
+    ax.set_title("⑬ ROC曲線: AUCは「ランダムな2日を見せたとき\n制御日をより高い確率と正しく順位付けできる割合」")
+    ax.legend(loc="lower right")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "13_roc_curve.png", dpi=140)
     plt.close(fig)
