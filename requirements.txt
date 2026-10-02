@@ -20,6 +20,7 @@ pdfplumber>=0.11     # 「日々の天気図」PDFの座標抽出 — ID-32 fetc
 pdf2image>=1.17      # 同PDFのページ画像化（要 poppler: brew install poppler）
 jpholiday>=0.1       # 日本の祝日判定 — ID-01 logistic_model.py で使用
 scikit-learn>=1.3    # ロジスティック回帰・AUC評価 — ID-01 logistic_model.py で使用
+xlrd>=2.0            # 資源エネルギー庁FITポータルの旧形式.xls読み込み — ID-01 fetch_pv_capacity.py で使用
 
 # --- 本設計フェーズで使う予定（スパイクでは未使用） ---
 # lightgbm>=4.0      # 価格の分位点回帰

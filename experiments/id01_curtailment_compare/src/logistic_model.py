@@ -21,6 +21,14 @@ PROCESSED_DIR = BASE_DIR / "data" / "processed"
 TRAIN_RATIO = 0.7
 
 
+def load_capacity_daily() -> pd.Series:
+    """資源エネルギー庁FITポータルの四半期データ(fetch_pv_capacity.py)を日次に線形補間する。"""
+    cap = pd.read_csv(PROCESSED_DIR / "kyushu_pv_capacity_quarterly.csv", parse_dates=["date"])
+    cap = cap.set_index("date")["capacity_kw"].sort_index()
+    daily_index = pd.date_range(cap.index.min(), cap.index.max(), freq="D")
+    return cap.reindex(daily_index).interpolate("linear")
+
+
 def build_dataset() -> pd.DataFrame:
     curtail = pd.read_csv(PROCESSED_DIR / "kyushu_curtail_days.csv", parse_dates=["date"])
     sun = pd.read_csv(PROCESSED_DIR / "sunshine_fukuoka.csv", parse_dates=["date"])
@@ -36,6 +44,11 @@ def build_dataset() -> pd.DataFrame:
     # 制御頻度が年々増えているのは主に天気ではなく太陽光の導入量増加が効いていると見て、
     # 天気・曜日の効果と分離できるかを確認するために追加。
     df["years_since_start"] = (df["date"] - df["date"].min()).dt.days / 365.25
+
+    # 「次にやるなら」#4: 経過年数の素朴な近似ではなく、資源エネルギー庁FITポータルの
+    # 実際の導入容量(九州本土7県、百万kW)に置き換えたらトレンド項として優れるかを検証する。
+    capacity_daily = load_capacity_daily()
+    df["capacity_million_kw"] = df["date"].map(capacity_daily) / 1e6
     return df
 
 
@@ -77,10 +90,15 @@ def main():
     results.append(evaluate(df, ["sunshine_h"], "日照時間のみ"))
     results.append(evaluate(df, ["sunshine_h", "is_weekend_or_holiday"], "日照時間＋曜日（土日祝）"))
     results.append(evaluate(df, ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
-                             "日照時間＋曜日＋トレンド（導入量増加の近似）"))
-    results.append(evaluate(df, month_cols + ["years_since_start"], "月（季節）のみ＋トレンド"))
+                             "日照時間＋曜日＋トレンド（経過年数の近似）"))
+    results.append(evaluate(df, ["sunshine_h", "is_weekend_or_holiday", "capacity_million_kw"],
+                             "日照時間＋曜日＋トレンド（実際の導入容量）"))
+    results.append(evaluate(df, month_cols + ["years_since_start"], "月（季節）のみ＋トレンド（経過年数）"))
+    results.append(evaluate(df, month_cols + ["capacity_million_kw"], "月（季節）のみ＋トレンド（導入容量）"))
     results.append(evaluate(df, month_cols + ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
-                             "月＋日照＋曜日＋トレンド（フル）"))
+                             "月＋日照＋曜日＋トレンド（経過年数、フル）"))
+    results.append(evaluate(df, month_cols + ["sunshine_h", "is_weekend_or_holiday", "capacity_million_kw"],
+                             "月＋日照＋曜日＋トレンド（実際の導入容量、フル）"))
 
     print("=== まとめ ===")
     for r in results:
