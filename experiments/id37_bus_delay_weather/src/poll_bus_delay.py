@@ -17,7 +17,7 @@ BusTimetableの取得結果は data/raw/busTimetable_cache.json にキャッシ�
 
 天気側: 各バス停に最も近いアメダス観測点の10分降水量を同じ行に付与する
 （コスト・精度を検討した結果、まずは軽量なアメダスから。詳細はfetch_amedas.py参照）。
-バス停の緯度経度は data/raw/busstop_latlon_cache.json にキャッシュする。
+バス停の緯度経度・名称は data/raw/busstop_latlon_cache.json にキャッシュする。
 """
 import datetime as dt
 import json
@@ -84,10 +84,10 @@ def save_busstop_cache(cache: dict):
     BUSSTOP_LATLON_CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False))
 
 
-def fetch_busstop_latlon(busstop_id: str, cache: dict, max_retry: int = 5) -> tuple | None:
-    """バス停の(緯度, 経度)を返す。初回のみODPTに問い合わせ、以降はキャッシュを使う。"""
+def fetch_busstop_info(busstop_id: str, cache: dict, max_retry: int = 5) -> dict | None:
+    """バス停の{"lat", "lon", "name"}を返す。初回のみODPTに問い合わせ、以降はキャッシュを使う。"""
     if busstop_id in cache:
-        return tuple(cache[busstop_id]) if cache[busstop_id] else None
+        return cache[busstop_id]
     for attempt in range(max_retry):
         try:
             results = get("odpt:BusstopPole", **{"owl:sameAs": busstop_id})
@@ -101,12 +101,13 @@ def fetch_busstop_latlon(busstop_id: str, cache: dict, max_retry: int = 5) -> tu
         return None
 
     if results and "geo:lat" in results[0]:
-        latlon = (results[0]["geo:lat"], results[0]["geo:long"])
+        info = {"lat": results[0]["geo:lat"], "lon": results[0]["geo:long"],
+                "name": results[0].get("dc:title")}
     else:
-        latlon = None
-    cache[busstop_id] = latlon
+        info = None
+    cache[busstop_id] = info
     time.sleep(0.3)
-    return latlon
+    return info
 
 
 def scheduled_time_for_stop(timetable: dict, busstop_id: str, actual_dt: dt.datetime):
@@ -158,9 +159,10 @@ def poll_once() -> pd.DataFrame:
 
         # バス停に最も近いアメダス観測点の10分降水量を付与
         station_code, station_name, station_dist_km, precip10m = None, None, None, None
-        latlon = fetch_busstop_latlon(from_pole, busstop_cache)
-        if latlon and amedas_obs:
-            station_code, station_dist_km = fetch_amedas.nearest_station(*latlon, amedas_stations)
+        busstop_info = fetch_busstop_info(from_pole, busstop_cache)
+        if busstop_info and amedas_obs:
+            station_code, station_dist_km = fetch_amedas.nearest_station(
+                busstop_info["lat"], busstop_info["lon"], amedas_stations)
             station_name = amedas_stations[station_code]["name"]
             precip10m = amedas_obs.get(station_code, {}).get("precipitation10m", [None])[0]
 
@@ -169,6 +171,7 @@ def poll_once() -> pd.DataFrame:
             "bus_id": bus.get("owl:sameAs"),
             "busroute": bus.get("odpt:busroute"),
             "busstop": from_pole,
+            "busstop_name": busstop_info["name"] if busstop_info else None,
             "scheduled_time": scheduled_dt.isoformat(),
             "actual_time": actual_dt.isoformat(),
             "delay_seconds": delay_seconds,

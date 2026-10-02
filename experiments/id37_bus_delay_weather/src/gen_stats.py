@@ -40,6 +40,23 @@ def main():
                .reset_index())
     daily["date"] = daily["date"].astype(str)
 
+    def _short(value: str) -> str:
+        """'odpt.Busroute:Toei.T01' -> 'T01' のように、ODPTのID接頭辞を落として読みやすくする。"""
+        return str(value).rsplit(".", 1)[-1] if pd.notna(value) else value
+
+    latest = df.sort_values("actual_time", ascending=False).head(5)
+    latest_observations = [
+        {
+            "actual_time": row["actual_time"],
+            "busroute": _short(row["busroute"]),
+            "busstop": row.get("busstop_name") or _short(row["busstop"]),
+            "delay_seconds": row["delay_seconds"],
+            "amedas_station": row["amedas_station"],
+            "precipitation10m_mm": row["precipitation10m_mm"],
+        }
+        for _, row in latest.iterrows()
+    ]
+
     stats = {
         "generated_at": pd.Timestamp.now().isoformat(),
         "total_observations": len(df) + old_count,
@@ -59,6 +76,7 @@ def main():
             "rows_with_rain_detected": int((df["precipitation10m_mm"].fillna(0) > 0).sum()),
         },
         "daily": daily.to_dict(orient="records"),
+        "latest_observations": latest_observations,
     }
     STATS_PATH.write_text(json.dumps(stats, ensure_ascii=False, indent=2))
     print(f"stats.json更新: 総観測数{stats['total_observations']}件, "

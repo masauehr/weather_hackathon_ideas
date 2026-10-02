@@ -37,6 +37,14 @@
   .bar-track { flex: 1; background: var(--surface-2); border-radius: 6px; height: 16px; min-width: 0; position: relative; }
   .bar-fill { background: var(--accent); height: 100%; border-radius: 6px; }
   .bar-row .n { width: 48px; flex: 0 0 auto; text-align: right; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--surface-2);
+          border-radius: 14px; overflow: hidden; font-size: .85rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--surface-2); }
+  th { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-variant-numeric: tabular-nums; text-align: right; }
+  .rain-yes { color: var(--accent); font-weight: 700; }
+  .tablewrap { overflow-x: auto; }
   footer { color: var(--muted); font-size: .78rem; text-align: center; margin-top: 32px; }
   #empty { color: var(--muted); padding: 24px; text-align: center; }
   a { color: var(--accent); }
@@ -65,6 +73,18 @@
     <section>
       <h2>日別の収集件数</h2>
       <div id="chart"></div>
+    </section>
+
+    <section>
+      <h2>最新5件の観測</h2>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>通過時刻</th><th>系統</th><th>バス停</th><th>遅延</th><th>アメダス観測点</th><th>10分降水量</th></tr>
+          </thead>
+          <tbody id="latest-body"></tbody>
+        </table>
+      </div>
     </section>
   </div>
 
@@ -99,6 +119,23 @@ async function load() {
         <div class="bar-track"><div class="bar-fill" style="width:${maxN ? (d.n / maxN * 100) : 0}%"></div></div>
         <div class="n">${d.n}</div>
       </div>`).join('');
+
+    const latestBody = document.getElementById('latest-body');
+    latestBody.innerHTML = (s.latest_observations || []).map(o => {
+      const rain = o.precipitation10m_mm;
+      const rainText = (rain === null || rain === undefined) ? '-' : rain + 'mm';
+      const rainClass = (rain > 0) ? 'rain-yes' : '';
+      const delayMin = (o.delay_seconds / 60).toFixed(1);
+      return `
+        <tr>
+          <td>${new Date(o.actual_time).toLocaleTimeString('ja-JP')}</td>
+          <td>${o.busroute}</td>
+          <td>${o.busstop}</td>
+          <td class="num">${delayMin}分</td>
+          <td>${o.amedas_station || '-'}</td>
+          <td class="num ${rainClass}">${rainText}</td>
+        </tr>`;
+    }).join('');
 
     document.getElementById('updated').textContent = '最終更新: ' + new Date(s.generated_at).toLocaleString('ja-JP') + '（約30分おきに自動更新）';
   } catch (e) {
