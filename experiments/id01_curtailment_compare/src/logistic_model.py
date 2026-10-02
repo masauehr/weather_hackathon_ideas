@@ -40,6 +40,14 @@ def build_dataset() -> pd.DataFrame:
     df["is_holiday"] = df["date"].apply(lambda d: jpholiday.is_holiday(d.date()))
     df["is_weekend_or_holiday"] = (df["is_weekend"] | df["is_holiday"]).astype(int)
     df = df.dropna(subset=["sunshine_h"]).sort_values("date").reset_index(drop=True)
+
+    # 「次にやるなら」#7: 単一点(福岡)より九州全体の面で見た方が出力制御予測の精度が
+    # 上がるかを検証する。(a)気象庁AMeDAS7県平均、(b)農研機構AMGSDSの九州メッシュ面平均、の2通り。
+    kyushu_mean = pd.read_csv(PROCESSED_DIR / "sunshine_kyushu_mainland_mean.csv", parse_dates=["date"])
+    df = df.merge(kyushu_mean[["date", "sunshine_h_kyushu_mean"]], on="date", how="left")
+    amgsds_mesh = pd.read_csv(PROCESSED_DIR / "sunshine_amgsds_kyushu_mesh_mean.csv", parse_dates=["date"])
+    df = df.merge(amgsds_mesh[["date", "sunshine_h_amgsds_mesh_mean"]], on="date", how="left")
+
     # 導入設備容量の増加を素朴に近似するトレンド項（開始日からの経過年数）。
     # 制御頻度が年々増えているのは主に天気ではなく太陽光の導入量増加が効いていると見て、
     # 天気・曜日の効果と分離できるかを確認するために追加。
@@ -99,6 +107,21 @@ def main():
                              "月＋日照＋曜日＋トレンド（経過年数、フル）"))
     results.append(evaluate(df, month_cols + ["sunshine_h", "is_weekend_or_holiday", "capacity_million_kw"],
                              "月＋日照＋曜日＋トレンド（実際の導入容量、フル）"))
+
+    # 「次にやるなら」#7: 単一点(福岡)より九州全体の面で見た方が精度が上がるか
+    df_mesh = df.dropna(subset=["sunshine_h_kyushu_mean", "sunshine_h_amgsds_mesh_mean"]).reset_index(drop=True)
+    results.append(evaluate(df_mesh, ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
+                             "日照（福岡単一点）＋曜日＋トレンド"))
+    results.append(evaluate(df_mesh, ["sunshine_h_kyushu_mean", "is_weekend_or_holiday", "years_since_start"],
+                             "日照（AMeDAS九州7県平均）＋曜日＋トレンド"))
+    results.append(evaluate(df_mesh, ["sunshine_h_amgsds_mesh_mean", "is_weekend_or_holiday", "years_since_start"],
+                             "日照（AMGSDS九州メッシュ面平均）＋曜日＋トレンド"))
+    results.append(evaluate(df_mesh, month_cols + ["sunshine_h", "is_weekend_or_holiday", "years_since_start"],
+                             "フル（福岡単一点）"))
+    results.append(evaluate(df_mesh, month_cols + ["sunshine_h_kyushu_mean", "is_weekend_or_holiday", "years_since_start"],
+                             "フル（AMeDAS九州7県平均）"))
+    results.append(evaluate(df_mesh, month_cols + ["sunshine_h_amgsds_mesh_mean", "is_weekend_or_holiday", "years_since_start"],
+                             "フル（AMGSDS九州メッシュ面平均）"))
 
     print("=== まとめ ===")
     for r in results:

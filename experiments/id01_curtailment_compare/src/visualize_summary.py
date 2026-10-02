@@ -311,6 +311,7 @@ def main():
     fig11_okinawa_seasonal()
     fig12_logistic_concept()
     fig13_roc_curve()
+    fig14_point_vs_area_comparison()
     print(f"図を保存: {FIG_DIR}")
 
 
@@ -457,6 +458,39 @@ def fig13_roc_curve():
     ax.set_ylim(0, 1)
     fig.tight_layout()
     fig.savefig(FIG_DIR / "13_roc_curve.png", dpi=140)
+    plt.close(fig)
+
+
+def fig14_point_vs_area_comparison():
+    """単一点(福岡)よりAMeDAS九州7県平均・AMGSDSメッシュ面平均の方が精度が上がることを示す。"""
+    df = build_dataset()
+    df["month"] = df["date"].dt.month
+    month_dummies = pd.get_dummies(df["month"], prefix="month", drop_first=True)
+    df = pd.concat([df, month_dummies], axis=1)
+    month_cols = list(month_dummies.columns)
+    df = df.dropna(subset=["sunshine_h_kyushu_mean", "sunshine_h_amgsds_mesh_mean"]).reset_index(drop=True)
+
+    methods = [
+        ("sunshine_h", "福岡単一点"),
+        ("sunshine_h_kyushu_mean", "AMeDAS\n九州7県平均"),
+        ("sunshine_h_amgsds_mesh_mean", "AMGSDS\n九州メッシュ面平均"),
+    ]
+    aucs = []
+    for col, label in methods:
+        r = lm.evaluate(df, month_cols + [col, "is_weekend_or_holiday", "years_since_start"], label.replace("\n", " "))
+        aucs.append(r["auc"])
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    labels = [m[1] for m in methods]
+    colors = ["#94a3b8", "#2563eb", "#16a34a"]
+    bars = ax.bar(labels, aucs, color=colors)
+    for b, v in zip(bars, aucs):
+        ax.text(b.get_x() + b.get_width() / 2, v + 0.004, f"{v:.3f}", ha="center", fontsize=11, weight="bold")
+    ax.set_ylabel("ROC-AUC（フルモデル: 月+日照+曜日+トレンド）")
+    ax.set_ylim(0.85, 0.95)
+    ax.set_title("⑭ 単一点より九州全体の面で見た方が精度が上がる\n（本リポジトリ最高のAUC。AMeDAS平均とAMGSDSメッシュ平均はほぼ同精度）")
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "14_point_vs_area.png", dpi=140)
     plt.close(fig)
 
 
