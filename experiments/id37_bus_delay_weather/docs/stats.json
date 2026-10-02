@@ -1,67 +1,67 @@
 {
-  "generated_at": "2026-10-02T13:38:26.668242",
-  "total_observations": 12760,
-  "observations_with_weather": 8439,
+  "generated_at": "2026-10-02T15:54:26.372311",
+  "total_observations": 13798,
+  "observations_with_weather": 9477,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-02 13:11:58.875470",
+  "period_end": "2026-10-02 15:45:36.093895",
   "delay_seconds": {
-    "mean": 147.5,
-    "median": 100.0,
+    "mean": 147.4,
+    "median": 99.0,
     "max": 1877.0,
     "min": -339.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 8439,
-    "rows_total": 8439,
+    "rows_with_precipitation_data": 9477,
+    "rows_total": 9477,
     "rows_with_rain_detected": 274
   },
   "daily": [
     {
       "date": "2026-10-02",
-      "n": 8439,
-      "mean_delay": 147.47754473278823,
+      "n": 9477,
+      "mean_delay": 147.41479371109,
       "n_rain": 274
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-02T13:11:35+09:00",
-      "busroute": "Ike86",
-      "busstop": "鳩森小学校西",
-      "delay_seconds": 455.0,
+      "actual_time": "2026-10-02T15:45:04+09:00",
+      "busroute": "Shina96",
+      "busstop": "天王洲運河",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-02T13:11:33+09:00",
-      "busroute": "Ue46",
-      "busstop": "南千住三丁目",
-      "delay_seconds": 93.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-02T15:45:03+09:00",
+      "busroute": "Kame29",
+      "busstop": "北砂四丁目",
+      "delay_seconds": 3.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-02T13:11:33+09:00",
-      "busroute": "Kusa63",
-      "busstop": "新庚申塚",
-      "delay_seconds": 33.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-02T13:11:33+09:00",
-      "busroute": "Shiro61",
-      "busstop": "都立新宿山吹高校前",
-      "delay_seconds": 93.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-02T13:11:33+09:00",
+      "actual_time": "2026-10-02T15:45:02+09:00",
       "busroute": "Shina99",
-      "busstop": "港南大橋下",
-      "delay_seconds": 93.0,
+      "busstop": "品川駅港南口",
+      "delay_seconds": 2.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-02T15:45:02+09:00",
+      "busroute": "Shina98",
+      "busstop": "食肉市場前",
+      "delay_seconds": 62.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-02T15:45:02+09:00",
+      "busroute": "Aki26",
+      "busstop": "人形町三丁目",
+      "delay_seconds": 2.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
