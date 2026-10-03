@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-03T12:05:04.872070",
-  "total_observations": 19834,
-  "observations_with_weather": 15513,
+  "generated_at": "2026-10-03T12:35:07.079705",
+  "total_observations": 22334,
+  "observations_with_weather": 18013,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-03 11:54:01.980617",
+  "period_end": "2026-10-03 12:30:45.056095",
   "delay_seconds": {
-    "mean": 139.9,
-    "median": 91.0,
-    "max": 1877.0,
+    "mean": 145.0,
+    "median": 95.0,
+    "max": 2146.0,
     "min": -359.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 15513,
-    "rows_total": 15513,
+    "rows_with_precipitation_data": 18013,
+    "rows_total": 18013,
     "rows_with_rain_detected": 274
   },
   "daily": [
@@ -25,49 +25,49 @@
     },
     {
       "date": "2026-10-03",
-      "n": 4244,
-      "mean_delay": 108.47643732327992,
+      "n": 6744,
+      "mean_delay": 133.63730723606167,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-03T11:53:35+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "浅草橋駅前",
-      "delay_seconds": 335.0,
+      "actual_time": "2026-10-03T12:30:06+09:00",
+      "busroute": "Shina98",
+      "busstop": "新東海橋",
+      "delay_seconds": 6.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-03T11:53:34+09:00",
+      "actual_time": "2026-10-03T12:30:05+09:00",
+      "busroute": "Ume70",
+      "busstop": "横田",
+      "delay_seconds": 725.0,
+      "amedas_station": "所沢",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-03T12:30:04+09:00",
       "busroute": "Ta87",
-      "busstop": "田町駅前",
-      "delay_seconds": 34.0,
+      "busstop": "慶応義塾大前",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-03T11:53:33+09:00",
-      "busroute": "Hashi63",
-      "busstop": "納戸町",
-      "delay_seconds": 273.0,
+      "actual_time": "2026-10-03T12:30:04+09:00",
+      "busroute": "Shuku74",
+      "busstop": "新宿駅西口",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-03T11:53:33+09:00",
-      "busroute": "Shuku75",
-      "busstop": "新宿五丁目",
-      "delay_seconds": 93.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-03T11:53:33+09:00",
-      "busroute": "Kusa63",
-      "busstop": "堀割",
-      "delay_seconds": 93.0,
+      "actual_time": "2026-10-03T12:30:04+09:00",
+      "busroute": "Kusa64",
+      "busstop": "西巣鴨",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
