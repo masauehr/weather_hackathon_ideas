@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-03T13:35:11.181131",
-  "total_observations": 27410,
-  "observations_with_weather": 23089,
+  "generated_at": "2026-10-03T14:05:13.182999",
+  "total_observations": 29937,
+  "observations_with_weather": 25616,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-03 13:30:31.380156",
+  "period_end": "2026-10-03 14:00:04.563977",
   "delay_seconds": {
-    "mean": 153.5,
-    "median": 101.0,
+    "mean": 157.7,
+    "median": 103.0,
     "max": 2146.0,
     "min": -359.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 23089,
-    "rows_total": 23089,
+    "rows_with_precipitation_data": 25616,
+    "rows_total": 25616,
     "rows_with_rain_detected": 274
   },
   "daily": [
@@ -25,50 +25,50 @@
     },
     {
       "date": "2026-10-03",
-      "n": 11820,
-      "mean_delay": 155.14788494077834,
+      "n": 14347,
+      "mean_delay": 162.4184149996515,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-03T13:30:05+09:00",
-      "busroute": "Nishiki40",
-      "busstop": "錦糸公園前",
-      "delay_seconds": 185.0,
+      "actual_time": "2026-10-03T13:59:34+09:00",
+      "busroute": "Shina91",
+      "busstop": "食肉市場前",
+      "delay_seconds": 394.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-03T13:30:05+09:00",
-      "busroute": "Ume77Kou",
-      "busstop": "吹上中学校入口",
-      "delay_seconds": 5.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-03T13:30:04+09:00",
-      "busroute": "Higashi43",
-      "busstop": "田端新町三丁目",
-      "delay_seconds": 64.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-03T13:30:04+09:00",
-      "busroute": "Ike65",
-      "busstop": "目白駅前",
-      "delay_seconds": 244.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-03T13:30:04+09:00",
-      "busroute": "I92",
-      "busstop": "品川総合福祉センター前",
-      "delay_seconds": 244.0,
+      "actual_time": "2026-10-03T13:59:34+09:00",
+      "busroute": "Shina93",
+      "busstop": "都立八潮高校前",
+      "delay_seconds": 454.0,
       "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-03T13:59:33+09:00",
+      "busroute": "Shina93",
+      "busstop": "品川車庫前",
+      "delay_seconds": 93.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-03T13:59:33+09:00",
+      "busroute": "Mon33",
+      "busstop": "清澄庭園前",
+      "delay_seconds": 273.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-03T13:59:32+09:00",
+      "busroute": "Kame24",
+      "busstop": "大島八丁目",
+      "delay_seconds": 32.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
