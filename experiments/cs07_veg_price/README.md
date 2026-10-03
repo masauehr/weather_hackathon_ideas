@@ -32,6 +32,7 @@
 | 気象（日別・降水/最高気温/日照/全天日射） | 気象庁「過去の気象データ検索」 daily_s1.php（view=p1 と a3） | `fetch_jma_daily.py` | ◎ 公開・鍵不要・完全自動 |
 | 卸売価格（東京・日別） | ベジ探「卸売市場別入荷量・価格」 sch7.do | `fetch_veg_price.py` | ◎ 鍵不要・完全自動（1リクエスト=1か月） |
 | 卸売価格（東京・月次 2011〜） | ベジ探「卸売市場別入荷量・価格」 sch7.do（月別 outPutKbn=1） | `fetch_veg_price.py --monthly` | ◎ 鍵不要・完全自動（1リクエスト=1年） |
+| キャベツ入荷量・単価（東京・月次 5年） | 同上（月別 outPutKbn=1, 品目317000） | `fetch_cabbage_monthly.py 2021 2025` | ◎ 鍵不要・完全自動（5リクエスト・間隔3秒）。出力 `data/cs07/veg_qty_cabbage_monthly.csv` |
 | 特徴×ラグの相関＋ヒートマップ（②） | — | `analyze_lag_corr.py` | `results/lag_corr_<品目>.png`, `summary_<品目>.txt` |
 | **単一仮説の検証（③・本命）** | — | `analyze_spinach_hotdays.py` | `results/spinach_hotdays.png`, `spinach_hotdays.txt` |
 | 日照ディープダイブ（6パネル・①） | — | `plot_diagnostics.py` | `results/diagnostics_<品目>.png`（日照のみ） |
