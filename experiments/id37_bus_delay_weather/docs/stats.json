@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-04T16:47:07.648273",
-  "total_observations": 71302,
-  "observations_with_weather": 66981,
+  "generated_at": "2026-10-04T17:17:10.117730",
+  "total_observations": 73706,
+  "observations_with_weather": 69385,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-04 13:54:01.833910",
+  "period_end": "2026-10-04 17:12:12.266481",
   "delay_seconds": {
-    "mean": 169.0,
+    "mean": 168.8,
     "median": 106.0,
     "max": 2146.0,
     "min": -363.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 66981,
-    "rows_total": 66981,
+    "rows_with_precipitation_data": 69385,
+    "rows_total": 69385,
     "rows_with_rain_detected": 274
   },
   "daily": [
@@ -31,49 +31,49 @@
     },
     {
       "date": "2026-10-04",
-      "n": 23372,
-      "mean_delay": 150.48823378401505,
+      "n": 25776,
+      "mean_delay": 151.7506207324643,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-04T13:53:34+09:00",
-      "busroute": "Shuku91",
-      "busstop": "新中野駅前",
-      "delay_seconds": 274.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-04T13:53:34+09:00",
-      "busroute": "Rinkai28-2",
-      "busstop": "臨海町四丁目",
-      "delay_seconds": 154.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-04T13:53:33+09:00",
+      "actual_time": "2026-10-04T17:11:36+09:00",
       "busroute": "Ume70",
-      "busstop": "殿ヶ谷",
-      "delay_seconds": 33.0,
+      "busstop": "芋窪",
+      "delay_seconds": 156.0,
       "amedas_station": "所沢",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-04T13:53:33+09:00",
-      "busroute": "Shiro61",
-      "busstop": "練馬総合病院入口",
-      "delay_seconds": 33.0,
-      "amedas_station": "練馬",
+      "actual_time": "2026-10-04T17:11:33+09:00",
+      "busroute": "Higashi43",
+      "busstop": "宮城都営住宅前",
+      "delay_seconds": 153.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-04T13:53:33+09:00",
-      "busroute": "Shiro61",
-      "busstop": "歌舞伎町",
+      "actual_time": "2026-10-04T17:11:33+09:00",
+      "busroute": "Hata44",
+      "busstop": "動坂下",
       "delay_seconds": 93.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-04T17:11:31+09:00",
+      "busroute": "T05-1",
+      "busstop": "有楽町駅前",
+      "delay_seconds": 391.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-04T17:11:31+09:00",
+      "busroute": "Ike86",
+      "busstop": "北参道",
+      "delay_seconds": 91.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
