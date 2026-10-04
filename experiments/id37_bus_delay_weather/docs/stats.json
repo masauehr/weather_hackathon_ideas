@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-05T06:47:10.838428",
-  "total_observations": 92458,
-  "observations_with_weather": 88137,
+  "generated_at": "2026-10-05T08:47:26.182250",
+  "total_observations": 96063,
+  "observations_with_weather": 91742,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-05 06:41:08.779454",
+  "period_end": "2026-10-05 08:45:41.728082",
   "delay_seconds": {
-    "mean": 164.1,
+    "mean": 163.5,
     "median": 102.0,
     "max": 2179.0,
-    "min": -363.0
+    "min": -752.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 88137,
-    "rows_total": 88137,
+    "rows_with_precipitation_data": 91742,
+    "rows_total": 91742,
     "rows_with_rain_detected": 274
   },
   "daily": [
@@ -37,50 +37,50 @@
     },
     {
       "date": "2026-10-05",
-      "n": 1175,
-      "mean_delay": 78.77787234042553,
+      "n": 4780,
+      "mean_delay": 131.43430962343095,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-05T06:40:35+09:00",
-      "busroute": "Ume77Kou",
-      "busstop": "青梅第四小学校前",
-      "delay_seconds": 95.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-05T06:40:32+09:00",
-      "busroute": "Shina93",
-      "busstop": "白金台五丁目",
-      "delay_seconds": 92.0,
+      "actual_time": "2026-10-05T08:45:06+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "東神田",
+      "delay_seconds": 6.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-05T06:40:32+09:00",
-      "busroute": "Higashi16",
-      "busstop": "春海橋",
-      "delay_seconds": 92.0,
+      "actual_time": "2026-10-05T08:45:05+09:00",
+      "busroute": "T05-2",
+      "busstop": "晴海三丁目",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-05T06:40:32+09:00",
-      "busroute": "Mon19",
-      "busstop": "豊洲四丁目",
-      "delay_seconds": 152.0,
+      "actual_time": "2026-10-05T08:45:05+09:00",
+      "busroute": "Hashi86",
+      "busstop": "広尾駅前（広尾橋）",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-05T06:40:31+09:00",
-      "busroute": "Shinko29",
-      "busstop": "桑川町",
-      "delay_seconds": 151.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-10-05T08:45:04+09:00",
+      "busroute": "Shina91",
+      "busstop": "品川警察署入口",
+      "delay_seconds": 64.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-05T08:45:03+09:00",
+      "busroute": "Hashi86",
+      "busstop": "新橋駅前",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
