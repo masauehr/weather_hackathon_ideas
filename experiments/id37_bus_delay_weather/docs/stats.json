@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-07T05:58:06.582286",
-  "total_observations": 141413,
-  "observations_with_weather": 137092,
+  "generated_at": "2026-10-07T06:28:08.737543",
+  "total_observations": 141817,
+  "observations_with_weather": 137496,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-07 05:53:36.016437",
+  "period_end": "2026-10-07 06:24:04.468946",
   "delay_seconds": {
-    "mean": 155.0,
+    "mean": 154.7,
     "median": 98.0,
     "max": 2426.0,
     "min": -752.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 137092,
-    "rows_total": 137092,
+    "rows_with_precipitation_data": 137496,
+    "rows_total": 137496,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -49,49 +49,49 @@
     },
     {
       "date": "2026-10-07",
-      "n": 23,
-      "mean_delay": 48.91304347826087,
+      "n": 427,
+      "mean_delay": 72.75175644028103,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-07T05:53:04+09:00",
-      "busroute": "Ou78",
-      "busstop": "高円寺陸橋",
-      "delay_seconds": 4.0,
-      "amedas_station": "練馬",
+      "actual_time": "2026-10-07T06:23:04+09:00",
+      "busroute": "Shina93",
+      "busstop": "白金小学校前",
+      "delay_seconds": 124.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T05:52:56+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "明治橋",
-      "delay_seconds": -4.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-07T05:52:54+09:00",
-      "busroute": "Nishikatsu20Otsu",
-      "busstop": "中央卸売市場葛西市場前",
-      "delay_seconds": 54.0,
+      "actual_time": "2026-10-07T06:23:03+09:00",
+      "busroute": "Aki26",
+      "busstop": "長島町交差点",
+      "delay_seconds": 3.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T05:52:40+09:00",
-      "busroute": "Ou78",
-      "busstop": "豊玉中",
-      "delay_seconds": 160.0,
+      "actual_time": "2026-10-07T06:23:03+09:00",
+      "busroute": "Ue46",
+      "busstop": "はなみずき通り中央",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-07T06:23:02+09:00",
+      "busroute": "Ike65",
+      "busstop": "豊玉中二丁目",
+      "delay_seconds": 2.0,
       "amedas_station": "練馬",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T05:52:23+09:00",
-      "busroute": "T02",
-      "busstop": "大塚三丁目",
-      "delay_seconds": 23.0,
+      "actual_time": "2026-10-07T06:23:02+09:00",
+      "busroute": "Nishiki37",
+      "busstop": "八広三丁目",
+      "delay_seconds": 242.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
