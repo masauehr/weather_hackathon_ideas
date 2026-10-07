@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-08T08:10:45.305343",
-  "total_observations": 200810,
-  "observations_with_weather": 196489,
+  "generated_at": "2026-10-08T08:40:47.720812",
+  "total_observations": 205617,
+  "observations_with_weather": 201296,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-08 07:09:32.706657",
+  "period_end": "2026-10-08 08:38:27.134995",
   "delay_seconds": {
-    "mean": 156.7,
-    "median": 95.0,
+    "mean": 157.4,
+    "median": 96.0,
     "max": 3761.0,
-    "min": -752.0
+    "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 196489,
-    "rows_total": 196489,
+    "rows_with_precipitation_data": 201296,
+    "rows_total": 201296,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -55,50 +55,50 @@
     },
     {
       "date": "2026-10-08",
-      "n": 692,
-      "mean_delay": 96.66907514450867,
+      "n": 5499,
+      "mean_delay": 175.68448808874342,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-08T07:09:04+09:00",
-      "busroute": "Shibu66",
-      "busstop": "西武百貨店前",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-10-08T08:37:33+09:00",
+      "busroute": "Shina91",
+      "busstop": "天王洲橋",
+      "delay_seconds": 93.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-08T07:09:04+09:00",
-      "busroute": "I92",
-      "busstop": "八潮パークタウン",
-      "delay_seconds": 4.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-10-08T08:37:33+09:00",
+      "busroute": "Ou57",
+      "busstop": "王子三丁目",
+      "delay_seconds": 393.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-08T07:09:04+09:00",
-      "busroute": "Shina98",
-      "busstop": "丸全昭和前",
-      "delay_seconds": 124.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-10-08T08:37:33+09:00",
+      "busroute": "Ou49",
+      "busstop": "椿二丁目",
+      "delay_seconds": 153.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-08T07:09:03+09:00",
-      "busroute": "Hira28",
-      "busstop": "小松川健康サポートセンター前",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-10-08T08:37:33+09:00",
+      "busroute": "Sato48",
+      "busstop": "江北陸橋下",
+      "delay_seconds": 33.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-08T08:37:33+09:00",
+      "busroute": "T05-2",
+      "busstop": "武蔵野大学前",
+      "delay_seconds": 153.0,
       "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-08T07:09:03+09:00",
-      "busroute": "Mon33",
-      "busstop": "森下駅前",
-      "delay_seconds": 63.0,
-      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
