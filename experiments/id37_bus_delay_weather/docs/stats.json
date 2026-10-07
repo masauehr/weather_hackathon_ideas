@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-07T09:32:30.422178",
-  "total_observations": 152306,
-  "observations_with_weather": 147985,
+  "generated_at": "2026-10-07T10:02:32.561219",
+  "total_observations": 155552,
+  "observations_with_weather": 151231,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-07 09:30:57.114827",
+  "period_end": "2026-10-07 09:57:22.178437",
   "delay_seconds": {
-    "mean": 154.5,
+    "mean": 154.4,
     "median": 97.0,
     "max": 2923.0,
     "min": -752.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 147985,
-    "rows_total": 147985,
+    "rows_with_precipitation_data": 151231,
+    "rows_total": 151231,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -49,49 +49,49 @@
     },
     {
       "date": "2026-10-07",
-      "n": 10916,
-      "mean_delay": 148.28114694027116,
+      "n": 14162,
+      "mean_delay": 149.21112837169892,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-07T09:30:35+09:00",
-      "busroute": "Tan96",
-      "busstop": "御殿山小学校前",
-      "delay_seconds": 155.0,
+      "actual_time": "2026-10-07T09:57:05+09:00",
+      "busroute": "Shibu66",
+      "busstop": "笹塚駅前",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T09:30:34+09:00",
+      "actual_time": "2026-10-07T09:57:05+09:00",
       "busroute": "Ou78",
-      "busstop": "王子三丁目",
-      "delay_seconds": 454.0,
+      "busstop": "高円寺駅入口",
+      "delay_seconds": 125.0,
+      "amedas_station": "練馬",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-07T09:57:05+09:00",
+      "busroute": "Hama95",
+      "busstop": "東京タワー",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T09:30:33+09:00",
-      "busroute": "Higashi42-1",
-      "busstop": "隅田公園",
-      "delay_seconds": 33.0,
+      "actual_time": "2026-10-07T09:57:05+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "東武浅草駅前",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T09:30:33+09:00",
-      "busroute": "Higashi43",
-      "busstop": "宮城都営住宅前",
-      "delay_seconds": 273.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-07T09:30:33+09:00",
-      "busroute": "Haya77",
-      "busstop": "西早稲田",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-10-07T09:57:05+09:00",
+      "busroute": "Tan94",
+      "busstop": "高輪台駅前",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
