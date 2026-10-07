@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-07T15:02:55.676323",
-  "total_observations": 184499,
-  "observations_with_weather": 180178,
+  "generated_at": "2026-10-07T15:32:58.034134",
+  "total_observations": 187569,
+  "observations_with_weather": 183248,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-07 14:57:29.346642",
+  "period_end": "2026-10-07 15:29:18.600818",
   "delay_seconds": {
-    "mean": 156.3,
+    "mean": 156.4,
     "median": 95.0,
     "max": 3761.0,
     "min": -752.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 180178,
-    "rows_total": 180178,
+    "rows_with_precipitation_data": 183248,
+    "rows_total": 183248,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -49,49 +49,49 @@
     },
     {
       "date": "2026-10-07",
-      "n": 43109,
-      "mean_delay": 160.4300958036605,
+      "n": 46179,
+      "mean_delay": 160.4535394876459,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-07T14:57:05+09:00",
-      "busroute": "Shina98",
-      "busstop": "２号バース前",
+      "actual_time": "2026-10-07T15:29:06+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "青梅第一中学校前",
+      "delay_seconds": 6.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-07T15:29:05+09:00",
+      "busroute": "Hama95",
+      "busstop": "田町駅東口",
       "delay_seconds": 5.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-07T14:57:05+09:00",
-      "busroute": "T05-2",
-      "busstop": "勝どき橋南詰",
-      "delay_seconds": 125.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-07T14:57:04+09:00",
-      "busroute": "Ue58",
-      "busstop": "鶴巻町",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-07T14:57:04+09:00",
-      "busroute": "T05-1",
-      "busstop": "晴海トリトンスクエア前",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-07T14:57:03+09:00",
-      "busroute": "Ou55",
-      "busstop": "新田一丁目",
+      "actual_time": "2026-10-07T15:29:03+09:00",
+      "busroute": "Ii64",
+      "busstop": "九段下",
       "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-07T15:29:03+09:00",
+      "busroute": "Tan96",
+      "busstop": "高輪一丁目",
+      "delay_seconds": 183.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-07T15:29:03+09:00",
+      "busroute": "Higashi43",
+      "busstop": "宮城小学校前",
+      "delay_seconds": 243.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
