@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-09T08:27:16.006468",
-  "total_observations": 257515,
-  "observations_with_weather": 253194,
+  "generated_at": "2026-10-09T08:57:18.420697",
+  "total_observations": 262254,
+  "observations_with_weather": 257933,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-09 08:25:18.203914",
+  "period_end": "2026-10-09 08:55:38.060166",
   "delay_seconds": {
-    "mean": 164.1,
+    "mean": 163.8,
     "median": 99.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 253194,
-    "rows_total": 253194,
+    "rows_with_precipitation_data": 257933,
+    "rows_total": 257933,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -61,49 +61,49 @@
     },
     {
       "date": "2026-10-09",
-      "n": 2822,
-      "mean_delay": 138.7058823529412,
+      "n": 7561,
+      "mean_delay": 144.34175373627826,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-09T08:25:05+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "南千住駅西口",
-      "delay_seconds": 605.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T08:25:05+09:00",
-      "busroute": "Shina99",
-      "busstop": "埠頭通り",
-      "delay_seconds": 305.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T08:25:05+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "一之江橋西詰",
-      "delay_seconds": 5.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T08:25:04+09:00",
+      "actual_time": "2026-10-09T08:55:05+09:00",
       "busroute": "Ume76Hei",
-      "busstop": "万年橋",
-      "delay_seconds": 4.0,
+      "busstop": "畑中三丁目",
+      "delay_seconds": 5.0,
       "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-09T08:25:04+09:00",
-      "busroute": "Shibu66",
-      "busstop": "八幡下",
+      "actual_time": "2026-10-09T08:55:04+09:00",
+      "busroute": "Rinkai28-1",
+      "busstop": "共育プラザ一之江入口",
+      "delay_seconds": 124.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T08:55:04+09:00",
+      "busroute": "Ou55",
+      "busstop": "王子駅前",
       "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T08:55:04+09:00",
+      "busroute": "Hashi63",
+      "busstop": "国会議事堂前",
+      "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T08:55:03+09:00",
+      "busroute": "Aki26",
+      "busstop": "浜町中の橋",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
