@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-09T20:14:20.706913",
-  "total_observations": 287915,
-  "observations_with_weather": 283594,
+  "generated_at": "2026-10-09T20:44:23.278341",
+  "total_observations": 289940,
+  "observations_with_weather": 285619,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-09 20:10:19.943753",
+  "period_end": "2026-10-09 20:41:13.670378",
   "delay_seconds": {
-    "mean": 165.0,
+    "mean": 165.2,
     "median": 101.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 283594,
-    "rows_total": 283594,
+    "rows_with_precipitation_data": 285619,
+    "rows_total": 285619,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -61,50 +61,50 @@
     },
     {
       "date": "2026-10-09",
-      "n": 33222,
-      "mean_delay": 169.82993197278913,
+      "n": 35247,
+      "mean_delay": 171.04669900984482,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-09T20:10:05+09:00",
-      "busroute": "Shina98",
-      "busstop": "楽水橋（品川車庫入口）",
-      "delay_seconds": 65.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T20:10:05+09:00",
-      "busroute": "Shina99",
-      "busstop": "港南大橋東詰",
-      "delay_seconds": 725.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T20:10:04+09:00",
-      "busroute": "Shina93",
-      "busstop": "都立八潮高校前",
-      "delay_seconds": 184.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T20:10:04+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "馬喰町",
-      "delay_seconds": 1204.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-09T20:10:03+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "江戸川臨海郵便局前",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-10-09T20:40:33+09:00",
+      "busroute": "Kasai24",
+      "busstop": "葛西南高校入口",
+      "delay_seconds": 153.0,
       "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T20:40:32+09:00",
+      "busroute": "Kusa64",
+      "busstop": "新三河島駅前",
+      "delay_seconds": 392.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T20:40:32+09:00",
+      "busroute": "Ue58",
+      "busstop": "音羽一丁目",
+      "delay_seconds": 152.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T20:40:32+09:00",
+      "busroute": "Ta87",
+      "busstop": "恵比寿駅前",
+      "delay_seconds": 692.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-09T20:40:32+09:00",
+      "busroute": "Ou41",
+      "busstop": "新田三丁目",
+      "delay_seconds": 152.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
