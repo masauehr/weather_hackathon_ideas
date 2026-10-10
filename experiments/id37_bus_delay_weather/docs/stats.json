@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-10T09:15:25.637514",
-  "total_observations": 308196,
-  "observations_with_weather": 303875,
+  "generated_at": "2026-10-10T09:45:28.183110",
+  "total_observations": 310741,
+  "observations_with_weather": 306420,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-10 09:12:33.317683",
+  "period_end": "2026-10-10 09:41:44.686412",
   "delay_seconds": {
-    "mean": 162.6,
+    "mean": 162.3,
     "median": 99.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 303875,
-    "rows_total": 303875,
+    "rows_with_precipitation_data": 306420,
+    "rows_total": 306420,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -67,48 +67,48 @@
     },
     {
       "date": "2026-10-10",
-      "n": 12582,
-      "mean_delay": 96.86178667938324,
+      "n": 15127,
+      "mean_delay": 102.01401467574536,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-10T09:12:05+09:00",
-      "busroute": "Ue69",
-      "busstop": "湯島四丁目",
-      "delay_seconds": 65.0,
+      "actual_time": "2026-10-10T09:41:03+09:00",
+      "busroute": "Ta87",
+      "busstop": "三光坂下",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T09:12:05+09:00",
-      "busroute": "Kuro77",
-      "busstop": "青山陸橋下",
-      "delay_seconds": 65.0,
+      "actual_time": "2026-10-10T09:41:03+09:00",
+      "busroute": "I92",
+      "busstop": "品川総合福祉センター前",
+      "delay_seconds": 3.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T09:41:03+09:00",
+      "busroute": "Ue46",
+      "busstop": "東上野六丁目",
+      "delay_seconds": 63.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T09:12:04+09:00",
-      "busroute": "Taka71",
-      "busstop": "東新宿駅前",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-10T09:41:03+09:00",
+      "busroute": "Nishiki25",
+      "busstop": "亀戸九丁目",
+      "delay_seconds": 3.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T09:12:04+09:00",
-      "busroute": "Shina98",
-      "busstop": "新東海橋",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T09:12:03+09:00",
-      "busroute": "Kusa64",
-      "busstop": "日本堤",
+      "actual_time": "2026-10-10T09:41:03+09:00",
+      "busroute": "Ue01",
+      "busstop": "竜岡門",
       "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
