@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-10T16:35:13.455070",
-  "total_observations": 321553,
-  "observations_with_weather": 317232,
+  "generated_at": "2026-10-10T17:05:15.994681",
+  "total_observations": 324211,
+  "observations_with_weather": 319890,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-10 16:34:49.242219",
+  "period_end": "2026-10-10 17:00:45.154026",
   "delay_seconds": {
-    "mean": 162.9,
+    "mean": 163.2,
     "median": 99.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 317232,
-    "rows_total": 317232,
+    "rows_with_precipitation_data": 319890,
+    "rows_total": 319890,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -67,49 +67,49 @@
     },
     {
       "date": "2026-10-10",
-      "n": 25939,
-      "mean_delay": 134.27317938239716,
+      "n": 28597,
+      "mean_delay": 139.9022624750848,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-10T16:34:35+09:00",
-      "busroute": "T05-2",
-      "busstop": "勝どき駅前",
-      "delay_seconds": 875.0,
+      "actual_time": "2026-10-10T17:00:04+09:00",
+      "busroute": "Kame29",
+      "busstop": "北砂四丁目",
+      "delay_seconds": 64.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T17:00:04+09:00",
+      "busroute": "Cha07",
+      "busstop": "東大病院前",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:34:34+09:00",
-      "busroute": "Kita47",
-      "busstop": "都立足立高校前",
-      "delay_seconds": 514.0,
+      "actual_time": "2026-10-10T17:00:04+09:00",
+      "busroute": "Shiro61",
+      "busstop": "目白駅前",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:34:33+09:00",
-      "busroute": "T05-1",
-      "busstop": "勝どき橋南詰",
-      "delay_seconds": 273.0,
+      "actual_time": "2026-10-10T17:00:03+09:00",
+      "busroute": "Shuku74",
+      "busstop": "若松町",
+      "delay_seconds": 123.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:34:33+09:00",
-      "busroute": "Aki26",
-      "busstop": "岩本町一丁目",
-      "delay_seconds": 153.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T16:34:33+09:00",
-      "busroute": "Ue46",
-      "busstop": "下谷神社前",
-      "delay_seconds": 33.0,
+      "actual_time": "2026-10-10T17:00:03+09:00",
+      "busroute": "Ou49",
+      "busstop": "王子駅前",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
