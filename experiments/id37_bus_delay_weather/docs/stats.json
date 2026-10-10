@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-10T16:05:11.105166",
-  "total_observations": 318356,
-  "observations_with_weather": 314035,
+  "generated_at": "2026-10-10T16:35:13.455070",
+  "total_observations": 321553,
+  "observations_with_weather": 317232,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-10 16:03:54.911497",
+  "period_end": "2026-10-10 16:34:49.242219",
   "delay_seconds": {
-    "mean": 162.6,
+    "mean": 162.9,
     "median": 99.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 314035,
-    "rows_total": 314035,
+    "rows_with_precipitation_data": 317232,
+    "rows_total": 317232,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -67,49 +67,49 @@
     },
     {
       "date": "2026-10-10",
-      "n": 22742,
-      "mean_delay": 126.43817606191188,
+      "n": 25939,
+      "mean_delay": 134.27317938239716,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-10T16:03:35+09:00",
-      "busroute": "Shina96",
-      "busstop": "東京海洋大学本部前",
-      "delay_seconds": 35.0,
+      "actual_time": "2026-10-10T16:34:35+09:00",
+      "busroute": "T05-2",
+      "busstop": "勝どき駅前",
+      "delay_seconds": 875.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:03:34+09:00",
-      "busroute": "Shina97",
-      "busstop": "左門町",
-      "delay_seconds": 154.0,
+      "actual_time": "2026-10-10T16:34:34+09:00",
+      "busroute": "Kita47",
+      "busstop": "都立足立高校前",
+      "delay_seconds": 514.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:03:33+09:00",
-      "busroute": "Shina91",
-      "busstop": "東品川三丁目",
-      "delay_seconds": 213.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T16:03:32+09:00",
-      "busroute": "Mon33",
-      "busstop": "月島第一小学校前",
-      "delay_seconds": 392.0,
+      "actual_time": "2026-10-10T16:34:33+09:00",
+      "busroute": "T05-1",
+      "busstop": "勝どき橋南詰",
+      "delay_seconds": 273.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-10T16:03:32+09:00",
-      "busroute": "Hashi63",
-      "busstop": "新橋駅前",
-      "delay_seconds": 32.0,
+      "actual_time": "2026-10-10T16:34:33+09:00",
+      "busroute": "Aki26",
+      "busstop": "岩本町一丁目",
+      "delay_seconds": 153.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T16:34:33+09:00",
+      "busroute": "Ue46",
+      "busstop": "下谷神社前",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
