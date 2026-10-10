@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-10T20:05:30.602335",
-  "total_observations": 338641,
-  "observations_with_weather": 334320,
+  "generated_at": "2026-10-10T20:35:33.256906",
+  "total_observations": 340226,
+  "observations_with_weather": 335905,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-10 20:02:43.829649",
+  "period_end": "2026-10-10 20:30:42.811138",
   "delay_seconds": {
-    "mean": 163.9,
+    "mean": 163.8,
     "median": 99.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 334320,
-    "rows_total": 334320,
+    "rows_with_precipitation_data": 335905,
+    "rows_total": 335905,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -67,50 +67,50 @@
     },
     {
       "date": "2026-10-10",
-      "n": 43027,
-      "mean_delay": 152.94310549190044,
+      "n": 44612,
+      "mean_delay": 153.17954810364924,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-10T20:02:05+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "総合レクリエーション公園前",
-      "delay_seconds": 65.0,
+      "actual_time": "2026-10-10T20:30:05+09:00",
+      "busroute": "Shina98",
+      "busstop": "食肉市場前",
+      "delay_seconds": 245.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T20:30:04+09:00",
+      "busroute": "Ou55",
+      "busstop": "ハートアイランド東",
+      "delay_seconds": 64.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T20:30:04+09:00",
+      "busroute": "T05-2",
+      "busstop": "東京駅丸の内南口",
+      "delay_seconds": 184.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T20:30:03+09:00",
+      "busroute": "Ou41",
+      "busstop": "豊島八丁目",
+      "delay_seconds": 243.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-10T20:30:03+09:00",
+      "busroute": "Kasai24",
+      "busstop": "なぎさニュータウン",
+      "delay_seconds": 3.0,
       "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T20:02:04+09:00",
-      "busroute": "Kita47",
-      "busstop": "島根町",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T20:02:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "東三丁目",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T20:02:04+09:00",
-      "busroute": "Kusa63",
-      "busstop": "上池袋一丁目",
-      "delay_seconds": -56.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-10T20:02:02+09:00",
-      "busroute": "Mon19",
-      "busstop": "豊洲駅前",
-      "delay_seconds": 2.0,
-      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
