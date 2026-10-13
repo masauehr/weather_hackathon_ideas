@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-13T13:19:25.216882",
-  "total_observations": 403205,
-  "observations_with_weather": 398884,
+  "generated_at": "2026-10-13T13:49:27.837766",
+  "total_observations": 406129,
+  "observations_with_weather": 401808,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-13 13:15:13.031210",
+  "period_end": "2026-10-13 13:46:02.611023",
   "delay_seconds": {
-    "mean": 165.1,
+    "mean": 165.0,
     "median": 100.0,
     "max": 3761.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 398520,
-    "rows_total": 398884,
+    "rows_with_precipitation_data": 401444,
+    "rows_total": 401808,
     "rows_with_rain_detected": 2204
   },
   "daily": [
@@ -85,49 +85,49 @@
     },
     {
       "date": "2026-10-13",
-      "n": 33727,
-      "mean_delay": 164.92068669018886,
+      "n": 36651,
+      "mean_delay": 163.8280538048075,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-13T13:14:34+09:00",
-      "busroute": "Shuku91",
-      "busstop": "鍋屋横丁",
-      "delay_seconds": 334.0,
+      "actual_time": "2026-10-13T13:45:36+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "宗泉寺",
+      "delay_seconds": 276.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-13T13:45:35+09:00",
+      "busroute": "Shina97",
+      "busstop": "高輪三丁目",
+      "delay_seconds": 215.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-13T13:14:34+09:00",
-      "busroute": "You12-1",
-      "busstop": "豊洲駅前",
-      "delay_seconds": 214.0,
+      "actual_time": "2026-10-13T13:45:34+09:00",
+      "busroute": "Ii64",
+      "busstop": "小滝橋",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-13T13:14:34+09:00",
-      "busroute": "Ike86",
-      "busstop": "渋谷駅西口",
-      "delay_seconds": 334.0,
+      "actual_time": "2026-10-13T13:45:34+09:00",
+      "busroute": "Kusa63",
+      "busstop": "西浅草三丁目",
+      "delay_seconds": 154.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-13T13:14:33+09:00",
-      "busroute": "Shuku75",
-      "busstop": "東新宿保健センター前",
-      "delay_seconds": 273.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-13T13:14:33+09:00",
-      "busroute": "Ii62",
-      "busstop": "東京新宿メディカルセンター前",
-      "delay_seconds": 273.0,
+      "actual_time": "2026-10-13T13:45:33+09:00",
+      "busroute": "Ike65",
+      "busstop": "池袋駅東口",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
