@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-14T13:26:07.273901",
-  "total_observations": 469885,
-  "observations_with_weather": 465564,
+  "generated_at": "2026-10-14T13:56:10.159486",
+  "total_observations": 472794,
+  "observations_with_weather": 468473,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-14 13:24:03.900517",
+  "period_end": "2026-10-14 13:54:24.576794",
   "delay_seconds": {
     "mean": 164.6,
     "median": 100.0,
@@ -12,8 +12,8 @@
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 464679,
-    "rows_total": 465564,
+    "rows_with_precipitation_data": 467588,
+    "rows_total": 468473,
     "rows_with_rain_detected": 2852
   },
   "daily": [
@@ -91,49 +91,49 @@
     },
     {
       "date": "2026-10-14",
-      "n": 41497,
-      "mean_delay": 158.21507578861122,
+      "n": 44406,
+      "mean_delay": 158.59428906003694,
       "n_rain": 638
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-14T13:23:33+09:00",
-      "busroute": "Shina99",
-      "busstop": "京浜運河",
-      "delay_seconds": 273.0,
+      "actual_time": "2026-10-14T13:54:05+09:00",
+      "busroute": "Shina93",
+      "busstop": "勝島一丁目",
+      "delay_seconds": 185.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-14T13:54:04+09:00",
+      "busroute": "Kusa64",
+      "busstop": "大関横丁",
+      "delay_seconds": 304.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T13:23:33+09:00",
-      "busroute": "Hashi86",
-      "busstop": "愛育クリニック前",
-      "delay_seconds": 213.0,
+      "actual_time": "2026-10-14T13:54:04+09:00",
+      "busroute": "Kusa63",
+      "busstop": "西日暮里五丁目",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T13:23:33+09:00",
-      "busroute": "Ue01",
-      "busstop": "竜岡門",
-      "delay_seconds": 213.0,
+      "actual_time": "2026-10-14T13:54:04+09:00",
+      "busroute": "Shina97",
+      "busstop": "北青山一丁目アパート前",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T13:23:32+09:00",
-      "busroute": "Hata44",
-      "busstop": "動坂下",
-      "delay_seconds": 272.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-14T13:23:32+09:00",
-      "busroute": "Ike86",
-      "busstop": "渋谷駅西口",
-      "delay_seconds": 92.0,
+      "actual_time": "2026-10-14T13:54:03+09:00",
+      "busroute": "Ou49",
+      "busstop": "王子五丁目",
+      "delay_seconds": 63.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
