@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-15T01:14:38.626637",
-  "total_observations": 488820,
-  "observations_with_weather": 484499,
+  "generated_at": "2026-10-15T06:56:07.689634",
+  "total_observations": 489139,
+  "observations_with_weather": 484818,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-14 22:45:33.321209",
+  "period_end": "2026-10-15 06:39:58.747522",
   "delay_seconds": {
     "mean": 164.4,
-    "median": 100.0,
+    "median": 99.0,
     "max": 4404.0,
     "min": -827.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 483614,
-    "rows_total": 484499,
+    "rows_with_precipitation_data": 483933,
+    "rows_total": 484818,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -94,47 +94,53 @@
       "n": 60432,
       "mean_delay": 159.13587172359016,
       "n_rain": 847
+    },
+    {
+      "date": "2026-10-15",
+      "n": 319,
+      "mean_delay": 82.17868338557994,
+      "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-14T22:45:02+09:00",
-      "busroute": "Mon19",
-      "busstop": "門前仲町",
-      "delay_seconds": 2.0,
+      "actual_time": "2026-10-15T06:39:34+09:00",
+      "busroute": "Ou40Shutsunyuu",
+      "busstop": "上池袋三丁目",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T22:45:01+09:00",
-      "busroute": "Higashi22",
-      "busstop": "錦糸町駅前",
-      "delay_seconds": 1.0,
+      "actual_time": "2026-10-15T06:39:33+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "青梅総合高校入口",
+      "delay_seconds": 153.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-15T06:39:33+09:00",
+      "busroute": "Nishiki37",
+      "busstop": "中居堀",
+      "delay_seconds": 213.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T22:45:01+09:00",
-      "busroute": "Ike86Shutsunyuu",
-      "busstop": "高田馬場二丁目",
-      "delay_seconds": 1.0,
+      "actual_time": "2026-10-15T06:39:33+09:00",
+      "busroute": "Nishiki37",
+      "busstop": "よつぎ小学校前",
+      "delay_seconds": 93.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-14T22:45:01+09:00",
-      "busroute": "Shuku91",
-      "busstop": "和田堀橋",
-      "delay_seconds": 61.0,
-      "amedas_station": "練馬",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-14T22:44:59+09:00",
-      "busroute": "Kusa63",
-      "busstop": "池袋駅東口",
-      "delay_seconds": 1199.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-15T06:39:31+09:00",
+      "busroute": "Nari10",
+      "busstop": "枝川二丁目",
+      "delay_seconds": 271.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
