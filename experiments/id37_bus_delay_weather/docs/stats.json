@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-15T13:42:17.077337",
-  "total_observations": 529924,
-  "observations_with_weather": 525603,
+  "generated_at": "2026-10-15T14:12:19.915501",
+  "total_observations": 532894,
+  "observations_with_weather": 528573,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-15 13:37:13.116790",
+  "period_end": "2026-10-15 14:08:09.149990",
   "delay_seconds": {
-    "mean": 184.4,
-    "median": 103.0,
+    "mean": 186.9,
+    "median": 104.0,
     "max": 11912.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 524718,
-    "rows_total": 525603,
+    "rows_with_precipitation_data": 527688,
+    "rows_total": 528573,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -97,49 +97,49 @@
     },
     {
       "date": "2026-10-15",
-      "n": 41104,
-      "mean_delay": 419.37536492798756,
+      "n": 44074,
+      "mean_delay": 433.9529200889413,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-15T13:36:35+09:00",
-      "busroute": "Shina91",
-      "busstop": "東品川三丁目",
-      "delay_seconds": 1535.0,
+      "actual_time": "2026-10-15T14:07:35+09:00",
+      "busroute": "Hashi86",
+      "busstop": "中ノ橋",
+      "delay_seconds": 95.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-15T14:07:34+09:00",
+      "busroute": "I92",
+      "busstop": "都立産業技術高専品川キャンパス前",
+      "delay_seconds": 994.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T13:36:35+09:00",
-      "busroute": "T05-2",
-      "busstop": "東京駅丸の内南口",
-      "delay_seconds": 1475.0,
+      "actual_time": "2026-10-15T14:07:34+09:00",
+      "busroute": "Ou55",
+      "busstop": "王子消防署前",
+      "delay_seconds": 154.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T13:36:34+09:00",
-      "busroute": "Ou49",
-      "busstop": "足立区役所",
-      "delay_seconds": 514.0,
+      "actual_time": "2026-10-15T14:07:33+09:00",
+      "busroute": "Haya81",
+      "busstop": "四谷四丁目",
+      "delay_seconds": 213.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T13:36:34+09:00",
-      "busroute": "Ou40Kou",
-      "busstop": "上池袋一丁目",
-      "delay_seconds": 994.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-15T13:36:34+09:00",
-      "busroute": "Kusa63",
-      "busstop": "荒川区役所前",
-      "delay_seconds": 1234.0,
+      "actual_time": "2026-10-15T14:07:33+09:00",
+      "busroute": "Hata44",
+      "busstop": "都立大荒川キャンパス前",
+      "delay_seconds": 513.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
