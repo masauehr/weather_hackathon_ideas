@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-16T04:48:17.687794",
-  "total_observations": 558192,
-  "observations_with_weather": 553871,
+  "generated_at": "2026-10-16T08:25:42.906088",
+  "total_observations": 558193,
+  "observations_with_weather": 553872,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-15 22:30:37.751715",
+  "period_end": "2026-10-16 05:07:21.913800",
   "delay_seconds": {
     "mean": 205.4,
     "median": 108.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 552878,
-    "rows_total": 553871,
+    "rows_with_precipitation_data": 552879,
+    "rows_total": 553872,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -100,9 +100,23 @@
       "n": 69372,
       "mean_delay": 491.78247708008996,
       "n_rain": 0
+    },
+    {
+      "date": "2026-10-16",
+      "n": 1,
+      "mean_delay": 129.0,
+      "n_rain": 0
     }
   ],
   "latest_observations": [
+    {
+      "actual_time": "2026-10-16T05:05:09+09:00",
+      "busroute": "Ichi01",
+      "busstop": "浜離宮前",
+      "delay_seconds": 129.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
     {
       "actual_time": "2026-10-15T22:30:03+09:00",
       "busroute": "T05-1",
@@ -132,14 +146,6 @@
       "busroute": "Nishikatsu20Kou",
       "busstop": "南葛西小学校前",
       "delay_seconds": 182.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
-    },
-    {
-      "actual_time": "2026-10-15T22:30:01+09:00",
-      "busroute": "Mon33",
-      "busstop": "東駒形一丁目",
-      "delay_seconds": 1621.0,
       "amedas_station": NaN,
       "precipitation10m_mm": NaN
     }
