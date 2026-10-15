@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-15T11:42:05.557020",
-  "total_observations": 518595,
-  "observations_with_weather": 514274,
+  "generated_at": "2026-10-15T12:12:08.472470",
+  "total_observations": 521589,
+  "observations_with_weather": 517268,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-15 11:38:47.394673",
+  "period_end": "2026-10-15 12:09:39.526278",
   "delay_seconds": {
-    "mean": 172.4,
+    "mean": 176.3,
     "median": 101.0,
-    "max": 11747.0,
+    "max": 11870.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 513389,
-    "rows_total": 514274,
+    "rows_with_precipitation_data": 516383,
+    "rows_total": 517268,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -97,49 +97,49 @@
     },
     {
       "date": "2026-10-15",
-      "n": 29775,
-      "mean_delay": 301.9458942065491,
+      "n": 32769,
+      "mean_delay": 352.16576642558516,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-15T11:38:05+09:00",
-      "busroute": "Shina93",
-      "busstop": "上大崎",
-      "delay_seconds": 245.0,
+      "actual_time": "2026-10-15T12:09:05+09:00",
+      "busroute": "Shibu66",
+      "busstop": "西武百貨店前",
+      "delay_seconds": 125.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T11:38:04+09:00",
-      "busroute": "Shina91",
-      "busstop": "品川駅港南口",
-      "delay_seconds": 1504.0,
+      "actual_time": "2026-10-15T12:09:04+09:00",
+      "busroute": "Ii64",
+      "busstop": "飯田橋駅前",
+      "delay_seconds": 1084.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T11:38:04+09:00",
-      "busroute": "You12-1",
-      "busstop": "塩浜東",
-      "delay_seconds": 4.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-15T11:38:04+09:00",
-      "busroute": "Kita47",
-      "busstop": "千住二丁目",
-      "delay_seconds": 1024.0,
+      "actual_time": "2026-10-15T12:09:04+09:00",
+      "busroute": "Kusa64",
+      "busstop": "田端新町二丁目",
+      "delay_seconds": 124.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T11:38:04+09:00",
-      "busroute": "Ou78",
-      "busstop": "成子坂下",
-      "delay_seconds": 424.0,
+      "actual_time": "2026-10-15T12:09:04+09:00",
+      "busroute": "T05-2",
+      "busstop": "有明一丁目",
+      "delay_seconds": 964.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-15T12:09:03+09:00",
+      "busroute": "Ta87",
+      "busstop": "恵比寿二丁目",
+      "delay_seconds": 1083.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
