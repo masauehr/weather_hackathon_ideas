@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-15T15:42:28.744496",
-  "total_observations": 542112,
-  "observations_with_weather": 537791,
+  "generated_at": "2026-10-15T16:12:31.604338",
+  "total_observations": 545528,
+  "observations_with_weather": 541207,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-15 15:41:02.466811",
+  "period_end": "2026-10-15 16:11:56.006450",
   "delay_seconds": {
-    "mean": 194.5,
-    "median": 105.0,
-    "max": 24320.0,
+    "mean": 197.4,
+    "median": 106.0,
+    "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 536906,
-    "rows_total": 537791,
+    "rows_with_precipitation_data": 540322,
+    "rows_total": 541207,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -97,50 +97,50 @@
     },
     {
       "date": "2026-10-15",
-      "n": 53292,
-      "mean_delay": 467.5945170006755,
+      "n": 56708,
+      "mean_delay": 478.7384319672709,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-15T15:40:35+09:00",
-      "busroute": "Kusa64",
-      "busstop": "荒川四丁目",
-      "delay_seconds": 215.0,
+      "actual_time": "2026-10-15T16:11:35+09:00",
+      "busroute": "Shina97",
+      "busstop": "広尾駅前（広尾橋）",
+      "delay_seconds": 155.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T15:40:34+09:00",
-      "busroute": "Shiro61",
-      "busstop": "目白警察署前",
-      "delay_seconds": 754.0,
+      "actual_time": "2026-10-15T16:11:35+09:00",
+      "busroute": "T05-1",
+      "busstop": "築地六丁目",
+      "delay_seconds": 755.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T15:40:33+09:00",
-      "busroute": "Ou78",
-      "busstop": "成子坂下",
-      "delay_seconds": 33.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-15T16:11:35+09:00",
+      "busroute": "Ume74Kou",
+      "busstop": "聖明福祉協会前",
+      "delay_seconds": 395.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T15:40:33+09:00",
-      "busroute": "Kusa64",
-      "busstop": "田端新町三丁目",
-      "delay_seconds": 333.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-15T16:11:35+09:00",
+      "busroute": "Ume70",
+      "busstop": "新小平駅前",
+      "delay_seconds": 395.0,
+      "amedas_station": "府中",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-15T15:40:32+09:00",
-      "busroute": "Shina93",
-      "busstop": "勝島一丁目",
-      "delay_seconds": 332.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-10-15T16:11:34+09:00",
+      "busroute": "Kusa63",
+      "busstop": "Hareza池袋",
+      "delay_seconds": 934.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
