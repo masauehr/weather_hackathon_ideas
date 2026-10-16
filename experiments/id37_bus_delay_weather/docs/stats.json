@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-16T16:26:30.859028",
-  "total_observations": 610874,
-  "observations_with_weather": 606553,
+  "generated_at": "2026-10-16T16:56:33.920885",
+  "total_observations": 614565,
+  "observations_with_weather": 610244,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-16 16:23:14.663626",
+  "period_end": "2026-10-16 16:54:05.587150",
   "delay_seconds": {
     "mean": 203.1,
     "median": 109.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 605560,
-    "rows_total": 606553,
+    "rows_with_precipitation_data": 609251,
+    "rows_total": 610244,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -103,49 +103,49 @@
     },
     {
       "date": "2026-10-16",
-      "n": 52682,
-      "mean_delay": 178.9898826923807,
+      "n": 56373,
+      "mean_delay": 179.81709328934065,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-16T16:22:35+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "総合レクリエーション公園前",
+      "actual_time": "2026-10-16T16:53:35+09:00",
+      "busroute": "Shina98",
+      "busstop": "大田市場北門西",
       "delay_seconds": 35.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-16T16:22:33+09:00",
-      "busroute": "I98",
-      "busstop": "仙台坂",
-      "delay_seconds": 93.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T16:22:33+09:00",
-      "busroute": "I92",
-      "busstop": "八潮公園前",
-      "delay_seconds": 93.0,
+      "actual_time": "2026-10-16T16:53:35+09:00",
+      "busroute": "Shina93",
+      "busstop": "新浜川橋",
+      "delay_seconds": 155.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T16:22:32+09:00",
-      "busroute": "Nishiki37",
-      "busstop": "押上一丁目",
-      "delay_seconds": 32.0,
+      "actual_time": "2026-10-16T16:53:34+09:00",
+      "busroute": "Ume70",
+      "busstop": "青梅総合高校入口",
+      "delay_seconds": 34.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-16T16:53:34+09:00",
+      "busroute": "Ta87",
+      "busstop": "白金高輪駅前",
+      "delay_seconds": 214.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T16:22:31+09:00",
-      "busroute": "Ue01",
-      "busstop": "上野公園山下",
-      "delay_seconds": 211.0,
+      "actual_time": "2026-10-16T16:53:34+09:00",
+      "busroute": "T05-1",
+      "busstop": "勝どき駅前",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
