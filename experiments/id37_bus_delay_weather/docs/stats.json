@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-16T09:55:51.954699",
-  "total_observations": 570723,
-  "observations_with_weather": 566402,
+  "generated_at": "2026-10-16T10:25:54.924905",
+  "total_observations": 574333,
+  "observations_with_weather": 570012,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-16 09:51:38.345811",
+  "period_end": "2026-10-16 10:22:41.004281",
   "delay_seconds": {
-    "mean": 204.5,
+    "mean": 204.3,
     "median": 108.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 565409,
-    "rows_total": 566402,
+    "rows_with_precipitation_data": 569019,
+    "rows_total": 570012,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -103,49 +103,49 @@
     },
     {
       "date": "2026-10-16",
-      "n": 12531,
-      "mean_delay": 163.3381214587822,
+      "n": 16141,
+      "mean_delay": 164.13047518741095,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-16T09:51:06+09:00",
-      "busroute": "Cha07",
-      "busstop": "順天堂病院前",
-      "delay_seconds": 66.0,
+      "actual_time": "2026-10-16T10:22:05+09:00",
+      "busroute": "T05-2",
+      "busstop": "東京駅丸の内南口",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T09:51:05+09:00",
-      "busroute": "I92",
-      "busstop": "明晴学園前",
-      "delay_seconds": 245.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-10-16T10:22:05+09:00",
+      "busroute": "Ume74Otsu",
+      "busstop": "河辺駅入口",
+      "delay_seconds": 545.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T09:51:04+09:00",
-      "busroute": "Ou78",
-      "busstop": "成子坂下",
-      "delay_seconds": 604.0,
+      "actual_time": "2026-10-16T10:22:05+09:00",
+      "busroute": "Shina96",
+      "busstop": "品川駅港南口",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T09:51:04+09:00",
-      "busroute": "Kusa63",
-      "busstop": "西日暮里五丁目",
-      "delay_seconds": 304.0,
+      "actual_time": "2026-10-16T10:22:04+09:00",
+      "busroute": "Ta87",
+      "busstop": "渋谷駅前",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T09:51:04+09:00",
-      "busroute": "Kusa63",
-      "busstop": "千石一丁目(せんごくいっちょうめ（ぶんきょうく）)",
-      "delay_seconds": 304.0,
+      "actual_time": "2026-10-16T10:22:04+09:00",
+      "busroute": "Taka71",
+      "busstop": "早大理工前",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
