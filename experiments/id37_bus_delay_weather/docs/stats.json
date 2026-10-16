@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-16T18:43:13.700709",
-  "total_observations": 617670,
-  "observations_with_weather": 613349,
+  "generated_at": "2026-10-16T20:08:38.196394",
+  "total_observations": 618812,
+  "observations_with_weather": 614491,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-16 17:19:47.518924",
+  "period_end": "2026-10-16 20:08:28.784812",
   "delay_seconds": {
     "mean": 203.1,
     "median": 109.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 612356,
-    "rows_total": 613349,
+    "rows_with_precipitation_data": 613498,
+    "rows_total": 614491,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -103,48 +103,48 @@
     },
     {
       "date": "2026-10-16",
-      "n": 59478,
-      "mean_delay": 181.0666128652611,
+      "n": 60620,
+      "mean_delay": 181.32337512372155,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-16T17:19:05+09:00",
-      "busroute": "Shina99",
-      "busstop": "品川駅港南口",
-      "delay_seconds": 485.0,
+      "actual_time": "2026-10-16T20:08:05+09:00",
+      "busroute": "Shina93",
+      "busstop": "グランドプリンスホテル新高輪前",
+      "delay_seconds": 185.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T17:19:04+09:00",
-      "busroute": "Tan96",
-      "busstop": "麻布十番駅前",
+      "actual_time": "2026-10-16T20:08:05+09:00",
+      "busroute": "Ume70",
+      "busstop": "新小平駅前",
+      "delay_seconds": 5.0,
+      "amedas_station": "府中",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-16T20:08:04+09:00",
+      "busroute": "T05-1",
+      "busstop": "築地六丁目",
       "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T17:19:03+09:00",
-      "busroute": "Kuro77",
-      "busstop": "千駄ヶ谷駅前",
-      "delay_seconds": 3.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-16T20:08:04+09:00",
+      "busroute": "Ou78",
+      "busstop": "中野天神前",
+      "delay_seconds": 844.0,
+      "amedas_station": "練馬",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T17:19:03+09:00",
-      "busroute": "Shina93",
-      "busstop": "鮫洲運転免許試験場前",
-      "delay_seconds": 183.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-16T17:19:03+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "清川二丁目",
+      "actual_time": "2026-10-16T20:08:03+09:00",
+      "busroute": "Ue46",
+      "busstop": "隅田川貨物駅前",
       "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
