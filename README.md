@@ -1,5 +1,7 @@
 # weather_hackathon_ideas
 
+詳しくは [hackathon_ideas_summary.pptx](hackathon_ideas_summary.pptx)（成果一覧の資料）を参照
+
 気象データ × 各種データの相関分析・機械学習予測モデル・生成AI活用の**アイデア出し**を行うプロジェクト。
 「気象 × 生成AI ハッカソン」の事前準備を兼ねる。案を広く集めて評価・選抜する段階（一部は [experiments/](experiments/) で相関の当たり付けまで実施済み）。
 
