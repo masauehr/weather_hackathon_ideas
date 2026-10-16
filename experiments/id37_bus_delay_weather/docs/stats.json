@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-17T00:24:53.384341",
-  "total_observations": 623661,
-  "observations_with_weather": 619340,
+  "generated_at": "2026-10-17T07:48:33.915119",
+  "total_observations": 624071,
+  "observations_with_weather": 619750,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-16 23:36:53.565076",
+  "period_end": "2026-10-17 07:23:08.119996",
   "delay_seconds": {
     "mean": 203.0,
     "median": 109.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 618347,
-    "rows_total": 619340,
+    "rows_with_precipitation_data": 618757,
+    "rows_total": 619750,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -106,46 +106,52 @@
       "n": 65469,
       "mean_delay": 182.631749377568,
       "n_rain": 0
+    },
+    {
+      "date": "2026-10-17",
+      "n": 410,
+      "mean_delay": 91.25365853658536,
+      "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-16T23:35:58+09:00",
-      "busroute": "T02",
-      "busstop": "小日向四丁目",
-      "delay_seconds": -2.0,
+      "actual_time": "2026-10-17T07:22:35+09:00",
+      "busroute": "Ume70",
+      "busstop": "中央二丁目",
+      "delay_seconds": 95.0,
+      "amedas_station": "所沢",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-17T07:22:34+09:00",
+      "busroute": "Tan96",
+      "busstop": "魚籃坂下",
+      "delay_seconds": 34.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T23:30:59+09:00",
-      "busroute": "T02",
-      "busstop": "春日駅前",
-      "delay_seconds": -1.0,
+      "actual_time": "2026-10-17T07:22:34+09:00",
+      "busroute": "T05-1",
+      "busstop": "勝どき橋南詰",
+      "delay_seconds": 34.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T23:26:01+09:00",
-      "busroute": "T02",
-      "busstop": "大塚三丁目",
-      "delay_seconds": 1621.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-16T23:26:00+09:00",
-      "busroute": "Ryou28",
-      "busstop": "宇喜田",
-      "delay_seconds": 300.0,
+      "actual_time": "2026-10-17T07:22:33+09:00",
+      "busroute": "Kame29",
+      "busstop": "北砂四丁目",
+      "delay_seconds": 33.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-16T23:24:21+09:00",
-      "busroute": "T02",
-      "busstop": "湯島四丁目",
-      "delay_seconds": 21.0,
+      "actual_time": "2026-10-17T07:22:32+09:00",
+      "busroute": "Nishiki37",
+      "busstop": "十間橋通り",
+      "delay_seconds": 92.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
