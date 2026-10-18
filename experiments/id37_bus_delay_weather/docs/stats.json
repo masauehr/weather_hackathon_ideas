@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-19T07:23:58.119855",
-  "total_observations": 646817,
-  "observations_with_weather": 642496,
+  "generated_at": "2026-10-19T07:56:15.013523",
+  "total_observations": 650450,
+  "observations_with_weather": 646129,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-19 05:55:15.278243",
+  "period_end": "2026-10-19 07:54:31.614021",
   "delay_seconds": {
-    "mean": 200.8,
+    "mean": 200.4,
     "median": 108.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 641494,
-    "rows_total": 642496,
+    "rows_with_precipitation_data": 645127,
+    "rows_total": 646129,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -121,51 +121,51 @@
     },
     {
       "date": "2026-10-19",
-      "n": 9,
-      "mean_delay": 47.888888888888886,
+      "n": 3642,
+      "mean_delay": 128.5439319055464,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-19T05:54:58+09:00",
-      "busroute": "T02",
-      "busstop": "新大塚",
-      "delay_seconds": 58.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
+      "actual_time": "2026-10-19T07:54:04+09:00",
+      "busroute": "Kita47",
+      "busstop": "千住四丁目",
+      "delay_seconds": 124.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T05:54:53+09:00",
-      "busroute": "Shina98",
-      "busstop": "天王洲橋",
-      "delay_seconds": 113.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
+      "actual_time": "2026-10-19T07:54:04+09:00",
+      "busroute": "Ue58",
+      "busstop": "上野松坂屋前",
+      "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T05:54:29+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "明治橋",
-      "delay_seconds": 89.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
+      "actual_time": "2026-10-19T07:54:04+09:00",
+      "busroute": "Ue69",
+      "busstop": "小滝橋車庫前",
+      "delay_seconds": 64.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T05:54:19+09:00",
+      "actual_time": "2026-10-19T07:54:04+09:00",
       "busroute": "Ou78",
-      "busstop": "高円寺南四丁目",
-      "delay_seconds": 19.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
+      "busstop": "豊玉中",
+      "delay_seconds": 4.0,
+      "amedas_station": "練馬",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T05:54:06+09:00",
-      "busroute": "Ou78",
-      "busstop": "豊玉北",
-      "delay_seconds": 6.0,
-      "amedas_station": NaN,
-      "precipitation10m_mm": NaN
+      "actual_time": "2026-10-19T07:54:04+09:00",
+      "busroute": "Kusa63",
+      "busstop": "Hareza池袋",
+      "delay_seconds": 124.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     }
   ]
 }
