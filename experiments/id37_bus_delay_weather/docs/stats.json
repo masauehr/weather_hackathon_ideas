@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-19T20:37:44.327303",
-  "total_observations": 687352,
-  "observations_with_weather": 683031,
+  "generated_at": "2026-10-20T07:53:59.927622",
+  "total_observations": 688920,
+  "observations_with_weather": 684599,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-19 17:18:56.083252",
+  "period_end": "2026-10-20 07:38:51.572794",
   "delay_seconds": {
-    "mean": 199.4,
+    "mean": 199.3,
     "median": 108.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 682029,
-    "rows_total": 683031,
+    "rows_with_precipitation_data": 683597,
+    "rows_total": 684599,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -121,49 +121,55 @@
     },
     {
       "date": "2026-10-19",
-      "n": 40544,
-      "mean_delay": 177.25461227308602,
+      "n": 40545,
+      "mean_delay": 177.25253422123566,
+      "n_rain": 0
+    },
+    {
+      "date": "2026-10-20",
+      "n": 1567,
+      "mean_delay": 118.5902999361838,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-19T17:18:35+09:00",
-      "busroute": "I92",
-      "busstop": "都立産業技術高専品川キャンパス前",
+      "actual_time": "2026-10-20T07:38:36+09:00",
+      "busroute": "You12-1",
+      "busstop": "深川八中南",
+      "delay_seconds": 96.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-20T07:38:35+09:00",
+      "busroute": "Shina99",
+      "busstop": "埠頭通り",
+      "delay_seconds": 455.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-20T07:38:35+09:00",
+      "busroute": "T05-1",
+      "busstop": "東京国際フォーラム前",
       "delay_seconds": 95.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-19T17:18:34+09:00",
-      "busroute": "Ta87",
-      "busstop": "北里研究所前",
-      "delay_seconds": 34.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T17:18:34+09:00",
-      "busroute": "T05-2",
-      "busstop": "築地",
-      "delay_seconds": -86.0,
+      "actual_time": "2026-10-20T07:38:34+09:00",
+      "busroute": "Ue58",
+      "busstop": "護国寺正門前",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-19T17:18:34+09:00",
-      "busroute": "Shibu66",
-      "busstop": "八幡下",
-      "delay_seconds": 154.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-19T17:18:34+09:00",
-      "busroute": "Kusa63",
-      "busstop": "堀割",
-      "delay_seconds": 154.0,
+      "actual_time": "2026-10-20T07:38:34+09:00",
+      "busroute": "Ou45",
+      "busstop": "千住中居町",
+      "delay_seconds": 514.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
