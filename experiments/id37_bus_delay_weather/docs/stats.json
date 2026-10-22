@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-22T09:57:29.226164",
-  "total_observations": 742561,
-  "observations_with_weather": 738240,
+  "generated_at": "2026-10-22T13:39:31.685620",
+  "total_observations": 745850,
+  "observations_with_weather": 741529,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-22 09:54:34.767063",
+  "period_end": "2026-10-22 13:36:53.792184",
   "delay_seconds": {
-    "mean": 195.2,
+    "mean": 195.1,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 737238,
-    "rows_total": 738240,
+    "rows_with_precipitation_data": 740527,
+    "rows_total": 741529,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -139,49 +139,49 @@
     },
     {
       "date": "2026-10-22",
-      "n": 14913,
-      "mean_delay": 153.304097096493,
+      "n": 18202,
+      "mean_delay": 155.00928469398968,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-22T09:54:06+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "隅田公園",
-      "delay_seconds": 66.0,
+      "actual_time": "2026-10-22T13:36:35+09:00",
+      "busroute": "Ike86",
+      "busstop": "大久保通り",
+      "delay_seconds": 95.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-22T09:54:05+09:00",
-      "busroute": "Taka71",
-      "busstop": "早大理工前",
-      "delay_seconds": 245.0,
+      "actual_time": "2026-10-22T13:36:34+09:00",
+      "busroute": "Kita47",
+      "busstop": "保木間仲通り",
+      "delay_seconds": 1354.0,
+      "amedas_station": "越谷",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-22T13:36:34+09:00",
+      "busroute": "Ue58",
+      "busstop": "団子坂下",
+      "delay_seconds": 214.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-22T09:54:05+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "堀江団地",
-      "delay_seconds": 5.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-22T09:54:04+09:00",
-      "busroute": "Shuku91",
-      "busstop": "新代田駅前",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-10-22T13:36:34+09:00",
+      "busroute": "Kusa41",
+      "busstop": "東日暮里四丁目",
+      "delay_seconds": 394.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-22T09:54:04+09:00",
-      "busroute": "Ou55",
-      "busstop": "飛鳥山",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-10-22T13:36:34+09:00",
+      "busroute": "T05-1",
+      "busstop": "はるみらい前",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
