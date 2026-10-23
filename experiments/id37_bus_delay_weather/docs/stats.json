@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-23T14:54:08.497313",
-  "total_observations": 757873,
-  "observations_with_weather": 753552,
+  "generated_at": "2026-10-23T15:24:11.849745",
+  "total_observations": 761013,
+  "observations_with_weather": 756692,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-23 14:50:56.821428",
+  "period_end": "2026-10-23 15:21:19.354973",
   "delay_seconds": {
-    "mean": 194.6,
+    "mean": 194.5,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 752550,
-    "rows_total": 753552,
+    "rows_with_precipitation_data": 755690,
+    "rows_total": 756692,
     "rows_with_rain_detected": 3061
   },
   "daily": [
@@ -145,49 +145,49 @@
     },
     {
       "date": "2026-10-23",
-      "n": 5899,
-      "mean_delay": 145.48482793693847,
+      "n": 9039,
+      "mean_delay": 151.2346498506472,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-23T14:50:34+09:00",
-      "busroute": "Hata44",
-      "busstop": "千住竜田町",
-      "delay_seconds": 274.0,
+      "actual_time": "2026-10-23T15:21:03+09:00",
+      "busroute": "Kame29",
+      "busstop": "東砂六丁目",
+      "delay_seconds": 63.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-23T15:21:03+09:00",
+      "busroute": "Cha51",
+      "busstop": "向丘一丁目",
+      "delay_seconds": 183.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-23T14:50:33+09:00",
-      "busroute": "Shina97",
-      "busstop": "高輪一丁目",
-      "delay_seconds": 213.0,
+      "actual_time": "2026-10-23T15:21:03+09:00",
+      "busroute": "Ue58",
+      "busstop": "大塚三丁目",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-23T14:50:33+09:00",
-      "busroute": "Kusa41",
-      "busstop": "入谷二丁目",
-      "delay_seconds": 273.0,
+      "actual_time": "2026-10-23T15:21:03+09:00",
+      "busroute": "Ue46",
+      "busstop": "南千住八丁目",
+      "delay_seconds": 843.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-23T14:50:33+09:00",
-      "busroute": "Mon33",
-      "busstop": "本所一丁目",
-      "delay_seconds": 93.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-23T14:50:32+09:00",
-      "busroute": "Taka71",
-      "busstop": "河田町",
-      "delay_seconds": 392.0,
+      "actual_time": "2026-10-23T15:21:02+09:00",
+      "busroute": "Shiro61",
+      "busstop": "新宿駅西口",
+      "delay_seconds": 2.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
