@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-27T08:27:56.603806",
-  "total_observations": 851591,
-  "observations_with_weather": 847270,
+  "generated_at": "2026-10-27T08:58:31.293994",
+  "total_observations": 856348,
+  "observations_with_weather": 852027,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-27 08:25:42.967102",
+  "period_end": "2026-10-27 08:56:05.496814",
   "delay_seconds": {
     "mean": 195.8,
     "median": 108.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 846268,
-    "rows_total": 847270,
+    "rows_with_precipitation_data": 851025,
+    "rows_total": 852027,
     "rows_with_rain_detected": 33204
   },
   "daily": [
@@ -169,50 +169,50 @@
     },
     {
       "date": "2026-10-27",
-      "n": 2540,
-      "mean_delay": 188.1031496062992,
+      "n": 7297,
+      "mean_delay": 190.82691517061807,
       "n_rain": 11
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-27T08:25:04+09:00",
-      "busroute": "Ii64",
-      "busstop": "小滝橋車庫前",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-10-27T08:55:36+09:00",
+      "busroute": "Ume70",
+      "busstop": "小平消防署前",
+      "delay_seconds": 336.0,
+      "amedas_station": "府中",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-27T08:55:34+09:00",
+      "busroute": "Ume70",
+      "busstop": "東青梅五丁目",
+      "delay_seconds": 214.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-27T08:55:33+09:00",
+      "busroute": "Kuro77",
+      "busstop": "広尾駅前（広尾橋）",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-27T08:25:04+09:00",
-      "busroute": "Haya77",
-      "busstop": "新宿駅西口",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-27T08:55:33+09:00",
+      "busroute": "I96",
+      "busstop": "都立八潮高校前",
+      "delay_seconds": 93.0,
+      "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-27T08:25:04+09:00",
-      "busroute": "Shiro61",
-      "busstop": "目白台三丁目",
-      "delay_seconds": 544.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-27T08:25:04+09:00",
-      "busroute": "Kusa64",
-      "busstop": "三ノ輪二丁目",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-27T08:25:04+09:00",
-      "busroute": "Kusa64",
-      "busstop": "西巣鴨",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-10-27T08:55:33+09:00",
+      "busroute": "Fune28",
+      "busstop": "篠崎町七丁目",
+      "delay_seconds": 93.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
