@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-10-27T10:05:06.002859",
-  "total_observations": 864582,
-  "observations_with_weather": 860261,
+  "generated_at": "2026-10-27T10:51:49.424625",
+  "total_observations": 868078,
+  "observations_with_weather": 863757,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-27 10:03:52.648089",
+  "period_end": "2026-10-27 10:50:53.585048",
   "delay_seconds": {
-    "mean": 195.7,
+    "mean": 195.6,
     "median": 108.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 859259,
-    "rows_total": 860261,
+    "rows_with_precipitation_data": 862755,
+    "rows_total": 863757,
     "rows_with_rain_detected": 33204
   },
   "daily": [
@@ -169,50 +169,50 @@
     },
     {
       "date": "2026-10-27",
-      "n": 15531,
-      "mean_delay": 187.39276286137402,
+      "n": 19027,
+      "mean_delay": 186.2223682135912,
       "n_rain": 11
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-27T10:03:34+09:00",
-      "busroute": "Shina99",
-      "busstop": "京浜運河",
-      "delay_seconds": 634.0,
+      "actual_time": "2026-10-27T10:50:35+09:00",
+      "busroute": "T05-1",
+      "busstop": "勝どき駅前",
+      "delay_seconds": 155.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-27T10:03:33+09:00",
-      "busroute": "Ue69",
-      "busstop": "江戸川橋",
-      "delay_seconds": 153.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-27T10:03:33+09:00",
-      "busroute": "Mon33",
-      "busstop": "とうきょうスカイツリー駅入口",
-      "delay_seconds": 213.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-27T10:03:33+09:00",
+      "actual_time": "2026-10-27T10:50:33+09:00",
       "busroute": "Ou40Kou",
-      "busstop": "飛鳥山",
+      "busstop": "上池袋三丁目",
       "delay_seconds": 153.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-27T10:03:32+09:00",
-      "busroute": "Shinko22",
-      "busstop": "今井",
-      "delay_seconds": 212.0,
+      "actual_time": "2026-10-27T10:50:32+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "吹上しょうぶ公園入口",
+      "delay_seconds": 512.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-27T10:50:32+09:00",
+      "busroute": "Rinkai28-2",
+      "busstop": "臨海町四丁目",
+      "delay_seconds": 32.0,
       "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-27T10:50:32+09:00",
+      "busroute": "Mon33",
+      "busstop": "本所吾妻橋",
+      "delay_seconds": 32.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
