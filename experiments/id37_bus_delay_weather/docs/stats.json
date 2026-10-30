@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-30T19:49:05.661607",
-  "total_observations": 969916,
-  "observations_with_weather": 965595,
+  "generated_at": "2026-10-30T21:06:28.459184",
+  "total_observations": 971886,
+  "observations_with_weather": 967565,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-10-30 19:45:26.115845",
+  "period_end": "2026-10-30 21:03:26.591322",
   "delay_seconds": {
     "mean": 193.4,
     "median": 108.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 964582,
-    "rows_total": 965595,
+    "rows_with_precipitation_data": 966552,
+    "rows_total": 967565,
     "rows_with_rain_detected": 33646
   },
   "daily": [
@@ -187,49 +187,49 @@
     },
     {
       "date": "2026-10-30",
-      "n": 33244,
-      "mean_delay": 200.52207917218144,
+      "n": 35214,
+      "mean_delay": 200.34866814335209,
       "n_rain": 442
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-10-30T19:45:06+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "畑中公会堂前",
-      "delay_seconds": 66.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-30T19:45:05+09:00",
-      "busroute": "Ume74Kou",
-      "busstop": "東青梅駅前",
-      "delay_seconds": 5.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-10-30T19:45:04+09:00",
-      "busroute": "Ou78",
-      "busstop": "南常盤台",
-      "delay_seconds": 184.0,
+      "actual_time": "2026-10-30T21:03:04+09:00",
+      "busroute": "Haya77",
+      "busstop": "早稲田",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-30T19:45:04+09:00",
-      "busroute": "Shina91",
-      "busstop": "品川シーサイド駅前",
-      "delay_seconds": 4.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-10-30T21:03:04+09:00",
+      "busroute": "Ume76Hei",
+      "busstop": "梅郷",
+      "delay_seconds": 64.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-10-30T19:45:04+09:00",
-      "busroute": "Higashi42-1",
-      "busstop": "東京駅八重洲口",
+      "actual_time": "2026-10-30T21:03:04+09:00",
+      "busroute": "Shiro61",
+      "busstop": "聖母病院入口",
       "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-30T21:03:03+09:00",
+      "busroute": "Ike86",
+      "busstop": "日清食品前",
+      "delay_seconds": 63.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-10-30T21:03:03+09:00",
+      "busroute": "Ou40Kou",
+      "busstop": "滝野川二丁目",
+      "delay_seconds": 243.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
