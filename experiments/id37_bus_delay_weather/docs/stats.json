@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-04T14:57:02.007977",
-  "total_observations": 1080393,
-  "observations_with_weather": 1076072,
+  "generated_at": "2026-11-04T15:33:40.973006",
+  "total_observations": 1083537,
+  "observations_with_weather": 1079216,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-04 14:55:46.895658",
+  "period_end": "2026-11-04 15:32:43.687432",
   "delay_seconds": {
-    "mean": 190.9,
+    "mean": 190.8,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1075059,
-    "rows_total": 1076072,
-    "rows_with_rain_detected": 36127
+    "rows_with_precipitation_data": 1078203,
+    "rows_total": 1079216,
+    "rows_with_rain_detected": 37137
   },
   "daily": [
     {
@@ -217,51 +217,51 @@
     },
     {
       "date": "2026-11-04",
-      "n": 25823,
-      "mean_delay": 136.06203771831312,
-      "n_rain": 1488
+      "n": 28967,
+      "mean_delay": 138.70663168433043,
+      "n_rain": 2498
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-04T14:55:04+09:00",
-      "busroute": "Shiro61",
-      "busstop": "ホテル椿山荘東京前",
-      "delay_seconds": 124.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "actual_time": "2026-11-04T15:32:06+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "上町",
+      "delay_seconds": 66.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-04T14:55:04+09:00",
-      "busroute": "Kusa64",
-      "busstop": "上池袋一丁目",
-      "delay_seconds": -56.0,
+      "actual_time": "2026-11-04T15:32:05+09:00",
+      "busroute": "Shina97",
+      "busstop": "新宿三丁目",
+      "delay_seconds": 65.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-04T14:55:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "並木橋",
-      "delay_seconds": 184.0,
+      "actual_time": "2026-11-04T15:32:05+09:00",
+      "busroute": "Ue01",
+      "busstop": "東大病院前",
+      "delay_seconds": 65.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-04T14:55:04+09:00",
-      "busroute": "Shiro61",
-      "busstop": "新宿駅西口",
-      "delay_seconds": -176.0,
+      "actual_time": "2026-11-04T15:32:05+09:00",
+      "busroute": "T05-2",
+      "busstop": "勝どき駅前",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-04T14:55:03+09:00",
-      "busroute": "Ou78",
-      "busstop": "王子三丁目",
-      "delay_seconds": 183.0,
+      "actual_time": "2026-11-04T15:32:04+09:00",
+      "busroute": "Ue58",
+      "busstop": "早稲田",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "precipitation10m_mm": 0.0
     }
   ]
 }
