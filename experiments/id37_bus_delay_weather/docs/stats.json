@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-05T11:21:48.592704",
-  "total_observations": 1120793,
-  "observations_with_weather": 1116472,
+  "generated_at": "2026-11-05T11:51:52.350505",
+  "total_observations": 1123816,
+  "observations_with_weather": 1119495,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-05 11:16:46.298956",
+  "period_end": "2026-11-05 11:47:17.824964",
   "delay_seconds": {
-    "mean": 191.6,
+    "mean": 191.7,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1115459,
-    "rows_total": 1116472,
+    "rows_with_precipitation_data": 1118482,
+    "rows_total": 1119495,
     "rows_with_rain_detected": 49906
   },
   "daily": [
@@ -223,50 +223,50 @@
     },
     {
       "date": "2026-11-05",
-      "n": 19181,
-      "mean_delay": 215.96220217923988,
+      "n": 22204,
+      "mean_delay": 215.20577373446227,
       "n_rain": 4302
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-05T11:16:35+09:00",
-      "busroute": "Ta87",
-      "busstop": "恵比寿三丁目",
-      "delay_seconds": 95.0,
+      "actual_time": "2026-11-05T11:47:05+09:00",
+      "busroute": "Shina93",
+      "busstop": "品川駅高輪口",
+      "delay_seconds": 245.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-05T11:16:35+09:00",
-      "busroute": "T05-2Shutsunyuu",
-      "busstop": "晴海三丁目",
-      "delay_seconds": 335.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-05T11:16:34+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "仲町",
-      "delay_seconds": 154.0,
-      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-05T11:16:34+09:00",
-      "busroute": "You12-1",
-      "busstop": "塩浜二丁目",
-      "delay_seconds": 214.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-05T11:47:04+09:00",
+      "busroute": "Ou57",
+      "busstop": "豊島三丁目",
+      "delay_seconds": 184.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-05T11:16:34+09:00",
-      "busroute": "Ou78",
-      "busstop": "東山町",
-      "delay_seconds": 154.0,
-      "amedas_station": "練馬",
+      "actual_time": "2026-11-05T11:47:03+09:00",
+      "busroute": "Mon33",
+      "busstop": "新島橋",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-05T11:47:03+09:00",
+      "busroute": "Hata44",
+      "busstop": "駒込病院前",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-05T11:47:03+09:00",
+      "busroute": "Mon33",
+      "busstop": "深川二丁目",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
