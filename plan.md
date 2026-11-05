@@ -52,6 +52,10 @@
   次: 日次で2023年以前を e-Stat 日別調査から補完、熱帯夜/WBGT で効果量比較、デモ化。
   副産物: 気象庁 etrn（p1+a3・2011〜・12官署）＋ ベジ探 sch7.do（日別／月別／産地別数量）の**完全自動取得**コード＋分布ラグ回帰スクリプト2本。
 
+- [x] **ID-37 バス遅延×天気 予備解析**（2026-11-05）: `experiments/id37_bus_delay_weather/`。約109万件で降水あり→遅延+25秒前後・5分超確率+3〜4pp、ただし設計に敏感で「傾向」止まり。
+  - [ ] 次: 降水日・強雨（10分降水1mm以上）が増えたら `python3 src/analyze_prelim.py` で再推定（収集はlaunchdで継続中。`/opt/homebrew/bin/python3` を使う＝~/projects/.venvはpandas無し）。
+  - [ ] 次: 直近1時間の累積降水、路線・バス停別の異質性、10/15の外れ日（平均492秒）の原因確認。
+
 ## フェーズ4: 選抜とデモ設計
 - [x] 第一次候補3案の詳細設計（[docs/candidates/](docs/candidates/)：ID-32 / ID-17 / ID-05）— 2026-09-02
 - [x] ID-32の相関検証・複数事例の正答率測定 → GO・67% — 2026-09-28。**2026-09-29に独立プロジェクト [weather_chart_vlm](https://github.com/masauehr/weather_chart_vlm) として切り出し**（本リポジトリの`experiments/cs32_chart_vlm/`は削除済み）

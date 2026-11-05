@@ -47,7 +47,7 @@
 
 | 案 | 内容 | 状況 |
 |---|---|---|
-| ID-37 バス遅延×天気 | ODPT（公共交通オープンデータ）の都営バスのリアルタイム位置情報＋時刻表から遅延（秒）を算出し、最寄りアメダス観測点の降水量と突き合わせて相関を検証（ODPTは履歴アーカイブが無いため、今から定期ポーリングして自分でログを蓄積している） | データ収集中（5分おきに自動収集、launchd）。収集状況は[モニターページ](https://masauehr.github.io/weather_hackathon_ideas/)で確認可能。詳細・途中経過は [experiments/id37_bus_delay_weather/README.md](experiments/id37_bus_delay_weather/README.md) |
+| ID-37 バス遅延×天気 | ODPT（公共交通オープンデータ）の都営バスのリアルタイム位置情報＋時刻表から遅延（秒）を算出し、最寄りアメダス観測点の降水量と突き合わせて相関を検証（ODPTは履歴アーカイブが無いため、今から定期ポーリングして自分でログを蓄積している） | データ収集中（5分おきに自動収集、launchd）。**予備解析済み（2026-11-05, 約109万件）: 弱い雨で遅延+25秒前後の傾向、ただし設計に敏感で断定不可**。収集状況は[モニターページ](https://masauehr.github.io/weather_hackathon_ideas/)で確認可能。詳細・途中経過は [experiments/id37_bus_delay_weather/README.md](experiments/id37_bus_delay_weather/README.md) |
 
 検討のみで検証・実装を見送った案（[docs/candidates/](docs/candidates/) に詳細設計を残す）:
 
@@ -100,6 +100,7 @@
 - **ID-01「再エネ出力予測＋需給ナレーション」を独立プロジェクトとして切り出し（2026-10-02）**: 検証GOだったため [solar_curtailment_kyushu](https://github.com/masauehr/solar_curtailment_kyushu) として独立。最終的には季節（月）を特徴量に加えた上で、単一点（福岡）より九州全体の面平均（気象庁AMeDAS7県平均・農研機構AMGSDSメッシュ面平均）で見た方が精度が上がることを確認し、ロジスティック回帰のROC-AUCは0.669→0.924まで改善した。トレンド項を資源エネルギー庁の実際の太陽光導入容量データに置き換える検証、確率付きの明確な判定表示（Claudeによる補足説明つき）、Pythonコードを1つずつ実行しながら学べるJupyterノートブック教材も実装。本リポジトリの`experiments/id01_curtailment_compare/`は削除済み。
 - **ID-37「バス遅延×天気」のデータ収集を開始（2026-10-02）**: ODPT（公共交通オープンデータ）のアカウントを取得し、都営バスのリアルタイム位置情報と時刻表を突き合わせて遅延（秒）を算出するパイプラインを構築。ODPTには履歴アーカイブが無いため、5分おきのポーリング（launchd）で自分でログを蓄積中。各観測には最寄りアメダス観測点の10分降水量も付与。収集状況は[モニターページ](https://masauehr.github.io/weather_hackathon_ideas/)（30分おきに自動更新）で確認可能。詳細は [experiments/id37_bus_delay_weather/README.md](experiments/id37_bus_delay_weather/README.md)。
 - **ID-37: 降水と遅延の初回確認（2026-10-06）**: 約14万件蓄積した時点で確認したところ、記録された降水イベントはまだ2回のみ（いずれも1時間換算3〜6mm程度の弱い雨）で、降水あり/なしで遅延に差は見られなかった（Cohen's d=0.007、相関r=0.001）。強い雨のイベントが観測されるか、十分な件数が蓄積されるまで判断は保留。
+- **ID-37: 予備解析（2026-11-05）**: 約109万イベント・35日で、路線＋日付＋曜日×時間帯の固定効果つき回帰により、降水ありで平均遅延+25秒（全日 t=3.3）／+30秒（平日 t=3.8）、5分超遅延の確率+3.5〜4.2pp。雨の日を1日ずつ除いても+17〜29秒で符号不変。ただし固定効果なしでは有意でなく、同日・同路線・同時間帯の単純対比では+3秒に縮む（推定が設計に敏感）。降水日は実質8日・弱い雨が大半で、**「弱い雨で遅延がやや増える傾向」止まり、強雨・因果は未確認**。次は降水日と強雨（10分降水1mm以上）が増えてからの再推定。詳細は [experiments/id37_bus_delay_weather/README.md](experiments/id37_bus_delay_weather/README.md)。
 - 次: 3分デモ筋書きを [docs/candidates/c32_weather_chart_vlm.md](docs/candidates/c32_weather_chart_vlm.md) をもとに詰める → ハッカソン要項の確認（[plan.md](plan.md) フェーズ4）。
 
 ## 🛠️ 実装メモ
