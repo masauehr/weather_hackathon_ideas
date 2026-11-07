@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-07T09:14:25.035098",
-  "total_observations": 1155117,
-  "observations_with_weather": 1150796,
+  "generated_at": "2026-11-07T10:36:13.083138",
+  "total_observations": 1158181,
+  "observations_with_weather": 1153860,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-07 09:12:29.064603",
+  "period_end": "2026-11-07 10:14:56.890323",
   "delay_seconds": {
-    "mean": 191.7,
+    "mean": 191.5,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1149783,
-    "rows_total": 1150796,
+    "rows_with_precipitation_data": 1152847,
+    "rows_total": 1153860,
     "rows_with_rain_detected": 49908
   },
   "daily": [
@@ -235,50 +235,50 @@
     },
     {
       "date": "2026-11-07",
-      "n": 5913,
-      "mean_delay": 107.15102316928801,
+      "n": 8977,
+      "mean_delay": 113.26044335524116,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-07T09:12:06+09:00",
-      "busroute": "Ue01",
-      "busstop": "上野公園山下",
-      "delay_seconds": 6.0,
+      "actual_time": "2026-11-07T10:14:34+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "宗泉寺",
+      "delay_seconds": 154.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-07T10:14:34+09:00",
+      "busroute": "Ou49",
+      "busstop": "王子二丁目",
+      "delay_seconds": 154.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-07T09:12:05+09:00",
-      "busroute": "T05-1",
-      "busstop": "数寄屋橋",
-      "delay_seconds": 125.0,
+      "actual_time": "2026-11-07T10:14:34+09:00",
+      "busroute": "Rinkai28-1",
+      "busstop": "仲町西組",
+      "delay_seconds": 274.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-07T10:14:34+09:00",
+      "busroute": "Kusa64",
+      "busstop": "Hareza池袋",
+      "delay_seconds": -26.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-07T09:12:04+09:00",
-      "busroute": "I92",
-      "busstop": "八潮北",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-07T10:14:34+09:00",
+      "busroute": "Shina93",
+      "busstop": "鮫洲運転免許試験場前",
+      "delay_seconds": 154.0,
       "amedas_station": "羽田",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-07T09:12:04+09:00",
-      "busroute": "Ou57",
-      "busstop": "豊島五丁目団地",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-07T09:12:04+09:00",
-      "busroute": "Ike86",
-      "busstop": "南池袋三丁目",
-      "delay_seconds": 64.0,
-      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
