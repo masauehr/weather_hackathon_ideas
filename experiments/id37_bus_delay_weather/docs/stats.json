@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-08T15:47:30.280432",
-  "total_observations": 1205899,
-  "observations_with_weather": 1201578,
+  "generated_at": "2026-11-08T16:17:34.240934",
+  "total_observations": 1208789,
+  "observations_with_weather": 1204468,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-08 15:02:19.572778",
+  "period_end": "2026-11-08 16:14:39.641467",
   "delay_seconds": {
-    "mean": 190.8,
+    "mean": 190.7,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1200565,
-    "rows_total": 1201578,
+    "rows_with_precipitation_data": 1203455,
+    "rows_total": 1204468,
     "rows_with_rain_detected": 49908
   },
   "daily": [
@@ -241,49 +241,49 @@
     },
     {
       "date": "2026-11-08",
-      "n": 17969,
-      "mean_delay": 142.66570204240637,
+      "n": 20859,
+      "mean_delay": 144.08399252121387,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-08T15:01:35+09:00",
-      "busroute": "Ta87",
-      "busstop": "東二丁目",
-      "delay_seconds": 95.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T15:01:33+09:00",
-      "busroute": "Fune28",
-      "busstop": "銀杏並木通り",
-      "delay_seconds": 33.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T15:01:33+09:00",
-      "busroute": "Higashi43",
-      "busstop": "小台",
-      "delay_seconds": 33.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T15:01:33+09:00",
-      "busroute": "Ou40Kou",
-      "busstop": "上池袋一丁目",
-      "delay_seconds": 93.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T15:01:32+09:00",
+      "actual_time": "2026-11-08T16:14:05+09:00",
       "busroute": "Higashi42-2",
-      "busstop": "東武浅草駅前",
-      "delay_seconds": 92.0,
+      "busstop": "駒形橋",
+      "delay_seconds": 5.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T16:14:04+09:00",
+      "busroute": "Ike86",
+      "busstop": "早大理工前",
+      "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T16:14:03+09:00",
+      "busroute": "Kita47",
+      "busstop": "北千住駅前",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T16:14:03+09:00",
+      "busroute": "Kusa39",
+      "busstop": "青戸車庫前",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T16:14:03+09:00",
+      "busroute": "Cha07",
+      "busstop": "外神田二丁目",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
