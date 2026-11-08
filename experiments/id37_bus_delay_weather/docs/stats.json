@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-08T10:53:01.005703",
-  "total_observations": 1197891,
-  "observations_with_weather": 1193570,
+  "generated_at": "2026-11-08T11:23:05.000329",
+  "total_observations": 1200701,
+  "observations_with_weather": 1196380,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-08 10:52:07.807000",
+  "period_end": "2026-11-08 11:22:34.370908",
   "delay_seconds": {
-    "mean": 191.0,
+    "mean": 190.9,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1192557,
-    "rows_total": 1193570,
+    "rows_with_precipitation_data": 1195367,
+    "rows_total": 1196380,
     "rows_with_rain_detected": 49908
   },
   "daily": [
@@ -241,49 +241,49 @@
     },
     {
       "date": "2026-11-08",
-      "n": 9961,
-      "mean_delay": 133.95090854331895,
+      "n": 12771,
+      "mean_delay": 137.6877300133114,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-08T10:51:34+09:00",
-      "busroute": "Kusa63",
-      "busstop": "荒川区役所前",
-      "delay_seconds": 154.0,
+      "actual_time": "2026-11-08T11:22:05+09:00",
+      "busroute": "Ou78",
+      "busstop": "南常盤台",
+      "delay_seconds": 305.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-08T10:51:33+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "仲町西組",
-      "delay_seconds": 93.0,
+      "actual_time": "2026-11-08T11:22:05+09:00",
+      "busroute": "Shina96",
+      "busstop": "品川駅港南口",
+      "delay_seconds": 5.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T11:22:04+09:00",
+      "busroute": "Kusa63",
+      "busstop": "荒川一丁目",
+      "delay_seconds": 64.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-08T11:22:03+09:00",
+      "busroute": "Shinko29",
+      "busstop": "大杉小学校前",
+      "delay_seconds": 3.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-08T10:51:33+09:00",
-      "busroute": "Shibu66",
-      "busstop": "八幡下",
-      "delay_seconds": 213.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T10:51:33+09:00",
-      "busroute": "Shina93",
-      "busstop": "品川車庫前",
-      "delay_seconds": 33.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-08T10:51:33+09:00",
-      "busroute": "Higashi43",
-      "busstop": "小台",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-11-08T11:22:03+09:00",
+      "busroute": "Ta87",
+      "busstop": "渋谷駅前",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
