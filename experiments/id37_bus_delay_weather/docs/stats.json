@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-09T21:38:31.993425",
-  "total_observations": 1231842,
-  "observations_with_weather": 1227521,
+  "generated_at": "2026-11-09T22:42:40.150850",
+  "total_observations": 1232560,
+  "observations_with_weather": 1228239,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-09 21:06:27.591269",
+  "period_end": "2026-11-09 22:41:33.644748",
   "delay_seconds": {
     "mean": 190.6,
     "median": 107.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1226508,
-    "rows_total": 1227521,
+    "rows_with_precipitation_data": 1227226,
+    "rows_total": 1228239,
     "rows_with_rain_detected": 54582
   },
   "daily": [
@@ -247,50 +247,50 @@
     },
     {
       "date": "2026-11-09",
-      "n": 16288,
-      "mean_delay": 198.49693025540276,
+      "n": 17006,
+      "mean_delay": 195.58738092437963,
       "n_rain": 4674
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-09T21:06:06+09:00",
-      "busroute": "T05-2",
-      "busstop": "有楽町駅前",
-      "delay_seconds": 126.0,
+      "actual_time": "2026-11-09T22:40:59+09:00",
+      "busroute": "Ue69",
+      "busstop": "春日駅前",
+      "delay_seconds": -1.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-09T21:06:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "魚籃坂下",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-09T22:40:58+09:00",
+      "busroute": "Kasai21",
+      "busstop": "なぎさニュータウン",
+      "delay_seconds": -2.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-09T22:40:54+09:00",
+      "busroute": "Ii64",
+      "busstop": "小滝橋",
+      "delay_seconds": -66.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-09T21:06:04+09:00",
-      "busroute": "I92",
-      "busstop": "八潮パークタウン",
-      "delay_seconds": 4.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-11-09T22:40:51+09:00",
+      "busroute": "Rinkai28-2",
+      "busstop": "臨海町四丁目",
+      "delay_seconds": 171.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-09T21:06:03+09:00",
-      "busroute": "Ike86",
-      "busstop": "渋谷駅東口",
-      "delay_seconds": 3.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-09T21:06:03+09:00",
-      "busroute": "Ou55",
-      "busstop": "豊島八丁目",
-      "delay_seconds": 3.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-09T22:40:49+09:00",
+      "busroute": "Shinko21",
+      "busstop": "東小松川小学校前",
+      "delay_seconds": 229.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
