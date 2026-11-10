@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-10T09:32:27.957037",
-  "total_observations": 1242416,
-  "observations_with_weather": 1238095,
+  "generated_at": "2026-11-10T10:46:56.477651",
+  "total_observations": 1246008,
+  "observations_with_weather": 1241687,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-10 09:16:52.285701",
+  "period_end": "2026-11-10 10:43:02.727829",
   "delay_seconds": {
-    "mean": 190.8,
+    "mean": 190.7,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1237082,
-    "rows_total": 1238095,
-    "rows_with_rain_detected": 56229
+    "rows_with_precipitation_data": 1240674,
+    "rows_total": 1241687,
+    "rows_with_rain_detected": 56270
   },
   "daily": [
     {
@@ -253,50 +253,50 @@
     },
     {
       "date": "2026-11-10",
-      "n": 9684,
-      "mean_delay": 218.72976042957455,
-      "n_rain": 1647
+      "n": 13276,
+      "mean_delay": 201.84701717384755,
+      "n_rain": 1688
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-10T09:16:05+09:00",
-      "busroute": "Ta87",
-      "busstop": "北里研究所前",
-      "delay_seconds": 5.0,
+      "actual_time": "2026-11-10T10:42:35+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "浅草七丁目",
+      "delay_seconds": 95.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-10T09:16:05+09:00",
-      "busroute": "Shina98",
-      "busstop": "東京税関大井出張所前",
-      "delay_seconds": 305.0,
+      "actual_time": "2026-11-10T10:42:33+09:00",
+      "busroute": "Shina93",
+      "busstop": "勝島",
+      "delay_seconds": 93.0,
       "amedas_station": "羽田",
-      "precipitation10m_mm": 0.5
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-10T09:16:04+09:00",
-      "busroute": "I92",
-      "busstop": "大井町駅東口",
-      "delay_seconds": 4.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-10T09:16:04+09:00",
-      "busroute": "I92",
-      "busstop": "八潮東",
-      "delay_seconds": 124.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-10T09:16:04+09:00",
-      "busroute": "Ou55",
-      "busstop": "ハートアイランド西",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-10T10:42:33+09:00",
+      "busroute": "Shina97",
+      "busstop": "信濃町駅南口",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-10T10:42:33+09:00",
+      "busroute": "Shina98",
+      "busstop": "セントラルビル前",
+      "delay_seconds": 573.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-10T10:42:32+09:00",
+      "busroute": "Aki26",
+      "busstop": "江戸川車庫前",
+      "delay_seconds": 272.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
