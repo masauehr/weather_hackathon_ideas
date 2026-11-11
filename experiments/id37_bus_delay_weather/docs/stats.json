@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-11T08:49:18.419533",
-  "total_observations": 1287682,
-  "observations_with_weather": 1283361,
+  "generated_at": "2026-11-11T09:19:23.031003",
+  "total_observations": 1292146,
+  "observations_with_weather": 1287825,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-11 08:47:24.918822",
+  "period_end": "2026-11-11 09:17:50.560041",
   "delay_seconds": {
-    "mean": 189.8,
+    "mean": 189.6,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1281211,
-    "rows_total": 1283361,
+    "rows_with_precipitation_data": 1285675,
+    "rows_total": 1287825,
     "rows_with_rain_detected": 56439
   },
   "daily": [
@@ -259,48 +259,48 @@
     },
     {
       "date": "2026-11-11",
-      "n": 7640,
-      "mean_delay": 135.69149214659686,
+      "n": 12104,
+      "mean_delay": 137.25388301387972,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-11T08:47:05+09:00",
-      "busroute": "Shina97",
-      "busstop": "新宿駅西口",
+      "actual_time": "2026-11-11T09:17:05+09:00",
+      "busroute": "Shina99",
+      "busstop": "東京出入国在留管理局前",
+      "delay_seconds": 365.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-11T09:17:05+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "今戸",
       "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T08:47:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "恵比寿駅前",
+      "actual_time": "2026-11-11T09:17:04+09:00",
+      "busroute": "Ue58",
+      "busstop": "池之端二丁目",
       "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T08:47:03+09:00",
-      "busroute": "Kasai24",
-      "busstop": "宇喜田第一住宅",
-      "delay_seconds": 3.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-11T08:47:03+09:00",
-      "busroute": "Shina99",
-      "busstop": "品川ふ頭橋",
-      "delay_seconds": 423.0,
+      "actual_time": "2026-11-11T09:17:04+09:00",
+      "busroute": "Ike86",
+      "busstop": "学習院戸山キャンパス前",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T08:47:03+09:00",
-      "busroute": "Shina98",
-      "busstop": "新東海橋",
+      "actual_time": "2026-11-11T09:17:03+09:00",
+      "busroute": "T06",
+      "busstop": "赤羽橋駅前",
       "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
