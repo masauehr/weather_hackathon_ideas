@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-11T09:49:27.191594",
-  "total_observations": 1296158,
-  "observations_with_weather": 1291837,
+  "generated_at": "2026-11-11T10:19:31.641234",
+  "total_observations": 1299777,
+  "observations_with_weather": 1295456,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-11 09:48:26.306802",
+  "period_end": "2026-11-11 10:18:49.431344",
   "delay_seconds": {
-    "mean": 189.4,
+    "mean": 189.3,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1289687,
-    "rows_total": 1291837,
+    "rows_with_precipitation_data": 1293306,
+    "rows_total": 1295456,
     "rows_with_rain_detected": 56439
   },
   "daily": [
@@ -259,50 +259,50 @@
     },
     {
       "date": "2026-11-11",
-      "n": 16116,
-      "mean_delay": 137.0354306279474,
+      "n": 19735,
+      "mean_delay": 138.049708639473,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-11T09:48:05+09:00",
-      "busroute": "T05-2",
-      "busstop": "有楽町駅前",
+      "actual_time": "2026-11-11T10:18:05+09:00",
+      "busroute": "Nishiki40",
+      "busstop": "押上",
+      "delay_seconds": 5.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-11T10:18:05+09:00",
+      "busroute": "Shina98",
+      "busstop": "丸全昭和前",
       "delay_seconds": 65.0,
-      "amedas_station": "東京",
+      "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T09:48:04+09:00",
-      "busroute": "Shina93",
-      "busstop": "明治学院前",
-      "delay_seconds": 64.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-11T09:48:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "魚籃坂下",
+      "actual_time": "2026-11-11T10:18:04+09:00",
+      "busroute": "Ike65",
+      "busstop": "下落合三丁目",
       "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T09:48:03+09:00",
-      "busroute": "Higashi43",
-      "busstop": "田端駅前",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-11-11T10:18:04+09:00",
+      "busroute": "Shina93",
+      "busstop": "白金小学校前",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T09:48:03+09:00",
-      "busroute": "Ou40Kou",
-      "busstop": "荒川土手",
-      "delay_seconds": 183.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-11T10:18:03+09:00",
+      "busroute": "Ume77Hei",
+      "busstop": "千ヶ瀬五丁目",
+      "delay_seconds": 123.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     }
   ]
