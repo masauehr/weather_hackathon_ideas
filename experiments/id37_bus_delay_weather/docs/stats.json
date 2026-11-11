@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-11T15:46:20.815675",
-  "total_observations": 1326911,
-  "observations_with_weather": 1322590,
+  "generated_at": "2026-11-11T16:16:25.218673",
+  "total_observations": 1330255,
+  "observations_with_weather": 1325934,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-11 15:43:33.524926",
+  "period_end": "2026-11-11 16:13:56.791656",
   "delay_seconds": {
-    "mean": 188.6,
+    "mean": 188.5,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1320440,
-    "rows_total": 1322590,
+    "rows_with_precipitation_data": 1323784,
+    "rows_total": 1325934,
     "rows_with_rain_detected": 56439
   },
   "daily": [
@@ -259,49 +259,49 @@
     },
     {
       "date": "2026-11-11",
-      "n": 46869,
-      "mean_delay": 146.73080287610148,
+      "n": 50213,
+      "mean_delay": 147.6203174476729,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-11T15:43:05+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "上郷",
-      "delay_seconds": 245.0,
-      "amedas_station": "青梅",
+      "actual_time": "2026-11-11T16:13:35+09:00",
+      "busroute": "You12-1",
+      "busstop": "枝川",
+      "delay_seconds": 335.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T15:43:05+09:00",
-      "busroute": "Ike86",
-      "busstop": "表参道",
-      "delay_seconds": 125.0,
+      "actual_time": "2026-11-11T16:13:35+09:00",
+      "busroute": "T05-1",
+      "busstop": "ホテルマリナーズコート東京前",
+      "delay_seconds": 155.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T15:43:04+09:00",
-      "busroute": "Kuro77",
-      "busstop": "広尾駅前（広尾橋）",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-11T16:13:33+09:00",
+      "busroute": "Ou55",
+      "busstop": "王子消防署前",
+      "delay_seconds": 153.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T15:43:04+09:00",
-      "busroute": "Ou78",
-      "busstop": "十条仲原二丁目",
-      "delay_seconds": 364.0,
+      "actual_time": "2026-11-11T16:13:33+09:00",
+      "busroute": "Shiro61",
+      "busstop": "目白駅前",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-11T15:43:03+09:00",
-      "busroute": "Hashi63",
-      "busstop": "牛込柳町駅前",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-11-11T16:13:33+09:00",
+      "busroute": "Ou40Kou",
+      "busstop": "上池袋一丁目",
+      "delay_seconds": 633.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
