@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-14T10:24:29.599686",
-  "total_observations": 1466755,
-  "observations_with_weather": 1462434,
+  "generated_at": "2026-11-14T10:54:34.131340",
+  "total_observations": 1469819,
+  "observations_with_weather": 1465498,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-14 10:22:29.734092",
+  "period_end": "2026-11-14 10:53:03.515712",
   "delay_seconds": {
-    "mean": 186.8,
+    "mean": 186.7,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1459898,
-    "rows_total": 1462434,
+    "rows_with_precipitation_data": 1462962,
+    "rows_total": 1465498,
     "rows_with_rain_detected": 56439
   },
   "daily": [
@@ -277,50 +277,50 @@
     },
     {
       "date": "2026-11-14",
-      "n": 19391,
-      "mean_delay": 102.42442370171729,
+      "n": 22455,
+      "mean_delay": 108.27788911155645,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-14T10:22:03+09:00",
-      "busroute": "Ou78",
-      "busstop": "王子四丁目",
-      "delay_seconds": 63.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-14T10:22:03+09:00",
-      "busroute": "Shuku91",
-      "busstop": "和田堀橋",
-      "delay_seconds": 3.0,
-      "amedas_station": "練馬",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-14T10:22:03+09:00",
-      "busroute": "Hata44",
-      "busstop": "駒込病院前",
+      "actual_time": "2026-11-14T10:52:03+09:00",
+      "busroute": "Kusa41",
+      "busstop": "浅草寿町",
       "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-14T10:22:03+09:00",
-      "busroute": "Shinko29",
-      "busstop": "下小松橋",
-      "delay_seconds": 123.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-14T10:52:03+09:00",
+      "busroute": "Aki26",
+      "busstop": "浜町中の橋",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-14T10:22:03+09:00",
-      "busroute": "Kame29",
-      "busstop": "北砂二丁目",
-      "delay_seconds": 63.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-14T10:52:02+09:00",
+      "busroute": "I92",
+      "busstop": "品川総合福祉センター前",
+      "delay_seconds": 2.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-14T10:52:02+09:00",
+      "busroute": "Ue46",
+      "busstop": "南千住清掃車車庫前",
+      "delay_seconds": 122.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-14T10:52:02+09:00",
+      "busroute": "Kita47",
+      "busstop": "千住車庫前",
+      "delay_seconds": 62.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
