@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T23:27:12.328866",
-  "total_observations": 1584573,
-  "observations_with_weather": 1580252,
+  "generated_at": "2026-11-16T23:57:17.331067",
+  "total_observations": 1584577,
+  "observations_with_weather": 1580256,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-16 23:23:32.015708",
+  "period_end": "2026-11-16 23:38:44.450069",
   "delay_seconds": {
     "mean": 186.0,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1576870,
-    "rows_total": 1580252,
+    "rows_with_precipitation_data": 1576874,
+    "rows_total": 1580256,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -289,50 +289,50 @@
     },
     {
       "date": "2026-11-16",
-      "n": 43232,
-      "mean_delay": 169.07221502590673,
+      "n": 43236,
+      "mean_delay": 169.06212415579608,
       "n_rain": 0
     }
   ],
   "latest_observations": [
+    {
+      "actual_time": "2026-11-16T23:37:17+09:00",
+      "busroute": "T02",
+      "busstop": "小石川四丁目",
+      "delay_seconds": 137.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T23:32:20+09:00",
+      "busroute": "T02",
+      "busstop": "富坂上",
+      "delay_seconds": 20.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T23:27:17+09:00",
+      "busroute": "T02",
+      "busstop": "大塚三丁目",
+      "delay_seconds": 77.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T23:26:06+09:00",
+      "busroute": "T02",
+      "busstop": "本郷三丁目駅前",
+      "delay_seconds": 6.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
     {
       "actual_time": "2026-11-16T23:22:55+09:00",
       "busroute": "Ryou28",
       "busstop": "稲荷神社前(いなりじんじゃまえ（えどがわく）)",
       "delay_seconds": 55.0,
       "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T23:22:18+09:00",
-      "busroute": "T02",
-      "busstop": "春日二丁目",
-      "delay_seconds": 138.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T23:21:53+09:00",
-      "busroute": "T02",
-      "busstop": "上野広小路",
-      "delay_seconds": 53.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T23:20:28+09:00",
-      "busroute": "Mon19",
-      "busstop": "辰巳三丁目",
-      "delay_seconds": -32.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T23:17:23+09:00",
-      "busroute": "T02",
-      "busstop": "東上野一丁目",
-      "delay_seconds": 23.0,
-      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
