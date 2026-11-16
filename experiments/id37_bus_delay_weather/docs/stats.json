@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-16T09:01:14.799556",
-  "total_observations": 1544336,
-  "observations_with_weather": 1540015,
+  "generated_at": "2026-11-16T09:31:19.300681",
+  "total_observations": 1548677,
+  "observations_with_weather": 1544356,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-16 08:25:07.992734",
+  "period_end": "2026-11-16 09:27:30.989662",
   "delay_seconds": {
-    "mean": 186.3,
+    "mean": 186.2,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1536633,
-    "rows_total": 1540015,
+    "rows_with_precipitation_data": 1540974,
+    "rows_total": 1544356,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -289,49 +289,49 @@
     },
     {
       "date": "2026-11-16",
-      "n": 2995,
-      "mean_delay": 126.89382303839733,
+      "n": 7336,
+      "mean_delay": 145.122546346783,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-16T08:24:35+09:00",
-      "busroute": "Shuku91",
-      "busstop": "大原町",
-      "delay_seconds": 95.0,
+      "actual_time": "2026-11-16T09:27:05+09:00",
+      "busroute": "Shuku74",
+      "busstop": "都営戸山ハイツ前",
+      "delay_seconds": 365.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T08:24:35+09:00",
-      "busroute": "Ume70",
-      "busstop": "東大和市駅前",
-      "delay_seconds": 275.0,
-      "amedas_station": "所沢",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T08:24:34+09:00",
-      "busroute": "Shina93",
-      "busstop": "白金台五丁目",
-      "delay_seconds": 394.0,
+      "actual_time": "2026-11-16T09:27:04+09:00",
+      "busroute": "T05-2",
+      "busstop": "有明一丁目",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T08:24:34+09:00",
-      "busroute": "Shiro61",
-      "busstop": "目白駅前",
-      "delay_seconds": 214.0,
+      "actual_time": "2026-11-16T09:27:04+09:00",
+      "busroute": "Ou57",
+      "busstop": "赤羽二丁目",
+      "delay_seconds": 124.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T08:24:34+09:00",
-      "busroute": "Shina99",
-      "busstop": "港南大橋下",
-      "delay_seconds": 214.0,
+      "actual_time": "2026-11-16T09:27:04+09:00",
+      "busroute": "Hata44",
+      "busstop": "東尾久五丁目",
+      "delay_seconds": 184.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T09:27:04+09:00",
+      "busroute": "Ue69",
+      "busstop": "高田馬場駅前",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
