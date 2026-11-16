@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T21:26:48.162447",
-  "total_observations": 1581369,
-  "observations_with_weather": 1577048,
+  "generated_at": "2026-11-16T21:56:52.956339",
+  "total_observations": 1582929,
+  "observations_with_weather": 1578608,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-16 21:21:49.870380",
+  "period_end": "2026-11-16 21:52:16.958471",
   "delay_seconds": {
     "mean": 186.0,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1573666,
-    "rows_total": 1577048,
+    "rows_with_precipitation_data": 1575226,
+    "rows_total": 1578608,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -289,49 +289,49 @@
     },
     {
       "date": "2026-11-16",
-      "n": 40028,
-      "mean_delay": 169.95583091835715,
+      "n": 41588,
+      "mean_delay": 170.21205636241223,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-16T21:21:34+09:00",
-      "busroute": "Kita47",
-      "busstop": "旧道交差点",
-      "delay_seconds": 34.0,
-      "amedas_station": "越谷",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T21:21:32+09:00",
-      "busroute": "Ue26",
-      "busstop": "谷中",
-      "delay_seconds": 152.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T21:21:31+09:00",
+      "actual_time": "2026-11-16T21:51:34+09:00",
       "busroute": "Higashi43",
-      "busstop": "西尾久三丁目",
-      "delay_seconds": 91.0,
+      "busstop": "小台",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T21:21:31+09:00",
-      "busroute": "Kame29",
-      "busstop": "北砂四丁目",
-      "delay_seconds": 91.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-16T21:51:33+09:00",
+      "busroute": "Ike86Shutsunyuu",
+      "busstop": "学習院戸山キャンパス前",
+      "delay_seconds": 153.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T21:21:31+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "浅草七丁目",
-      "delay_seconds": 151.0,
+      "actual_time": "2026-11-16T21:51:33+09:00",
+      "busroute": "Kusa63",
+      "busstop": "浅草一丁目",
+      "delay_seconds": 213.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T21:51:33+09:00",
+      "busroute": "Ou78",
+      "busstop": "南常盤台",
+      "delay_seconds": 453.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T21:51:32+09:00",
+      "busroute": "Higashi22",
+      "busstop": "呉服橋",
+      "delay_seconds": 272.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
