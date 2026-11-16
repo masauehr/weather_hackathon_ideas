@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T10:31:28.325771",
-  "total_observations": 1556178,
-  "observations_with_weather": 1551857,
+  "generated_at": "2026-11-16T11:21:02.033136",
+  "total_observations": 1559519,
+  "observations_with_weather": 1555198,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-16 10:28:20.147762",
+  "period_end": "2026-11-16 10:58:43.612310",
   "delay_seconds": {
     "mean": 186.1,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1548475,
-    "rows_total": 1551857,
+    "rows_with_precipitation_data": 1551816,
+    "rows_total": 1555198,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -289,50 +289,50 @@
     },
     {
       "date": "2026-11-16",
-      "n": 14837,
-      "mean_delay": 151.67203612590146,
+      "n": 18178,
+      "mean_delay": 154.0619980195841,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-16T10:27:36+09:00",
-      "busroute": "You12-1",
-      "busstop": "枝川二丁目",
-      "delay_seconds": 156.0,
+      "actual_time": "2026-11-16T10:58:04+09:00",
+      "busroute": "Ume76Hei",
+      "busstop": "吉野",
+      "delay_seconds": 4.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T10:58:04+09:00",
+      "busroute": "Ue46",
+      "busstop": "浅草一丁目",
+      "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T10:58:04+09:00",
+      "busroute": "Haya81",
+      "busstop": "早大正門",
+      "delay_seconds": 4.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T10:58:03+09:00",
+      "busroute": "Ta87",
+      "busstop": "北里研究所前",
+      "delay_seconds": 3.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T10:58:03+09:00",
+      "busroute": "Rinkai28-2",
+      "busstop": "堀江団地",
+      "delay_seconds": 63.0,
       "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T10:27:35+09:00",
-      "busroute": "T05-1",
-      "busstop": "築地三丁目",
-      "delay_seconds": 335.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T10:27:35+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "駒形橋",
-      "delay_seconds": 155.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T10:27:34+09:00",
-      "busroute": "Shina99",
-      "busstop": "東京出入国在留管理局前",
-      "delay_seconds": 34.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T10:27:34+09:00",
-      "busroute": "Tan96",
-      "busstop": "東五反田三丁目",
-      "delay_seconds": 154.0,
-      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
