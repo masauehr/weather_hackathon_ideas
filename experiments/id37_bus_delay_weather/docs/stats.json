@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T09:31:19.300681",
-  "total_observations": 1548677,
-  "observations_with_weather": 1544356,
+  "generated_at": "2026-11-16T10:01:23.755719",
+  "total_observations": 1552617,
+  "observations_with_weather": 1548296,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-16 09:27:30.989662",
+  "period_end": "2026-11-16 09:57:54.574421",
   "delay_seconds": {
     "mean": 186.2,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1540974,
-    "rows_total": 1544356,
+    "rows_with_precipitation_data": 1544914,
+    "rows_total": 1548296,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -289,49 +289,49 @@
     },
     {
       "date": "2026-11-16",
-      "n": 7336,
-      "mean_delay": 145.122546346783,
+      "n": 11276,
+      "mean_delay": 149.4012947853849,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-16T09:27:05+09:00",
-      "busroute": "Shuku74",
-      "busstop": "都営戸山ハイツ前",
-      "delay_seconds": 365.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-16T09:57:35+09:00",
+      "busroute": "Ume76Hei",
+      "busstop": "万年橋",
+      "delay_seconds": 95.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T09:27:04+09:00",
+      "actual_time": "2026-11-16T09:57:35+09:00",
+      "busroute": "Ume70",
+      "busstop": "小川町二丁目",
+      "delay_seconds": -25.0,
+      "amedas_station": "府中",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T09:57:33+09:00",
       "busroute": "T05-2",
-      "busstop": "有明一丁目",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
+      "busstop": "武蔵野大学前",
+      "delay_seconds": 33.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-16T09:27:04+09:00",
-      "busroute": "Ou57",
-      "busstop": "赤羽二丁目",
-      "delay_seconds": 124.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T09:27:04+09:00",
-      "busroute": "Hata44",
-      "busstop": "東尾久五丁目",
-      "delay_seconds": 184.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-16T09:27:04+09:00",
+      "actual_time": "2026-11-16T09:57:33+09:00",
       "busroute": "Ue69",
-      "busstop": "高田馬場駅前",
-      "delay_seconds": 4.0,
+      "busstop": "大曲",
+      "delay_seconds": 33.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-16T09:57:33+09:00",
+      "busroute": "Ou57",
+      "busstop": "志茂二丁目",
+      "delay_seconds": 33.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
