@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-11-17T15:14:27.570494",
-  "total_observations": 1622447,
-  "observations_with_weather": 1618126,
+  "generated_at": "2026-11-17T17:41:33.924367",
+  "total_observations": 1624887,
+  "observations_with_weather": 1620566,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-17 15:11:57.646940",
+  "period_end": "2026-11-17 17:39:18.526948",
   "delay_seconds": {
-    "mean": 185.6,
+    "mean": 185.7,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1614744,
-    "rows_total": 1618126,
-    "rows_with_rain_detected": 64535
+    "rows_with_precipitation_data": 1617184,
+    "rows_total": 1620566,
+    "rows_with_rain_detected": 65604
   },
   "daily": [
     {
@@ -295,49 +295,49 @@
     },
     {
       "date": "2026-11-17",
-      "n": 37870,
-      "mean_delay": 170.71119619751784,
-      "n_rain": 1169
+      "n": 40310,
+      "mean_delay": 176.5021334656413,
+      "n_rain": 2238
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-17T15:11:34+09:00",
-      "busroute": "Hata44",
-      "busstop": "町屋三丁目",
-      "delay_seconds": 214.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "actual_time": "2026-11-17T17:39:06+09:00",
+      "busroute": "Ume77Otsu",
+      "busstop": "万年橋",
+      "delay_seconds": 66.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-17T15:11:34+09:00",
-      "busroute": "Shina97",
-      "busstop": "魚籃坂下",
-      "delay_seconds": 34.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
+      "actual_time": "2026-11-17T17:39:04+09:00",
+      "busroute": "Ume76Hei",
+      "busstop": "吉野梅林",
+      "delay_seconds": 244.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-17T15:11:34+09:00",
-      "busroute": "Shina99",
-      "busstop": "品川ふ頭橋",
-      "delay_seconds": 214.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-17T15:11:34+09:00",
-      "busroute": "Shina97",
-      "busstop": "グランドプリンスホテル新高輪前",
-      "delay_seconds": 394.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.5
-    },
-    {
-      "actual_time": "2026-11-17T15:11:33+09:00",
+      "actual_time": "2026-11-17T17:39:04+09:00",
       "busroute": "Shibu88",
       "busstop": "神谷町駅前",
-      "delay_seconds": 33.0,
+      "delay_seconds": 304.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.5
+    },
+    {
+      "actual_time": "2026-11-17T17:39:04+09:00",
+      "busroute": "Shibu66",
+      "busstop": "初台坂上",
+      "delay_seconds": 364.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.5
+    },
+    {
+      "actual_time": "2026-11-17T17:39:04+09:00",
+      "busroute": "Ike65",
+      "busstop": "南長崎二丁目",
+      "delay_seconds": 184.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.5
     }
