@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-17T08:38:11.930724",
-  "total_observations": 1596839,
-  "observations_with_weather": 1592518,
+  "generated_at": "2026-11-17T09:08:16.797954",
+  "total_observations": 1601539,
+  "observations_with_weather": 1597218,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-17 08:33:23.361052",
+  "period_end": "2026-11-17 09:03:48.581539",
   "delay_seconds": {
     "mean": 185.7,
-    "median": 105.0,
+    "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1589136,
-    "rows_total": 1592518,
+    "rows_with_precipitation_data": 1593836,
+    "rows_total": 1597218,
     "rows_with_rain_detected": 63366
   },
   "daily": [
@@ -295,50 +295,50 @@
     },
     {
       "date": "2026-11-17",
-      "n": 12262,
-      "mean_delay": 151.2247594193443,
+      "n": 16962,
+      "mean_delay": 161.0084895649098,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-17T08:33:04+09:00",
-      "busroute": "T05-2",
-      "busstop": "勝どき橋南詰",
+      "actual_time": "2026-11-17T09:03:06+09:00",
+      "busroute": "T05-1",
+      "busstop": "築地三丁目",
+      "delay_seconds": 66.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-17T09:03:04+09:00",
+      "busroute": "Kita47",
+      "busstop": "弥生町",
       "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-17T08:33:04+09:00",
-      "busroute": "Kusa64",
-      "busstop": "王子駅前",
+      "actual_time": "2026-11-17T09:03:04+09:00",
+      "busroute": "Kame29",
+      "busstop": "境川",
       "delay_seconds": 4.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-17T09:03:03+09:00",
+      "busroute": "Higashi42-1",
+      "busstop": "浅草橋駅前",
+      "delay_seconds": 3.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-17T08:33:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "白金高輪駅前",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-17T08:33:04+09:00",
-      "busroute": "Ta87",
-      "busstop": "慶応義塾大前",
-      "delay_seconds": 4.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-17T08:33:04+09:00",
-      "busroute": "Kusa41",
-      "busstop": "東日暮里四丁目",
-      "delay_seconds": 184.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-17T09:03:03+09:00",
+      "busroute": "Shina91",
+      "busstop": "明晴学園前",
+      "delay_seconds": 63.0,
+      "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     }
   ]
