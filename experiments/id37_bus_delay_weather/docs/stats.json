@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-20T22:45:32.673037",
-  "total_observations": 1800421,
-  "observations_with_weather": 1796100,
+  "generated_at": "2026-11-20T23:15:37.651163",
+  "total_observations": 1800576,
+  "observations_with_weather": 1796255,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-20 22:44:45.416944",
+  "period_end": "2026-11-20 23:15:07.684884",
   "delay_seconds": {
     "mean": 187.3,
     "median": 107.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1792662,
-    "rows_total": 1796100,
+    "rows_with_precipitation_data": 1792817,
+    "rows_total": 1796255,
     "rows_with_rain_detected": 66128
   },
   "daily": [
@@ -313,50 +313,50 @@
     },
     {
       "date": "2026-11-20",
-      "n": 60532,
-      "mean_delay": 206.21355646600145,
+      "n": 60687,
+      "mean_delay": 206.31932703873977,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-20T22:44:03+09:00",
-      "busroute": "Ou40Shutsunyuu",
-      "busstop": "北区神谷町",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-11-20T23:14:23+09:00",
+      "busroute": "T02",
+      "busstop": "真砂坂上",
+      "delay_seconds": 23.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-20T22:44:03+09:00",
-      "busroute": "Kita47",
-      "busstop": "平野町",
-      "delay_seconds": 183.0,
+      "actual_time": "2026-11-20T23:14:21+09:00",
+      "busroute": "Kame26",
+      "busstop": "東小松川一丁目",
+      "delay_seconds": 621.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-20T23:14:04+09:00",
+      "busroute": "Ue69",
+      "busstop": "小滝橋",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-20T22:44:02+09:00",
-      "busroute": "Ou40Shutsunyuu",
-      "busstop": "西巣鴨",
-      "delay_seconds": 2.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-20T23:14:04+09:00",
+      "busroute": "Ryou28",
+      "busstop": "北砂二丁目",
+      "delay_seconds": 184.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-20T22:43:57+09:00",
-      "busroute": "Mon33",
-      "busstop": "柳島",
-      "delay_seconds": 297.0,
+      "actual_time": "2026-11-20T23:13:42+09:00",
+      "busroute": "Higashi42-1",
+      "busstop": "隅田公園",
+      "delay_seconds": 222.0,
       "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-20T22:43:55+09:00",
-      "busroute": "Ou78",
-      "busstop": "野方二丁目",
-      "delay_seconds": -5.0,
-      "amedas_station": "練馬",
       "precipitation10m_mm": 0.0
     }
   ]
