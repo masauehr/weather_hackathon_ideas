@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-21T12:04:49.407277",
-  "total_observations": 1821332,
-  "observations_with_weather": 1817011,
+  "generated_at": "2026-11-21T12:34:54.249144",
+  "total_observations": 1823355,
+  "observations_with_weather": 1819034,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-21 12:04:25.955749",
+  "period_end": "2026-11-21 12:25:49.773130",
   "delay_seconds": {
     "mean": 186.7,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1813459,
-    "rows_total": 1817011,
+    "rows_with_precipitation_data": 1814974,
+    "rows_total": 1819034,
     "rows_with_rain_detected": 66128
   },
   "daily": [
@@ -319,49 +319,49 @@
     },
     {
       "date": "2026-11-21",
-      "n": 20742,
-      "mean_delay": 138.53244624433518,
+      "n": 22765,
+      "mean_delay": 142.2930375576543,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-21T12:04:05+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "奥多摩橋",
-      "delay_seconds": 125.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-21T12:04:04+09:00",
+      "actual_time": "2026-11-21T12:25:06+09:00",
       "busroute": "Ume70",
-      "busstop": "鈴法寺跡",
-      "delay_seconds": 64.0,
+      "busstop": "新町天神社前",
+      "delay_seconds": 1746.0,
       "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-21T12:04:04+09:00",
-      "busroute": "Ii64",
-      "busstop": "江戸川橋",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-21T12:25:05+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "霞台第二住宅",
+      "delay_seconds": 365.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-21T12:25:04+09:00",
+      "busroute": "Shiro61",
+      "busstop": "牛込保健センター前",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-21T12:04:04+09:00",
-      "busroute": "Shina98",
-      "busstop": "若潮橋",
-      "delay_seconds": 124.0,
-      "amedas_station": "羽田",
+      "actual_time": "2026-11-21T12:25:04+09:00",
+      "busroute": "Kusa63",
+      "busstop": "巣鴨四丁目",
+      "delay_seconds": 64.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-21T12:04:03+09:00",
-      "busroute": "Tan96",
-      "busstop": "飯倉片町",
-      "delay_seconds": 483.0,
+      "actual_time": "2026-11-21T12:25:04+09:00",
+      "busroute": "Nishiki40",
+      "busstop": "水神前",
+      "delay_seconds": 844.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
