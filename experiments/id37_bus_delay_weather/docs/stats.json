@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-24T05:26:17.309215",
-  "total_observations": 2003928,
-  "observations_with_weather": 1999607,
+  "generated_at": "2026-11-24T05:56:22.581630",
+  "total_observations": 2003954,
+  "observations_with_weather": 1999633,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-24 05:25:47.158032",
+  "period_end": "2026-11-24 05:56:11.287509",
   "delay_seconds": {
     "mean": 185.6,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 1995547,
-    "rows_total": 1999607,
+    "rows_with_precipitation_data": 1995573,
+    "rows_total": 1999633,
     "rows_with_rain_detected": 66128
   },
   "daily": [
@@ -337,50 +337,50 @@
     },
     {
       "date": "2026-11-24",
-      "n": 7,
-      "mean_delay": 26.0,
+      "n": 33,
+      "mean_delay": 30.0,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-24T05:25:21+09:00",
-      "busroute": "Ichi01",
-      "busstop": "新橋駅前",
-      "delay_seconds": 21.0,
+      "actual_time": "2026-11-24T05:56:06+09:00",
+      "busroute": "Ume76Hei",
+      "busstop": "畑中下西",
+      "delay_seconds": 6.0,
+      "amedas_station": "青梅",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-24T05:56:00+09:00",
+      "busroute": "T02",
+      "busstop": "新大塚",
+      "delay_seconds": 120.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T05:25:05+09:00",
-      "busroute": "Nishikatsu20Otsu",
-      "busstop": "中葛西七丁目",
-      "delay_seconds": 5.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-24T05:20:02+09:00",
-      "busroute": "Nishikatsu20Otsu",
-      "busstop": "西葛西駅前",
-      "delay_seconds": 2.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-24T05:20:02+09:00",
-      "busroute": "Ichi01",
-      "busstop": "水産仲卸棟",
-      "delay_seconds": 182.0,
+      "actual_time": "2026-11-24T05:55:43+09:00",
+      "busroute": "Shina98",
+      "busstop": "新東海橋",
+      "delay_seconds": 43.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T05:07:03+09:00",
+      "actual_time": "2026-11-24T05:55:25+09:00",
       "busroute": "Ichi01",
       "busstop": "国立がん研究センター前",
-      "delay_seconds": 3.0,
+      "delay_seconds": 25.0,
       "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-24T05:55:02+09:00",
+      "busroute": "Ryou28",
+      "busstop": "第六葛西小学校前",
+      "delay_seconds": 2.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
   ]
