@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-24T17:45:18.393745",
-  "total_observations": 2063697,
-  "observations_with_weather": 2059376,
+  "generated_at": "2026-11-24T19:39:16.672911",
+  "total_observations": 2064221,
+  "observations_with_weather": 2059900,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-24 17:19:03.203816",
+  "period_end": "2026-11-24 19:05:04.890863",
   "delay_seconds": {
-    "mean": 185.6,
+    "mean": 185.7,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2055316,
-    "rows_total": 2059376,
+    "rows_with_precipitation_data": 2055840,
+    "rows_total": 2059900,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -337,49 +337,49 @@
     },
     {
       "date": "2026-11-24",
-      "n": 59776,
-      "mean_delay": 185.23854055139185,
+      "n": 60300,
+      "mean_delay": 186.1180431177446,
       "n_rain": 44
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-24T17:18:34+09:00",
-      "busroute": "Ike86",
-      "busstop": "鳩森小学校西",
-      "delay_seconds": 34.0,
+      "actual_time": "2026-11-24T19:04:35+09:00",
+      "busroute": "Shina99",
+      "busstop": "京浜運河",
+      "delay_seconds": 395.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T17:18:34+09:00",
-      "busroute": "Ou55",
-      "busstop": "王子二丁目",
-      "delay_seconds": 214.0,
+      "actual_time": "2026-11-24T19:04:34+09:00",
+      "busroute": "Ue69",
+      "busstop": "石切橋",
+      "delay_seconds": 154.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T17:18:34+09:00",
-      "busroute": "Shina93",
-      "busstop": "北品川二丁目",
-      "delay_seconds": 34.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 1.0
+      "actual_time": "2026-11-24T19:04:33+09:00",
+      "busroute": "Ue58",
+      "busstop": "音羽二丁目",
+      "delay_seconds": 213.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T17:18:34+09:00",
-      "busroute": "I92",
-      "busstop": "都立産業技術高専品川キャンパス前",
-      "delay_seconds": 94.0,
-      "amedas_station": "羽田",
-      "precipitation10m_mm": 1.0
+      "actual_time": "2026-11-24T19:04:33+09:00",
+      "busroute": "Kusa43",
+      "busstop": "弥生町",
+      "delay_seconds": 93.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T17:18:33+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "駒形橋",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-11-24T19:04:32+09:00",
+      "busroute": "Hashi86",
+      "busstop": "二ノ橋",
+      "delay_seconds": 212.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
