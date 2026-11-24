@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-24T13:25:02.855805",
-  "total_observations": 2040230,
-  "observations_with_weather": 2035909,
+  "generated_at": "2026-11-24T13:55:08.084721",
+  "total_observations": 2043133,
+  "observations_with_weather": 2038812,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-24 13:23:48.027617",
+  "period_end": "2026-11-24 13:54:11.550493",
   "delay_seconds": {
     "mean": 185.4,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2031849,
-    "rows_total": 2035909,
+    "rows_with_precipitation_data": 2034752,
+    "rows_total": 2038812,
     "rows_with_rain_detected": 66128
   },
   "daily": [
@@ -337,50 +337,50 @@
     },
     {
       "date": "2026-11-24",
-      "n": 36309,
-      "mean_delay": 172.50800077115866,
+      "n": 39212,
+      "mean_delay": 172.66551055799246,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-24T13:23:05+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "古川親水公園",
-      "delay_seconds": 1025.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-24T13:53:36+09:00",
+      "busroute": "Ume74Kou",
+      "busstop": "成木一丁目四ツ角",
+      "delay_seconds": 36.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T13:23:05+09:00",
-      "busroute": "Ume70",
-      "busstop": "神明二丁目",
-      "delay_seconds": 245.0,
-      "amedas_station": "所沢",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-24T13:23:04+09:00",
-      "busroute": "Higashi42-1",
-      "busstop": "室町三丁目",
-      "delay_seconds": 4.0,
+      "actual_time": "2026-11-24T13:53:34+09:00",
+      "busroute": "Ue69",
+      "busstop": "本郷三丁目駅前",
+      "delay_seconds": 34.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T13:23:04+09:00",
-      "busroute": "Ike86",
-      "busstop": "新宿コズミックセンター前",
-      "delay_seconds": 124.0,
+      "actual_time": "2026-11-24T13:53:34+09:00",
+      "busroute": "Tan96",
+      "busstop": "飯倉片町",
+      "delay_seconds": 274.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T13:23:03+09:00",
-      "busroute": "Hira23",
-      "busstop": "新川橋",
-      "delay_seconds": 3.0,
-      "amedas_station": "江戸川臨海",
+      "actual_time": "2026-11-24T13:53:33+09:00",
+      "busroute": "Kusa41",
+      "busstop": "大下",
+      "delay_seconds": 213.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-24T13:53:33+09:00",
+      "busroute": "Nishiki40",
+      "busstop": "業平四丁目",
+      "delay_seconds": 33.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
