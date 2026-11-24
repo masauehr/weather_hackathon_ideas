@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-24T13:55:08.084721",
-  "total_observations": 2043133,
-  "observations_with_weather": 2038812,
+  "generated_at": "2026-11-24T14:25:13.180215",
+  "total_observations": 2046023,
+  "observations_with_weather": 2041702,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-24 13:54:11.550493",
+  "period_end": "2026-11-24 14:24:35.072175",
   "delay_seconds": {
     "mean": 185.4,
-    "median": 106.0,
+    "median": 105.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2034752,
-    "rows_total": 2038812,
+    "rows_with_precipitation_data": 2037642,
+    "rows_total": 2041702,
     "rows_with_rain_detected": 66128
   },
   "daily": [
@@ -337,50 +337,50 @@
     },
     {
       "date": "2026-11-24",
-      "n": 39212,
-      "mean_delay": 172.66551055799246,
+      "n": 42102,
+      "mean_delay": 173.27103225499977,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-24T13:53:36+09:00",
+      "actual_time": "2026-11-24T14:24:05+09:00",
+      "busroute": "Ume70",
+      "busstop": "東大和市役所入口",
+      "delay_seconds": 245.0,
+      "amedas_station": "所沢",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-24T14:24:05+09:00",
+      "busroute": "Shina93",
+      "busstop": "品川駅高輪口",
+      "delay_seconds": 5.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-24T14:24:05+09:00",
       "busroute": "Ume74Kou",
-      "busstop": "成木一丁目四ツ角",
-      "delay_seconds": 36.0,
+      "busstop": "西分二丁目",
+      "delay_seconds": 5.0,
       "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T13:53:34+09:00",
-      "busroute": "Ue69",
-      "busstop": "本郷三丁目駅前",
-      "delay_seconds": 34.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-24T14:24:04+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "仲町",
+      "delay_seconds": 544.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-24T13:53:34+09:00",
-      "busroute": "Tan96",
-      "busstop": "飯倉片町",
-      "delay_seconds": 274.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-24T13:53:33+09:00",
-      "busroute": "Kusa41",
-      "busstop": "大下",
-      "delay_seconds": 213.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-24T13:53:33+09:00",
-      "busroute": "Nishiki40",
-      "busstop": "業平四丁目",
-      "delay_seconds": 33.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-24T14:24:04+09:00",
+      "busroute": "Ume77Kou",
+      "busstop": "青梅駅前",
+      "delay_seconds": 4.0,
+      "amedas_station": "青梅",
       "precipitation10m_mm": 0.0
     }
   ]
