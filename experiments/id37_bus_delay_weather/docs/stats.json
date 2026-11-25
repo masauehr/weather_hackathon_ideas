@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-25T10:29:33.589278",
-  "total_observations": 2092988,
-  "observations_with_weather": 2088667,
+  "generated_at": "2026-11-25T10:59:39.038778",
+  "total_observations": 2096330,
+  "observations_with_weather": 2092009,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-25 10:24:41.510845",
+  "period_end": "2026-11-25 10:55:12.058584",
   "delay_seconds": {
-    "mean": 185.6,
+    "mean": 185.5,
     "median": 105.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2084607,
-    "rows_total": 2088667,
+    "rows_with_precipitation_data": 2087949,
+    "rows_total": 2092009,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -343,49 +343,49 @@
     },
     {
       "date": "2026-11-25",
-      "n": 21487,
-      "mean_delay": 158.56652859868757,
+      "n": 24829,
+      "mean_delay": 160.23476579805873,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-25T10:24:06+09:00",
-      "busroute": "Ume70",
-      "busstop": "峰",
-      "delay_seconds": 66.0,
-      "amedas_station": "所沢",
+      "actual_time": "2026-11-25T10:54:35+09:00",
+      "busroute": "Shibu88",
+      "busstop": "虎ノ門三丁目",
+      "delay_seconds": 155.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T10:24:05+09:00",
+      "actual_time": "2026-11-25T10:54:34+09:00",
+      "busroute": "Hashi63",
+      "busstop": "大久保通り",
+      "delay_seconds": 94.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T10:54:33+09:00",
+      "busroute": "Mon33",
+      "busstop": "越中島",
+      "delay_seconds": 573.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T10:54:33+09:00",
       "busroute": "Shina98",
-      "busstop": "みなとが丘ふ頭公園前",
-      "delay_seconds": 65.0,
+      "busstop": "品川清掃工場前",
+      "delay_seconds": 93.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T10:24:05+09:00",
-      "busroute": "Higashi42-2",
-      "busstop": "今戸",
-      "delay_seconds": 65.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T10:24:04+09:00",
-      "busroute": "Ike65",
-      "busstop": "目白駅前",
-      "delay_seconds": 184.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T10:24:04+09:00",
-      "busroute": "Ii62",
-      "busstop": "飯田橋",
-      "delay_seconds": 124.0,
+      "actual_time": "2026-11-25T10:54:32+09:00",
+      "busroute": "Ta87",
+      "busstop": "恵比寿二丁目",
+      "delay_seconds": 32.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
