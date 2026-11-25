@@ -50,8 +50,10 @@ def load_station_table() -> dict:
 
     stations = {}
     for code, info in raw.items():
-        # elems の1文字目が"1"なら降水量を観測している(気象庁の仕様)
-        if not info.get("elems", "")[:1] == "1":
+        # elems(8桁)の2文字目が"1"なら降水量を観測している。1文字目は気温なので、
+        # 1文字目で絞ると降水量のみの観測点(胡屋・国頭など全国で約370地点)を取りこぼす
+        # (旧実装は1文字目で絞っていた。2026-11-25修正。桁の意味は jma_navigator/tools/build_amedas_stations.py の整理に基づく)
+        if info.get("elems", "")[1:2] != "1":
             continue
         stations[code] = {
             "name": info["kjName"],
