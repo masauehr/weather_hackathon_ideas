@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-25T16:00:32.606570",
-  "total_observations": 2126489,
-  "observations_with_weather": 2122168,
+  "generated_at": "2026-11-25T16:30:38.254788",
+  "total_observations": 2129985,
+  "observations_with_weather": 2125664,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-25 15:59:46.307810",
+  "period_end": "2026-11-25 16:30:18.670927",
   "delay_seconds": {
     "mean": 185.5,
     "median": 105.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2118099,
-    "rows_total": 2122168,
+    "rows_with_precipitation_data": 2121595,
+    "rows_total": 2125664,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -343,50 +343,50 @@
     },
     {
       "date": "2026-11-25",
-      "n": 54988,
-      "mean_delay": 172.11751654906524,
+      "n": 58484,
+      "mean_delay": 174.8070412420491,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-25T15:59:05+09:00",
-      "busroute": "Shina97",
-      "busstop": "左門町",
-      "delay_seconds": 245.0,
+      "actual_time": "2026-11-25T16:30:05+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "浅草橋",
+      "delay_seconds": 125.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T15:59:05+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "古川親水公園",
-      "delay_seconds": 5.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T15:59:04+09:00",
+      "actual_time": "2026-11-25T16:30:04+09:00",
       "busroute": "Shina98",
-      "busstop": "ダイトー大井物流センター前",
-      "delay_seconds": 4.0,
+      "busstop": "八潮二丁目",
+      "delay_seconds": 304.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T15:59:03+09:00",
-      "busroute": "Ta87",
-      "busstop": "北里研究所前",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-11-25T16:30:04+09:00",
+      "busroute": "Shina96",
+      "busstop": "天王洲運河",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T15:59:03+09:00",
+      "actual_time": "2026-11-25T16:30:04+09:00",
       "busroute": "Shina98",
-      "busstop": "若潮橋",
-      "delay_seconds": 63.0,
+      "busstop": "鴻池運輸前",
+      "delay_seconds": 124.0,
       "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T16:30:04+09:00",
+      "busroute": "Haya81",
+      "busstop": "若松町",
+      "delay_seconds": 244.0,
+      "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
   ]
