@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-25T12:29:55.142301",
-  "total_observations": 2105437,
-  "observations_with_weather": 2101116,
+  "generated_at": "2026-11-25T13:00:00.412546",
+  "total_observations": 2108330,
+  "observations_with_weather": 2104009,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-25 12:26:33.798979",
+  "period_end": "2026-11-25 12:56:58.835995",
   "delay_seconds": {
     "mean": 185.5,
     "median": 105.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2097047,
-    "rows_total": 2101116,
+    "rows_with_precipitation_data": 2099940,
+    "rows_total": 2104009,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -343,49 +343,49 @@
     },
     {
       "date": "2026-11-25",
-      "n": 33936,
-      "mean_delay": 164.05280528052805,
+      "n": 36829,
+      "mean_delay": 164.87577724076135,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-25T12:26:05+09:00",
-      "busroute": "Ume70",
-      "busstop": "神明二丁目",
-      "delay_seconds": 425.0,
-      "amedas_station": "所沢",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T12:26:04+09:00",
-      "busroute": "T05-2",
-      "busstop": "有明小中学校前",
-      "delay_seconds": 4.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T12:26:04+09:00",
-      "busroute": "Kusa63",
-      "busstop": "上池袋三丁目",
-      "delay_seconds": 184.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T12:26:04+09:00",
+      "actual_time": "2026-11-25T12:56:34+09:00",
       "busroute": "I92",
-      "busstop": "明晴学園前",
-      "delay_seconds": 64.0,
+      "busstop": "八潮北",
+      "delay_seconds": 34.0,
       "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T12:26:03+09:00",
+      "actual_time": "2026-11-25T12:56:34+09:00",
+      "busroute": "T05-2",
+      "busstop": "晴海トリトンスクエア前",
+      "delay_seconds": 574.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T12:56:33+09:00",
       "busroute": "Ta87",
-      "busstop": "渋谷駅前",
-      "delay_seconds": 3.0,
+      "busstop": "白金高輪駅前",
+      "delay_seconds": 33.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T12:56:33+09:00",
+      "busroute": "Kusa43",
+      "busstop": "千住一丁目",
+      "delay_seconds": 333.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T12:56:33+09:00",
+      "busroute": "T05-2",
+      "busstop": "東京国際フォーラム前",
+      "delay_seconds": 453.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
