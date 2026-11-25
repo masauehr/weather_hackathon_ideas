@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-25T14:00:11.063882",
-  "total_observations": 2114129,
-  "observations_with_weather": 2109808,
+  "generated_at": "2026-11-25T14:30:16.500020",
+  "total_observations": 2117097,
+  "observations_with_weather": 2112776,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-25 13:57:54.199393",
+  "period_end": "2026-11-25 14:28:21.257089",
   "delay_seconds": {
     "mean": 185.4,
     "median": 105.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2105739,
-    "rows_total": 2109808,
+    "rows_with_precipitation_data": 2108707,
+    "rows_total": 2112776,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -343,49 +343,49 @@
     },
     {
       "date": "2026-11-25",
-      "n": 42628,
-      "mean_delay": 165.45235525945387,
+      "n": 45596,
+      "mean_delay": 166.47947188349855,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-25T13:57:35+09:00",
-      "busroute": "Ta87",
-      "busstop": "三田五丁目",
-      "delay_seconds": 35.0,
+      "actual_time": "2026-11-25T14:27:35+09:00",
+      "busroute": "Shina97",
+      "busstop": "西麻布",
+      "delay_seconds": 395.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T13:57:34+09:00",
-      "busroute": "Ou49",
-      "busstop": "江北陸橋下",
-      "delay_seconds": 154.0,
+      "actual_time": "2026-11-25T14:27:34+09:00",
+      "busroute": "Higashi43",
+      "busstop": "東大正門前",
+      "delay_seconds": 34.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T13:57:34+09:00",
-      "busroute": "Ume70",
-      "busstop": "瑞穂第一小学校前",
-      "delay_seconds": 214.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T13:57:33+09:00",
-      "busroute": "Nishiki37",
-      "busstop": "青戸車庫前",
-      "delay_seconds": 33.0,
+      "actual_time": "2026-11-25T14:27:34+09:00",
+      "busroute": "Shina91",
+      "busstop": "楽水橋（品川車庫入口）",
+      "delay_seconds": 94.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T13:57:33+09:00",
-      "busroute": "Hama95",
-      "busstop": "芝浦水再生センター前",
-      "delay_seconds": 33.0,
+      "actual_time": "2026-11-25T14:27:33+09:00",
+      "busroute": "Ou55",
+      "busstop": "王子二丁目",
+      "delay_seconds": 333.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T14:27:33+09:00",
+      "busroute": "Ue58",
+      "busstop": "本駒込四丁目",
+      "delay_seconds": 273.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
