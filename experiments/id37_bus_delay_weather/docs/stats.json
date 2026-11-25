@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-25T15:00:21.938525",
-  "total_observations": 2120117,
-  "observations_with_weather": 2115796,
+  "generated_at": "2026-11-25T15:30:27.297226",
+  "total_observations": 2123220,
+  "observations_with_weather": 2118899,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-25 14:58:50.504980",
+  "period_end": "2026-11-25 15:29:17.483502",
   "delay_seconds": {
-    "mean": 185.4,
+    "mean": 185.5,
     "median": 105.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2111727,
-    "rows_total": 2115796,
+    "rows_with_precipitation_data": 2114830,
+    "rows_total": 2118899,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -343,49 +343,49 @@
     },
     {
       "date": "2026-11-25",
-      "n": 48616,
-      "mean_delay": 167.9072527562942,
+      "n": 51719,
+      "mean_delay": 169.91001372803032,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-25T14:58:33+09:00",
-      "busroute": "Kusa39",
-      "busstop": "新宿郵便局前",
-      "delay_seconds": 153.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-25T15:28:34+09:00",
+      "busroute": "Shina91",
+      "busstop": "品川警察署入口",
+      "delay_seconds": 214.0,
+      "amedas_station": "羽田",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T14:58:33+09:00",
-      "busroute": "Shiro61",
-      "busstop": "鬼子母神前",
-      "delay_seconds": 153.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T14:58:32+09:00",
-      "busroute": "Ou78",
-      "busstop": "王子五丁目",
-      "delay_seconds": 272.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-25T14:58:32+09:00",
-      "busroute": "Shinko29",
-      "busstop": "中葛西七丁目",
-      "delay_seconds": 32.0,
+      "actual_time": "2026-11-25T15:28:33+09:00",
+      "busroute": "T05-2",
+      "busstop": "有明クリーンセンター前",
+      "delay_seconds": 453.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-25T14:58:31+09:00",
-      "busroute": "T02",
-      "busstop": "三筋二丁目",
-      "delay_seconds": 1711.0,
+      "actual_time": "2026-11-25T15:28:33+09:00",
+      "busroute": "Ou45",
+      "busstop": "新渡し",
+      "delay_seconds": 213.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T15:28:33+09:00",
+      "busroute": "Kasai24",
+      "busstop": "法蓮寺",
+      "delay_seconds": 33.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-25T15:28:33+09:00",
+      "busroute": "Ta87",
+      "busstop": "東三丁目",
+      "delay_seconds": 93.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
