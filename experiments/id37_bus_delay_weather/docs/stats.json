@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-26T20:15:33.182391",
-  "total_observations": 2237372,
-  "observations_with_weather": 2233051,
+  "generated_at": "2026-11-26T20:45:38.749993",
+  "total_observations": 2239347,
+  "observations_with_weather": 2235026,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-26 20:12:20.446288",
+  "period_end": "2026-11-26 20:42:44.172536",
   "delay_seconds": {
-    "mean": 186.9,
+    "mean": 187.0,
     "median": 106.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2228982,
-    "rows_total": 2233051,
+    "rows_with_precipitation_data": 2230957,
+    "rows_total": 2235026,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -349,49 +349,49 @@
     },
     {
       "date": "2026-11-26",
-      "n": 76099,
-      "mean_delay": 213.59873322908317,
+      "n": 78074,
+      "mean_delay": 213.76094474472936,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-26T20:11:36+09:00",
-      "busroute": "Ike86Shutsunyuu",
-      "busstop": "南池袋三丁目",
-      "delay_seconds": 96.0,
+      "actual_time": "2026-11-26T20:42:04+09:00",
+      "busroute": "Shina93",
+      "busstop": "大井競馬場前",
+      "delay_seconds": 4.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-26T20:42:04+09:00",
+      "busroute": "Shina97",
+      "busstop": "四ノ橋",
+      "delay_seconds": 304.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-26T20:11:35+09:00",
-      "busroute": "Shina98",
-      "busstop": "食肉市場前",
-      "delay_seconds": 95.0,
+      "actual_time": "2026-11-26T20:42:04+09:00",
+      "busroute": "Ike65",
+      "busstop": "哲学堂",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-26T20:11:34+09:00",
-      "busroute": "Ou55",
-      "busstop": "滝野川二丁目",
-      "delay_seconds": 34.0,
+      "actual_time": "2026-11-26T20:42:04+09:00",
+      "busroute": "Ou78",
+      "busstop": "本町三丁目(ほんちょうさんちょうめ（なかのく）)",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-26T20:11:34+09:00",
-      "busroute": "Ume76Hei",
-      "busstop": "畑中三丁目",
-      "delay_seconds": 34.0,
-      "amedas_station": "青梅",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-26T20:11:33+09:00",
-      "busroute": "Rinkai28-1",
-      "busstop": "桑川町",
-      "delay_seconds": 33.0,
+      "actual_time": "2026-11-26T20:42:03+09:00",
+      "busroute": "Nishikatsu27",
+      "busstop": "臨海町二丁目団地前",
+      "delay_seconds": 3.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
