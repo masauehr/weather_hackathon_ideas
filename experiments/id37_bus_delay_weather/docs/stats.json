@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-27T09:30:19.533593",
-  "total_observations": 2260338,
-  "observations_with_weather": 2256017,
+  "generated_at": "2026-11-27T10:00:26.218534",
+  "total_observations": 2264301,
+  "observations_with_weather": 2259980,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-27 09:26:56.338261",
+  "period_end": "2026-11-27 09:57:25.818725",
   "delay_seconds": {
     "mean": 187.2,
     "median": 106.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2251948,
-    "rows_total": 2256017,
+    "rows_with_precipitation_data": 2255911,
+    "rows_total": 2259980,
     "rows_with_rain_detected": 66172
   },
   "daily": [
@@ -355,49 +355,49 @@
     },
     {
       "date": "2026-11-27",
-      "n": 15511,
-      "mean_delay": 201.15376184643156,
+      "n": 19474,
+      "mean_delay": 204.28679264660573,
       "n_rain": 0
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-27T09:26:35+09:00",
-      "busroute": "Hashi86",
-      "busstop": "東大医科研病院西門",
-      "delay_seconds": 395.0,
+      "actual_time": "2026-11-27T09:57:05+09:00",
+      "busroute": "Ta87",
+      "busstop": "恵比寿二丁目",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T09:26:35+09:00",
-      "busroute": "Shuku75",
-      "busstop": "東新宿保健センター前",
-      "delay_seconds": 215.0,
+      "actual_time": "2026-11-27T09:57:04+09:00",
+      "busroute": "Ou45",
+      "busstop": "ハートアイランド西",
+      "delay_seconds": 184.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T09:26:34+09:00",
-      "busroute": "Shibu66",
-      "busstop": "富ヶ谷",
-      "delay_seconds": 994.0,
+      "actual_time": "2026-11-27T09:57:04+09:00",
+      "busroute": "Ta87",
+      "busstop": "三田五丁目",
+      "delay_seconds": 64.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T09:26:33+09:00",
-      "busroute": "Ou40Hei",
-      "busstop": "豊島二丁目",
-      "delay_seconds": 333.0,
+      "actual_time": "2026-11-27T09:57:04+09:00",
+      "busroute": "Higashi42-2",
+      "busstop": "浅草七丁目",
+      "delay_seconds": 184.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T09:26:33+09:00",
-      "busroute": "Shibu88",
-      "busstop": "虎ノ門",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-11-27T09:57:04+09:00",
+      "busroute": "Hama95",
+      "busstop": "東京タワー",
+      "delay_seconds": 4.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
