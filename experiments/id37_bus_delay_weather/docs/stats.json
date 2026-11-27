@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-28T04:46:13.571968",
-  "total_observations": 2326161,
-  "observations_with_weather": 2321840,
+  "generated_at": "2026-11-28T05:54:04.747195",
+  "total_observations": 2326177,
+  "observations_with_weather": 2321856,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-27 23:41:11.555144",
+  "period_end": "2026-11-28 05:50:32.716328",
   "delay_seconds": {
     "mean": 190.6,
     "median": 107.0,
@@ -12,9 +12,9 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2317771,
-    "rows_total": 2321840,
-    "rows_with_rain_detected": 66172
+    "rows_with_precipitation_data": 2317787,
+    "rows_total": 2321856,
+    "rows_with_rain_detected": 66178
   },
   "daily": [
     {
@@ -358,48 +358,54 @@
       "n": 81334,
       "mean_delay": 286.2000270489586,
       "n_rain": 0
+    },
+    {
+      "date": "2026-11-28",
+      "n": 16,
+      "mean_delay": 52.5625,
+      "n_rain": 6
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-27T23:39:16+09:00",
-      "busroute": "T02",
-      "busstop": "窪町小学校",
-      "delay_seconds": 76.0,
+      "actual_time": "2026-11-28T05:50:05+09:00",
+      "busroute": "Shina98",
+      "busstop": "品川駅港南口",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T23:35:11+09:00",
-      "busroute": "T02",
-      "busstop": "春日二丁目",
-      "delay_seconds": 71.0,
-      "amedas_station": "東京",
+      "actual_time": "2026-11-28T05:50:03+09:00",
+      "busroute": "Ou78",
+      "busstop": "中野北郵便局前",
+      "delay_seconds": 63.0,
+      "amedas_station": "練馬",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-27T23:30:20+09:00",
-      "busroute": "T02",
-      "busstop": "春日駅前",
-      "delay_seconds": -40.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
+      "actual_time": "2026-11-28T05:49:26+09:00",
+      "busroute": "Nishikatsu20Otsu",
+      "busstop": "江戸川臨海郵便局前",
+      "delay_seconds": 86.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.5
     },
     {
-      "actual_time": "2026-11-27T23:30:10+09:00",
-      "busroute": "T02",
-      "busstop": "大塚四丁目",
-      "delay_seconds": 1810.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
+      "actual_time": "2026-11-28T05:49:06+09:00",
+      "busroute": "Kame26",
+      "busstop": "東小松川一丁目",
+      "delay_seconds": 6.0,
+      "amedas_station": "江戸川臨海",
+      "precipitation10m_mm": 0.5
     },
     {
-      "actual_time": "2026-11-27T23:25:13+09:00",
-      "busroute": "T02",
-      "busstop": "本郷三丁目駅前",
-      "delay_seconds": -47.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
+      "actual_time": "2026-11-28T05:48:52+09:00",
+      "busroute": "Shina98",
+      "busstop": "水産棟前",
+      "delay_seconds": -68.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.5
     }
   ]
 }
