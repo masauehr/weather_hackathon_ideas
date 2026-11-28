@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-28T14:51:26.684652",
-  "total_observations": 2348749,
-  "observations_with_weather": 2344428,
+  "generated_at": "2026-11-28T15:21:32.583034",
+  "total_observations": 2351720,
+  "observations_with_weather": 2347399,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-28 14:50:58.320618",
+  "period_end": "2026-11-28 15:21:24.571989",
   "delay_seconds": {
-    "mean": 190.3,
+    "mean": 190.4,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2340359,
-    "rows_total": 2344428,
+    "rows_with_precipitation_data": 2343330,
+    "rows_total": 2347399,
     "rows_with_rain_detected": 67147
   },
   "daily": [
@@ -361,49 +361,49 @@
     },
     {
       "date": "2026-11-28",
-      "n": 22588,
-      "mean_delay": 166.5789357180804,
+      "n": 25559,
+      "mean_delay": 171.3647247544896,
       "n_rain": 975
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-28T14:50:36+09:00",
-      "busroute": "Ume77Tei",
-      "busstop": "東青梅駅前",
-      "delay_seconds": 96.0,
-      "amedas_station": "青梅",
+      "actual_time": "2026-11-28T15:21:05+09:00",
+      "busroute": "You12-1",
+      "busstop": "枝川二丁目",
+      "delay_seconds": 65.0,
+      "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T14:50:33+09:00",
-      "busroute": "Shiro61",
-      "busstop": "高田一丁目",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-11-28T15:21:05+09:00",
+      "busroute": "T05-1",
+      "busstop": "晴海埠頭",
+      "delay_seconds": 5.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T14:50:33+09:00",
-      "busroute": "Ou40Kou",
-      "busstop": "Hareza池袋",
-      "delay_seconds": 153.0,
+      "actual_time": "2026-11-28T15:21:05+09:00",
+      "busroute": "Shina98",
+      "busstop": "天王洲橋",
+      "delay_seconds": 245.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T14:50:33+09:00",
-      "busroute": "Kusa63",
-      "busstop": "新庚申塚",
-      "delay_seconds": 93.0,
+      "actual_time": "2026-11-28T15:21:04+09:00",
+      "busroute": "Ou78",
+      "busstop": "上十条五丁目",
+      "delay_seconds": 244.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T14:50:33+09:00",
-      "busroute": "Kusa41",
-      "busstop": "梅田町神明通り",
-      "delay_seconds": -27.0,
+      "actual_time": "2026-11-28T15:21:04+09:00",
+      "busroute": "Cha51",
+      "busstop": "東大正門前",
+      "delay_seconds": 304.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
