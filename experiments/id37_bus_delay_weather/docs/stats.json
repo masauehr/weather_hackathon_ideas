@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-28T12:20:50.975556",
-  "total_observations": 2333810,
-  "observations_with_weather": 2329489,
+  "generated_at": "2026-11-28T12:50:56.838286",
+  "total_observations": 2336797,
+  "observations_with_weather": 2332476,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-28 12:18:32.581837",
+  "period_end": "2026-11-28 12:48:59.097761",
   "delay_seconds": {
-    "mean": 190.4,
+    "mean": 190.3,
     "median": 107.0,
     "max": 25119.0,
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2325420,
-    "rows_total": 2329489,
+    "rows_with_precipitation_data": 2328407,
+    "rows_total": 2332476,
     "rows_with_rain_detected": 67145
   },
   "daily": [
@@ -361,49 +361,49 @@
     },
     {
       "date": "2026-11-28",
-      "n": 7649,
-      "mean_delay": 132.20943914237156,
+      "n": 10636,
+      "mean_delay": 140.87241444151937,
       "n_rain": 973
     }
   ],
   "latest_observations": [
     {
-      "actual_time": "2026-11-28T12:18:04+09:00",
+      "actual_time": "2026-11-28T12:48:33+09:00",
+      "busroute": "Shiro61",
+      "busstop": "下落合四丁目",
+      "delay_seconds": 153.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-28T12:48:33+09:00",
       "busroute": "Ou55",
-      "busstop": "新豊橋南",
-      "delay_seconds": 4.0,
+      "busstop": "王子四丁目",
+      "delay_seconds": 153.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T12:18:03+09:00",
-      "busroute": "Ii64",
-      "busstop": "小滝橋",
-      "delay_seconds": 3.0,
+      "actual_time": "2026-11-28T12:48:33+09:00",
+      "busroute": "I92",
+      "busstop": "八潮パークタウン",
+      "delay_seconds": 93.0,
+      "amedas_station": "羽田",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-28T12:48:32+09:00",
+      "busroute": "Ue23",
+      "busstop": "中居堀",
+      "delay_seconds": 32.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     },
     {
-      "actual_time": "2026-11-28T12:18:03+09:00",
-      "busroute": "Ta87",
-      "busstop": "東二丁目",
-      "delay_seconds": 3.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-28T12:18:03+09:00",
-      "busroute": "T05-2",
-      "busstop": "東京駅丸の内南口",
-      "delay_seconds": 3.0,
-      "amedas_station": "東京",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-28T12:18:02+09:00",
-      "busroute": "Ue58",
-      "busstop": "池之端二丁目",
-      "delay_seconds": 2.0,
+      "actual_time": "2026-11-28T12:48:32+09:00",
+      "busroute": "Nari10",
+      "busstop": "東駒形三丁目",
+      "delay_seconds": 92.0,
       "amedas_station": "東京",
       "precipitation10m_mm": 0.0
     }
