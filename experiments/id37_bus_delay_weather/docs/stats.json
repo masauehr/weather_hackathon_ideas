@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-28T23:23:08.283168",
-  "total_observations": 2385539,
-  "observations_with_weather": 2381218,
+  "generated_at": "2026-11-28T23:53:14.354283",
+  "total_observations": 2385541,
+  "observations_with_weather": 2381220,
   "observations_before_weather_tracking": 4321,
   "period_start": "2026-10-02 08:56:08.104420",
-  "period_end": "2026-11-28 23:23:04.406403",
+  "period_end": "2026-11-28 23:33:12.208268",
   "delay_seconds": {
     "mean": 191.0,
     "median": 107.0,
@@ -12,8 +12,8 @@
     "min": -854.0
   },
   "weather_coverage": {
-    "rows_with_precipitation_data": 2377149,
-    "rows_total": 2381218,
+    "rows_with_precipitation_data": 2377151,
+    "rows_total": 2381220,
     "rows_with_rain_detected": 67147
   },
   "daily": [
@@ -361,12 +361,28 @@
     },
     {
       "date": "2026-11-28",
-      "n": 59378,
-      "mean_delay": 207.39297382869077,
+      "n": 59380,
+      "mean_delay": 207.38809363422027,
       "n_rain": 975
     }
   ],
   "latest_observations": [
+    {
+      "actual_time": "2026-11-28T23:32:06+09:00",
+      "busroute": "T02",
+      "busstop": "小石川四丁目",
+      "delay_seconds": 126.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
+    {
+      "actual_time": "2026-11-28T23:26:59+09:00",
+      "busroute": "T02",
+      "busstop": "春日駅前",
+      "delay_seconds": -1.0,
+      "amedas_station": "東京",
+      "precipitation10m_mm": 0.0
+    },
     {
       "actual_time": "2026-11-28T23:22:24+09:00",
       "busroute": "T02",
@@ -388,22 +404,6 @@
       "busroute": "Mon19",
       "busstop": "辰巳駅前",
       "delay_seconds": 217.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-28T23:19:25+09:00",
-      "busroute": "Ryou28",
-      "busstop": "東砂六丁目",
-      "delay_seconds": 85.0,
-      "amedas_station": "江戸川臨海",
-      "precipitation10m_mm": 0.0
-    },
-    {
-      "actual_time": "2026-11-28T23:17:33+09:00",
-      "busroute": "Ryou28",
-      "busstop": "東砂四丁目",
-      "delay_seconds": 153.0,
       "amedas_station": "江戸川臨海",
       "precipitation10m_mm": 0.0
     }
